@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe v5 Video Full — Fureco × Fabio Gavazzi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --paper: #fafaf8;
+    --bone: #f5f3ef;
+    --line: #e8e5df;
+    --line-soft: #efece6;
+    --tortora: #b8aa97;
+    --tortora-deep: #968671;
+    --tortora-light: #e0d8cb;
+    --ink: #1f1d1a;
+    --gray-1: #4a4844;
+    --gray-2: #7a766f;
+    --gray-3: #a8a39a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--gray-1);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  /* ==================== ANNOTATION ==================== */
+  . { position: relative; }
+
+  . ::before {
+    content: attr(data-note);
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background: var(--tortora);
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+    z-index: 10;
+    text-transform: uppercase;
+  }
+
+  
+
+  
+  /* ==================== HEADER FISSO & DINAMICO ==================== */
+  #site-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    background: transparent;
+  }
+  
+  /* Stato iniziale (Trasparente sopra al video scuro) */
+  #site-header .utility-bar,
+  #site-header .main-nav {
+    background: transparent !important;
+    border-bottom: none !important;
+  }
+  #site-header .utility-bar {
+    border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  #site-header .nav-item, 
+  #site-header .utility-bar span,
+  #site-header .nav-logo {
+    color: #ffffff !important;
+    transition: color 0.4s ease;
+  }
+  #site-header .nav-logo .accent {
+    color: rgba(255,255,255,0.7) !important;
+  }
+  #site-header .nav-icon {
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.4) !important;
+    transition: all 0.4s ease;
+  }
+
+  /* Stato Scrolled (Sfondo chiaro una volta superata la Hero) */
+  #site-header.scrolled {
+    background: var(--paper) !important;
+    box-shadow: 0 4px 24px rgba(31, 29, 26, 0.04);
+  }
+  #site-header.scrolled .utility-bar {
+    border-bottom: 1px solid var(--line) !important;
+  }
+  #site-header.scrolled .main-nav {
+    border-bottom: 1px solid var(--line) !important;
+  }
+  #site-header.scrolled .nav-item,
+  #site-header.scrolled .nav-logo {
+    color: var(--ink) !important;
+  }
+  #site-header.scrolled .utility-bar span {
+    color: var(--gray-2) !important;
+  }
+  #site-header.scrolled .nav-logo .accent {
+    color: var(--tortora-deep) !important;
+  }
+  #site-header.scrolled .nav-icon {
+    color: var(--gray-2) !important;
+    border-color: var(--line) !important;
+  }
+
+  /* ==================== UTILITY BAR ==================== */
+  .utility-bar {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--paper);
+    color: var(--gray-2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ==================== MAIN NAVIGATION ==================== */
+  .main-nav {
+    padding: 28px 48px;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-right { justify-content: flex-end; }
+
+  .nav-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .nav-item:hover {
+    border-bottom-color: var(--tortora);
+    color: var(--ink);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .nav-logo .accent {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: var(--tortora-deep);
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: 18px;
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--gray-2);
+  }
+
+  /* ============================================================
+     HERO 50/50 SPLIT
+     ============================================================ */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    min-height: 680px;
+    max-height: 820px;
+    background: var(--paper);
+  }
+
+  /* LEFT — VIDEO/IMAGE */
+  .hero-media {
+    position: relative;
+    background: var(--bone);
+    overflow: hidden;
+    border-right: 1px solid var(--line);
+  }
+
+  .hero-media-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 30% 50%, rgba(184, 170, 151, 0.15), transparent 70%),
+      var(--bone);
+  }
+
+  .hero-media-placeholder { text-align: center; color: var(--gray-3); }
+
+  .hero-media-placeholder .icon {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--tortora);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 18px;
+    color: var(--tortora-deep);
+  }
+
+  .hero-media-placeholder .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--tortora-deep);
+  }
+
+  .hero-media-placeholder .desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gray-2);
+    max-width: 280px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  .hero-media-overlay {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    right: 48px;
+    z-index: 3;
+  }
+
+  .hero-overlay-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-overlay-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: rgba(255,255,255,0.60);
+  }
+
+  .hero-overlay-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  }
+
+  .hero-overlay-title em {
+    font-style: italic;
+    color: rgba(224,216,203,0.95);
+  }
+
+  .hero-overlay-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  .hero-media-meta {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  /* RIGHT — 4 BRAND GRID */
+  .hero-brands {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: var(--paper);
+  }
+
+  .brand-tile {
+    position: relative;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background: var(--white);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    transition: background 0.4s ease;
+  }
+
+  .brand-tile:nth-child(2n) { border-right: none; }
+  .brand-tile:nth-child(3), .brand-tile:nth-child(4) { border-bottom: none; }
+
+  .brand-tile:hover { background: var(--bone); }
+
+  .brand-tile-image-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--bone);
+    opacity: 0;
+    transition: all 0.6s ease;
+    z-index: 0;
+  }
+
+  .brand-tile:hover .brand-tile-image-bg {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  .brand-tile > * { position: relative; z-index: 1; }
+
+  .brand-tile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .brand-tile-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--tortora-deep);
+  }
+
+  .brand-tile-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    background: var(--tortora);
+    color: var(--white);
+    padding: 3px 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .brand-tile-mini-img {
+    width: 60px;
+    height: 60px;
+    background: var(--bone);
+    border: 1px solid var(--line);
+    margin-top: 24px;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gray-3);
+    letter-spacing: 0.15em;
+  }
+
+  .brand-tile-bottom { margin-top: 24px; }
+
+  .brand-tile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+
+  .brand-tile-name em { font-style: italic; color: var(--tortora-deep); }
+
+  .brand-tile-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--gray-2);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  .brand-tile-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-tile-cta .arrow { color: var(--tortora-deep); transition: transform 0.3s; }
+  .brand-tile:hover .brand-tile-cta .arrow { transform: translateX(4px); }
+
+  /* ============================================================
+     SECTIONS (after hero)
+     ============================================================ */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  section.below-hero {
+    margin-top: 120px;
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--tortora-deep);
+  }
+
+  .section-title-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+
+  .section-title em { font-style: italic; color: var(--tortora-deep); }
+
+  .section-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    border-bottom: 1px solid var(--gray-1);
+    padding-bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .section-link:hover {
+    color: var(--tortora-deep);
+    border-bottom-color: var(--tortora-deep);
+  }
+
+  /* ==================== SECTION 02 — COLLEZIONI ==================== */
+  .collezioni-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .collezione-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .collezione-card:hover { border-color: var(--tortora); }
+
+  .collezione-image {
+    aspect-ratio: 16/10;
+    background: var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .collezione-image::before {
+    content: 'EDITORIAL IMAGE';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray-3);
+    letter-spacing: 0.2em;
+  }
+
+  .collezione-content { padding: 40px; }
+
+  .collezione-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--tortora-deep);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .collezione-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .collezione-title em { font-style: italic; color: var(--tortora-deep); }
+
+  .collezione-desc {
+    font-size: 13px;
+    color: var(--gray-2);
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .collezione-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid var(--line);
+    color: var(--gray-2);
+  }
+
+  .collezione-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gray-1);
+    padding-bottom: 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--gray-1);
+  }
+
+  /* ==================== SECTION 03 — HERITAGE ==================== */
+  .heritage {
+    background: var(--bone);
+    padding: 96px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--line);
+  }
+
+  .heritage-decoration {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 280px;
+    line-height: 1;
+    color: var(--tortora);
+    opacity: 0.08;
+    font-style: italic;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .heritage-image {
+    aspect-ratio: 4/5;
+    background: var(--white);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heritage-image::before {
+    content: 'HISTORICAL IMG';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray-3);
+    letter-spacing: 0.2em;
+  }
+
+  .heritage-content { z-index: 2; }
+
+  .heritage-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--tortora-deep);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .heritage-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--tortora);
+  }
+
+  .heritage-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  .heritage-title em { font-style: italic; color: var(--tortora-deep); }
+
+  .heritage-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray-1);
+    margin-bottom: 16px;
+    max-width: 520px;
+  }
+
+  .heritage-text em { color: var(--ink); font-style: normal; font-weight: 400; }
+
+  .heritage-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--tortora-deep);
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    color: var(--gray-2);
+  }
+
+  /* ==================== SECTION 04 — SERVIZI ==================== */
+  .servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line);
+    background: var(--white);
+  }
+
+  .servizio-card {
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    cursor: pointer;
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s;
+  }
+
+  .servizio-card:hover { background: var(--bone); }
+  .servizio-card:last-child { border-right: none; }
+
+  .servizio-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--tortora);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--tortora-deep);
+    margin-bottom: 32px;
+  }
+
+  .servizio-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .servizio-name em { font-style: italic; color: var(--tortora-deep); }
+
+  .servizio-desc {
+    font-size: 12px;
+    color: var(--gray-2);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .servizio-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tortora-deep);
+  }
+
+  /* ==================== SECTION 05 — SHOWROOM ==================== */
+  .showroom-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .showroom-card {
+    padding: 64px 56px;
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--white);
+    border: 1px solid var(--line);
+    transition: border-color 0.3s;
+  }
+
+  .showroom-card:hover { border-color: var(--tortora); }
+
+  .showroom-card.featured { background: var(--bone); }
+
+  .showroom-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--tortora-deep);
+    margin-bottom: 24px;
+  }
+
+  .showroom-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .showroom-name em { font-style: italic; color: var(--tortora-deep); }
+
+  .showroom-address {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    color: var(--gray-1);
+  }
+
+  .showroom-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+
+  .info-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: var(--gray-3);
+  }
+
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gray-1);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--white);
+    border: 1px solid var(--ink);
+    padding: 16px 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  /* ==================== NEWSLETTER ==================== */
+  .newsletter {
+    margin-top: 96px;
+    padding: 80px 64px;
+    background: var(--bone);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .newsletter-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .newsletter-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--tortora-deep);
+    margin-bottom: 16px;
+  }
+
+  .newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .newsletter-title em { color: var(--tortora-deep); font-style: italic; }
+
+  .newsletter-desc {
+    font-size: 13px;
+    color: var(--gray-2);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--gray-1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+
+  .newsletter-form input::placeholder { color: var(--gray-3); }
+
+  /* ==================== FOOTER ==================== */
+  .footer {
+    background: var(--paper);
+    color: var(--gray-1);
+    padding: 80px 48px 40px;
+    margin-top: 96px;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-brand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .footer-brand h3 em { font-style: italic; color: var(--tortora-deep); }
+
+  .footer-brand p {
+    font-size: 12px;
+    color: var(--gray-2);
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .footer-social {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-social span {
+    border: 1px solid var(--line);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--gray-2);
+  }
+
+  .footer-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--tortora-deep);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li {
+    font-size: 12px;
+    color: var(--gray-1);
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .footer-col li:hover { color: var(--tortora-deep); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray-3);
+    letter-spacing: 0.15em;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ==================== ANNOTATIONS PANEL ==================== */
+  . s-panel {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--white);
+    color: var(--gray-1);
+    padding: 20px;
+    max-width: 280px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    z-index: 50;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--tortora);
+    box-shadow: 0 4px 24px rgba(31, 29, 26, 0.04);
+  }
+
+  . s-panel h5 {
+    font-size: 11px;
+    color: var(--tortora-deep);
+    margin-bottom: 12px;
+    letter-spacing: 0.2em;
+  }
+
+  . s-panel ul { list-style: none; }
+
+  . s-panel li {
+    padding: 4px 0;
+    color: var(--gray-2);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  . s-panel li:last-child { border: none; }
+
+  . s-panel .num {
+    color: var(--tortora-deep);
+    margin-right: 8px;
+  }
+
+  /* ==================== SLIDER ==================== */
+  .slider-wrap { position:relative; overflow:hidden; aspect-ratio:16/10; border-bottom:1px solid var(--line); }
+  .slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); height:100%; }
+  .slider-track img { width:100%; flex-shrink:0; object-fit:cover; }
+  .slider-btn {
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(250,250,248,.85); border:1px solid var(--line);
+    width:38px; height:38px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:14px; color:var(--ink); z-index:5;
+    transition:background .2s;
+  }
+  .slider-btn:hover { background:var(--white); }
+  .slider-prev { left:16px; }
+  .slider-next { right:16px; }
+  .slider-dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; }
+  .slider-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:var(--tortora); opacity:.4; cursor:pointer; transition:opacity .3s;
+  }
+  .slider-dot.active { opacity:1; }
+  /* ── heritage gallery ─────────────────────────── */
+  .heritage-gallery { display:flex; flex-direction:column; gap:8px; }
+  .heritage-gallery img { width:100%; object-fit:cover; border:1px solid var(--line); }
+  .heritage-gallery img:first-child { flex:2; }
+  .heritage-gallery img:not(:first-child) { flex:1; }
+  .heritage-image-real { aspect-ratio:unset; background:none; border:none; display:flex; flex-direction:column; gap:8px; }
+  .heritage-image-real::before { display:none; }
+  /* ── video hero ───────────────────────────────── */
+  .hero-video-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+  .hero-media-overlay { z-index:4; }
+  .hero-media-meta { z-index:5; }
+  /* ── brand tile real bg ───────────────────────── */
+  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease; z-index:0; }
+  .brand-tile:hover .brand-tile-image-bg-real { opacity:.18; }
+
+
+  /* ── Showroom Milano con foto sfondo ── */
+  .showroom-card.featured {
+    background-image: url('showroom-milano.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .showroom-card.featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(245,243,239,0.92) 0%,
+      rgba(245,243,239,0.85) 50%,
+      rgba(245,243,239,0.60) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* ── Showroom Seregno con foto sfondo ── */
+  .showroom-card.seregno {
+    background-image: url("L'arte della pellicceria/02_img_furecoworld.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .showroom-card.seregno::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(245,243,239,0.92) 0%,
+      rgba(245,243,239,0.85) 50%,
+      rgba(245,243,239,0.60) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  .showroom-card.featured > *,
+  .showroom-card.seregno > * {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  /* ==================== VIDEO FULL WIDTH ==================== */
+  .hero-video-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-full video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-video-full .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(15,13,10,0.15) 0%,
+      rgba(15,13,10,0.35) 40%,
+      rgba(15,13,10,0.65) 75%,
+      rgba(15,13,10,0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-split {
+    position: relative;
+    background: transparent !important;
+  }
+
+  .hero-media {
+    background: transparent !important;
+    border-right: none !important;
+  }
+  
+  /* Nascondiamo l'inner del video originale */
+  .hero-media-inner {
+    display: none !important;
+  }
+
+  .hero-brands {
+    background: transparent !important;
+    padding-top: 140px;
+  }
+
+  .brand-tile {
+    background: transparent !important;
+    border-color: rgba(255,255,255,0.15) !important;
+  }
+
+  .brand-tile > * {
+    z-index: 3 !important;
+  }
+
+  /* Modifichiamo le scritte dei brand per farle risaltare sul video */
+  .brand-tile-name {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  .brand-tile-name em {
+    color: rgba(224,216,203,0.95) !important;
+  }
+  .brand-tile-desc {
+    color: rgba(255,255,255,0.8) !important;
+  }
+  .brand-tile-num {
+    color: rgba(255,255,255,0.9) !important;
+  }
+  .brand-tile-mini-img {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: #ffffff !important;
+  }
+  .brand-tile-cta {
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.2) !important;
+  }
+  .brand-tile-cta .arrow {
+    color: #ffffff !important;
+  }
+
+  /* L'immagine in hover: va sopra il video ma sotto il gradiente per le scritte,
+     oppure il tile ha un suo gradiente. Mettiamo il gradiente permanente dentro il tile */
+  .brand-tile-image-bg-real {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease !important;
+    z-index: 1 !important;
+  }
+  .brand-tile:hover .brand-tile-image-bg-real {
+    opacity: 1 !important;
+  }
+  
+  /* Gradiente scuro permanente interno al tile per garantire la leggibilità anche con la foto 100% visibile */
+  .brand-tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15,13,10,0.1) 0%, rgba(15,13,10,0.7) 100%);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .brand-tile:hover::before {
+    opacity: 1; /* Appare quando la foto compare, così le scritte si leggono */
+  }
+
+
+
+  /* ── Miglioramento leggibilità testi sui quadrati dei brand ── */
+  .brand-tile-name {
+    text-shadow: 0 4px 16px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6) !important;
+    font-weight: 400 !important;
+  }
+  .brand-tile-desc {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.9) !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+  }
+  .brand-tile-cta {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.9) !important;
+  }
+  
+  /* Aggiungo un gradiente permanente alla base del quadrato, così i testi bianchi staccano 
+     sempre perfettamente dal video, anche se in quel punto l'immagine è chiara */
+  .brand-tile::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 60%;
+    background: linear-gradient(to top, rgba(15,13,10,0.85) 0%, rgba(15,13,10,0.3) 50%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+
+  .brand-tile {
+    justify-content: flex-end !important;
+    padding-bottom: 40px !important;
+  }
+
+</style>
+</head>
+<body>
+
+
+</div>
+
+<header id="site-header">
+<!-- ==================== UTILITY BAR ==================== -->
+<div class="utility-bar ">
+  <span>NEW COLLECTION 2025 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+  <span>SPEDIZIONE GRATUITA OLTRE €1.000</span>
+  <span>IT / EN</span>
+</div>
+
+<!-- ==================== MAIN NAVIGATION ==================== -->
+<nav class="main-nav ">
+  <div class="nav-left">
+    <span class="nav-item">Brand</span>
+    <span class="nav-item">Collezioni</span>
+    <span class="nav-item">Shop</span>
+    <span class="nav-item">Servizi</span>
+  </div>
+  <div class="nav-logo">
+    FURECO
+    <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+  </div>
+  <div class="nav-right">
+        <a href="#" class="nav-item">Showroom</a>
+        <a href="#" class="nav-item">Contatti</a>
+        <a href="#" class="nav-item">Shop</a>
+        <a href="#" class="nav-icon search-only" style="padding: 0; border: none; margin-left: 16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+      </div>
+      
+      
+    </div>
+  </div>
+</nav>
+</header>
+
+<!-- ============================================================
+     HERO 50/50 — VIDEO LEFT, 4 BRANDS RIGHT
+     ============================================================ -->
+<section class="hero-split ">
+
+  <!-- Sfondo video full width -->
+  <div class="hero-video-full">
+    <video autoplay muted loop playsinline>
+      <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+
+  <div class="hero-media">
+    
+
+    <div class="hero-media-inner" style="background:#000;">
+      <video class="hero-video-real" autoplay muted loop playsinline>
+        <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
+      </video>
+      <!-- Gradiente fisso: parte bassa sempre scura per leggibilità -->
+      <div style="
+        position:absolute; inset:0; z-index:2;
+        background: linear-gradient(
+          to bottom,
+          rgba(15,13,10,0.10) 0%,
+          rgba(15,13,10,0.08) 40%,
+          rgba(15,13,10,0.55) 75%,
+          rgba(15,13,10,0.78) 100%
+        );
+        pointer-events:none;
+      "></div>
+    </div>
+
+    <div class="hero-media-overlay">
+      <h1 class="hero-overlay-title" style="font-family:'Inter', sans-serif; font-weight:400;">Tradizione artigianale,<br/><span style="font-weight:200;">lusso senza tempo.</span></h1>
+      <p class="hero-overlay-subtitle" style="font-size: 18px; letter-spacing: 0.05em; font-weight: 300; max-width: 450px; line-height: 1.6; color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
+    </div>
+  </div>
+
+  <div class="hero-brands">
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fabio Gavazzi <em>Donna</em></h3>
+        <p class="brand-tile-desc">Alta moda donna · haute couture</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Uomo">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fabio Gavazzi <em>Uomo</em></h3>
+        <p class="brand-tile-desc">Pellicce e cashmere uomo</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/Mavina.jpg" alt="Mavina">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Mavina</h3>
+        <p class="brand-tile-desc">Pellicceria contemporanea</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/home-2.jpg.webp" alt="Fureco Home">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fureco <em>Home</em></h3>
+        <p class="brand-tile-desc">Pelliccia per la casa</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
+<div class="container">
+
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="collezioni-split">
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-donna">
+          <div class="slider-track" id="track-donna">
+            <img src="Donna/FG2296PIVR_A.jpg" alt="Collezione Donna 1">
+            <img src="Donna/FG2343FDOR_B.jpg" alt="Collezione Donna 2">
+            <img src="Donna/FG2355PIVR_B.jpg" alt="Collezione Donna 3">
+            <img src="Donna/FG2368FDOR_B.jpg" alt="Collezione Donna 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('donna',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('donna',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-donna">
+            <div class="slider-dot active" onclick="goTo('donna',0)"></div>
+            <div class="slider-dot" onclick="goTo('donna',1)"></div>
+            <div class="slider-dot" onclick="goTo('donna',2)"></div>
+            <div class="slider-dot" onclick="goTo('donna',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">Fabio Gavazzi Donna</div>
+          <h3 class="collezione-title" id="title-donna" style="transition: opacity 0.3s ease;">Visone, zibellino,<br/><em>chinchilla.</em></h3>
+          <p class="collezione-desc" id="desc-donna" style="transition: opacity 0.3s ease;">Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture.</p>
+          <div class="collezione-tags">
+            <span class="tag">Visone</span>
+            <span class="tag">Zibellino</span>
+            <span class="tag">Chinchilla</span>
+            <span class="tag">Cashmere</span>
+            <span class="tag">Shearling</span>
+          </div>
+          <span class="collezione-link">Esplora donna</span>
+        </div>
+      </div>
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-uomo">
+          <div class="slider-track" id="track-uomo">
+            <img src="Uomo/FG2230PIVR_B.jpg" alt="Collezione Uomo 1">
+            <img src="Uomo/FG2231PIVR_B.jpg" alt="Collezione Uomo 2">
+            <img src="Uomo/FG2259PIVR_B.jpg" alt="Collezione Uomo 3">
+            <img src="Uomo/FG2260PIVR_B.jpg" alt="Collezione Uomo 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('uomo',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('uomo',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-uomo">
+            <div class="slider-dot active" onclick="goTo('uomo',0)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',1)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',2)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">Fabio Gavazzi Uomo</div>
+          <h3 class="collezione-title" id="title-uomo" style="transition: opacity 0.3s ease;">Eleganza<br/><em>maschile.</em></h3>
+          <p class="collezione-desc" id="desc-uomo" style="transition: opacity 0.3s ease;">Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani con oltre 30 anni di esperienza.</p>
+          <div class="collezione-tags">
+            <span class="tag">Cashmere</span>
+            <span class="tag">Pelliccia</span>
+            <span class="tag">Tailoring</span>
+          </div>
+          <span class="collezione-link">Esplora uomo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 03 — HERITAGE -->
+  <section class="below-hero ">
+    <div class="heritage">
+      <span class="heritage-decoration">1924</span>
+      <div class="heritage-image heritage-image-real">
+        <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Storia Fureco" style="object-fit:cover; width:100%; aspect-ratio:4/3; border:1px solid var(--line);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Fureco World 1" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Fureco World 2" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+        </div>
+      </div>
+      <div class="heritage-content">
+        <div class="heritage-eyebrow">Heritage</div>
+        <h2 class="heritage-title">L'arte della<br/>pellicceria<br/><em>dal 1924.</em></h2>
+        <p class="heritage-text">Oltre un secolo di eccellenza sartoriale. La storia di Fureco nasce nei primi anni '20, quando Cesare Gavazzi avviò un esclusivo atelier a Seregno. Oggi, quattro generazioni dopo, l'azienda continua a rappresentare il puro artigianato italiano nel mondo.</p>
+        <p class="heritage-text">Sotto la guida dei fratelli Gavazzi — <em>Cesare</em> (CEO), <em>Fabio</em> (Direttore Creativo) e <em>Alberto</em> (Commercial Manager) — ogni capo viene pensato, disegnato e realizzato a mano in Italia, garantendo una qualità e una tracciabilità senza compromessi.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  
+
+  
+
+  <!-- SEZIONE 05 — SHOWROOM -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Visita i nostri <em>showroom</em></h2>
+        <span class="section-link">Prenota appuntamento</span>
+      </div>
+    </div>
+    <div class="showroom-split">
+      <div class="showroom-card featured">
+        <div>
+          <div class="showroom-tag">★ Boutique flagship</div>
+          <h3 class="showroom-name">Milano,<br/><em>Montenapoleone.</em></h3>
+          <p class="showroom-address">Palazzo Gavazzi<br/>Via Monte Napoleone 23<br/>20121 Milano</p>
+          <div class="showroom-info">
+            <div>
+              <div class="info-label">Orari</div>
+              <div class="info-value">10:00 — 18:00<br/>Lun–Ven · su appuntamento</div>
+            </div>
+            <div>
+              <div class="info-label">Contatti</div>
+              <div class="info-value">+39 02 870 38516<br/>WhatsApp 344 390 9855</div>
+            </div>
+          </div>
+        </div>
+        <button class="btn-primary" style="align-self: flex-start;">Prenota visita</button>
+      </div>
+      <div class="showroom-card seregno">
+        <div>
+          <div class="showroom-tag">— Atelier &amp; produzione</div>
+          <h3 class="showroom-name">Seregno,<br/><em>headquarter.</em></h3>
+          <p class="showroom-address">Via Magenta 35<br/>20831 Seregno (MB)<br/>Italy</p>
+          <div class="showroom-info">
+            <div>
+              <div class="info-label">Sede storica</div>
+              <div class="info-value">L'atelier dove<br/>nascono le collezioni</div>
+            </div>
+            <div>
+              <div class="info-label">B2B / Wholesale</div>
+              <div class="info-value">Per buyer e<br/>professionisti</div>
+            </div>
+          </div>
+        </div>
+        <span class="collezione-link">Contatta l'atelier →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 05 — SHOP -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Boutique <em>online</em></h2>
+        <span class="section-link">Visita lo shop online</span>
+      </div>
+    </div>
+    <div style="position:relative; width:100%; padding: 64px 0; background: var(--paper); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; gap: 40px; overflow:hidden;">
+      
+      <!-- Immagine di sinistra (Donna) animata in hover -->
+      <div style="position:relative; width: 28%; max-width: 300px; aspect-ratio: 3/4; overflow: hidden; transform: translateY(-24px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG0924PIVR.jpg" alt="Fureco Shop Woman" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+
+      <!-- Testo centrale -->
+      <div style="position:relative; z-index:2; text-align:center; padding: 48px 40px; background: var(--white); border: 1px solid var(--line); flex: 0 0 380px; box-shadow: 0 20px 50px rgba(0,0,0,0.06);">
+        <div style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.2em; color:var(--tortora-deep); margin-bottom:16px;">— E-COMMERCE</div>
+        <h3 style="font-size:26px; font-weight:300; margin-bottom:16px; line-height:1.3;">Le nostre creazioni,<br/><em>a casa tua.</em></h3>
+        <p style="font-size:14px; color:var(--gray-2); margin-bottom:32px; line-height: 1.6;">Acquista comodamente online le collezioni di pellicceria, cashmere e accessori sartoriali Fureco. Spedizione gratuita in tutto il mondo.</p>
+        <button class="btn-primary" style="width: 100%;">Esplora la Boutique</button>
+      </div>
+
+      <!-- Immagine di destra (Uomo) sfalsata -->
+      <div style="position:relative; width: 28%; max-width: 300px; aspect-ratio: 3/4; overflow: hidden; transform: translateY(24px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1328PIVR.jpg" alt="Fureco Shop Man" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEZIONE 04 — SERVIZI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Servizi <em>esclusivi</em></h2>
+        <span class="section-link">Tutti i servizi</span>
+      </div>
+    </div>
+    <div class="servizi-grid">
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="6" r="3" stroke="#968671" stroke-width="1.5"/>
+  <line x1="16" y1="9" x2="16" y2="28" stroke="#968671" stroke-width="1.5"/>
+  <path d="M10 18 Q16 14 22 18" stroke="#968671" stroke-width="1.5" fill="none"/>
+  <path d="M8 24 Q16 19 24 24" stroke="#968671" stroke-width="1.5" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Bespoke</h3>
+          <p class="servizio-desc">Capo unico realizzato secondo le tue specifiche, dal modello agli accessori.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="13" width="24" height="6" rx="1" stroke="#968671" stroke-width="1.5"/>
+  <line x1="8" y1="13" x2="8" y2="10" stroke="#968671" stroke-width="1.5"/>
+  <line x1="12" y1="13" x2="12" y2="11" stroke="#968671" stroke-width="1.5"/>
+  <line x1="16" y1="13" x2="16" y2="10" stroke="#968671" stroke-width="1.5"/>
+  <line x1="20" y1="13" x2="20" y2="11" stroke="#968671" stroke-width="1.5"/>
+  <line x1="24" y1="13" x2="24" y2="10" stroke="#968671" stroke-width="1.5"/>
+</svg></div>
+          <h3 class="servizio-name">Made to <em>Measure</em></h3>
+          <p class="servizio-desc">Personalizza un modello della collezione per adattarlo alle tue esigenze.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="22" r="4" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="22" cy="22" r="4" stroke="#968671" stroke-width="1.5"/>
+  <line x1="13.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1.5"/>
+  <line x1="18.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="16" cy="8" r="1.5" fill="#968671"/>
+</svg></div>
+          <h3 class="servizio-name">Fur <em>Restyling</em></h3>
+          <p class="servizio-desc">Rinnova la tua pelliccia vintage secondo un'estetica moderna e attuale.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 5 C16 5 16 8 13 10 L6 15 H26 L19 10 C16 8 16 5 16 5Z" stroke="#968671" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+  <line x1="16" y1="5" x2="16" y2="3" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="16" cy="2.5" r="1.5" stroke="#968671" stroke-width="1.5"/>
+  <path d="M22 22 C22 25.3 19.3 28 16 28 C12.7 28 10 25.3 10 22 C10 18.7 16 14 16 14 C16 14 22 18.7 22 22Z" stroke="#968671" stroke-width="1.5" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Cura &amp; <em>Conservazione</em></h3>
+          <p class="servizio-desc">Pulitura standard, antibatterica e custodia stagionale dei tuoi capi.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 07 — FURMARK -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Certificazione <em>Furmark®</em></h2>
+        <span class="section-link">Sostenibilità</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:48px; align-items:center; border: 1px solid var(--line); padding: 56px; background: var(--white);">
+      <div style="flex: 0 0 160px; text-align:center;">
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size:42px; font-style:italic; color:var(--tortora-deep); margin:0;">Furmark</h2>
+      </div>
+      <div style="flex: 1; padding-left: 48px; border-left: 1px solid var(--line-soft);">
+        <h3 style="font-size:20px; font-weight:300; margin-bottom:12px; line-height:1.4;">Fureco è stata tra le prime aziende ad adottare la certificazione Furmark®</h3>
+        <p style="font-size:14px; color:var(--gray-2); line-height:1.6; max-width: 600px;">Selezioniamo pellami provenienti da Paesi in cui vigono rigorose normative sul benessere animale e stringenti standard ambientali. Da diversi anni partecipiamo attivamente a un programma globale per la tracciabilità delle pelli, che adottiamo lungo tutta la filiera produttiva per garantire la massima trasparenza e la più alta qualità ai nostri clienti.</p>
+        <div style="margin-top: 24px;">
+          <a href="#" class="collezione-link" style="text-decoration:none;">Scopri la certificazione →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter ">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">— FUR JOURNAL</div>
+      <h2 class="newsletter-title">Iscriviti alla nostra<br/><em>newsletter privata.</em></h2>
+      <p class="newsletter-desc">Anteprime collezioni, eventi privati, accesso esclusivo allo showroom e contenuti editoriali dedicati.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="LA TUA EMAIL">
+        <button class="btn-primary">Iscriviti</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer ">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" style="border: 1px solid var(--line); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--gray-2); transition: all 0.3s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="#" aria-label="LinkedIn" style="border: 1px solid var(--line); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--gray-2); transition: all 0.3s;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Brand</h4>
+      <ul>
+        <li>Fabio Gavazzi</li>
+        <li>Fabio Gavazzi Man</li>
+        <li>Mavina</li>
+        <li>Fureco Home</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Esplora</h4>
+      <ul>
+        <li>Collezioni</li>
+        <li>Shop online</li>
+        <li>Virtual Showroom</li>
+        <li>Press</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servizi</h4>
+      <ul>
+        <li>Bespoke</li>
+        <li>Made to Measure</li>
+        <li>Fur Restyling</li>
+        <li>Cura &amp; Conservazione</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <ul>
+        <li>Chi siamo</li>
+        <li>Sostenibilità</li>
+        <li>Showroom</li>
+        <li>Contatti</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+    <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+  </div>
+</footer>
+
+<!-- ==================== ANNOTATIONS PANEL ==================== -->
+<div class=" s-panel">
+  <h5>NUOVA STRUTTURA</h5>
+  <ul>
+    <li><span class="num">01</span>Utility bar & Nav</li>
+    <li><span class="num">02</span>HERO (Video + 4 Brands)</li>
+    <li><span class="num">03</span>Collezioni Donna+Uomo</li>
+    <li><span class="num">04</span>Heritage 1924</li>
+    <li><span class="num">05</span>Showroom</li>
+    <li><span class="num">06</span>Online Shop</li>
+    <li><span class="num">07</span>Servizi Esclusivi</li>
+    <li><span class="num">08</span>Certificazione Furmark</li>
+    <li><span class="num">09</span>Newsletter</li>
+    <li><span class="num">10</span>Footer Modernizzato</li>
+  </ul>
+</div>
+
+
+<script>
+  const sliders = {
+    donna: { idx: 0, total: 4 },
+    uomo:  { idx: 0, total: 4 }
+  };
+  
+  const slidesData = {
+    donna: [
+      { title: "Visone, zibellino,<br/><em>chinchilla.</em>", desc: "Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture." },
+      { title: "Intarsi e<br/><em>cashmere.</em>", desc: "Cappa avvolgente in puro cashmere Loro Piana impreziosita da lavorazioni a intarsio artigianali e profili nobili." },
+      { title: "Eleganza<br/><em>reversibile.</em>", desc: "La versatilità del lusso quotidiano: capispalla double face che uniscono la nappa più morbida al calore e all'estetica della pelliccia." },
+      { title: "Lavorazioni<br/><em>sartoriali.</em>", desc: "Capolavori di artigianato haute couture, realizzati con tecniche di taglio esclusive e assemblaggio certosino." }
+    ],
+    uomo: [
+      { title: "Eleganza<br/><em>maschile.</em>", desc: "Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani esperti." },
+      { title: "Parka in<br/><em>visone.</em>", desc: "Il capospalla tecnico per eccellenza incontra il lusso assoluto: interni interamente foderati in visone e finiture d'autore." },
+      { title: "Dettagli in<br/><em>zibellino.</em>", desc: "Il rigore del cappotto classico destrutturato si arricchisce di colli prestigiosi, studiati per l'uomo contemporaneo." },
+      { title: "Shearling<br/><em>moderno.</em>", desc: "Geometrie rigorose e volumi asciutti. Giacche in shearling lavorate per garantire la massima leggerezza e un isolamento termico perfetto." }
+    ]
+  };
+
+  function updateSlider(id) {
+    const s = sliders[id];
+    document.getElementById('track-' + id).style.transform = 'translateX(-' + (s.idx * 100) + '%)';
+    document.querySelectorAll('#dots-' + id + ' .slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === s.idx);
+    });
+    
+    // Aggiornamento testi con fade effect
+    const titleEl = document.getElementById('title-' + id);
+    const descEl = document.getElementById('desc-' + id);
+    
+    if (titleEl && descEl) {
+      titleEl.style.opacity = 0;
+      descEl.style.opacity = 0;
+      
+      setTimeout(() => {
+        titleEl.innerHTML = slidesData[id][s.idx].title;
+        descEl.innerHTML = slidesData[id][s.idx].desc;
+        titleEl.style.opacity = 1;
+        descEl.style.opacity = 1;
+      }, 300); // attende metà della transizione per cambiare testo
+    }
+  }
+  
+  function slide(id, dir) {
+    const s = sliders[id];
+    s.idx = (s.idx + dir + s.total) % s.total;
+    updateSlider(id);
+  }
+  function goTo(id, i) {
+    sliders[id].idx = i;
+    updateSlider(id);
+  }
+  
+  // Auto-play (rallentato per dare tempo di leggere i testi)
+  setInterval(() => slide('donna', 1), 6000);
+  setInterval(() => slide('uomo',  1), 6500);
+
+  // Header dinamico allo scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 80) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+</script>
+
+</body>
+</html>

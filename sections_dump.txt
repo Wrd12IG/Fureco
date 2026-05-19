@@ -1,0 +1,229 @@
+<div class="container">
+
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-number">— 02</div>
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="collezioni-split">
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-donna">
+          <div class="slider-track" id="track-donna">
+            <img src="Donna/FG2296PIVR_A.jpg" alt="Collezione Donna 1">
+            <img src="Donna/FG2343FDOR_B.jpg" alt="Collezione Donna 2">
+            <img src="Donna/FG2355PIVR_B.jpg" alt="Collezione Donna 3">
+            <img src="Donna/FG2368FDOR_B.jpg" alt="Collezione Donna 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('donna',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('donna',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-donna">
+            <div class="slider-dot active" onclick="goTo('donna',0)"></div>
+            <div class="slider-dot" onclick="goTo('donna',1)"></div>
+            <div class="slider-dot" onclick="goTo('donna',2)"></div>
+            <div class="slider-dot" onclick="goTo('donna',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">— Donna FW 2025</div>
+          <h3 class="collezione-title" id="title-donna" style="transition: opacity 0.3s ease;">Visone, zibellino,<br/><em>chinchilla.</em></h3>
+          <p class="collezione-desc" id="desc-donna" style="transition: opacity 0.3s ease;">Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture.</p>
+          <div class="collezione-tags">
+            <span class="tag">Visone</span>
+            <span class="tag">Zibellino</span>
+            <span class="tag">Chinchilla</span>
+            <span class="tag">Cashmere</span>
+            <span class="tag">Shearling</span>
+          </div>
+          <span class="collezione-link">Esplora donna</span>
+        </div>
+      </div>
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-uomo">
+          <div class="slider-track" id="track-uomo">
+            <img src="Uomo/FG2230PIVR_B.jpg" alt="Collezione Uomo 1">
+            <img src="Uomo/FG2231PIVR_B.jpg" alt="Collezione Uomo 2">
+            <img src="Uomo/FG2259PIVR_B.jpg" alt="Collezione Uomo 3">
+            <img src="Uomo/FG2260PIVR_B.jpg" alt="Collezione Uomo 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('uomo',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('uomo',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-uomo">
+            <div class="slider-dot active" onclick="goTo('uomo',0)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',1)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',2)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">— Uomo FW 2025</div>
+          <h3 class="collezione-title" id="title-uomo" style="transition: opacity 0.3s ease;">Eleganza<br/><em>maschile.</em></h3>
+          <p class="collezione-desc" id="desc-uomo" style="transition: opacity 0.3s ease;">Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani con oltre 30 anni di esperienza.</p>
+          <div class="collezione-tags">
+            <span class="tag">Cashmere</span>
+            <span class="tag">Pelliccia</span>
+            <span class="tag">Tailoring</span>
+          </div>
+          <span class="collezione-link">Esplora uomo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 03 — HERITAGE -->
+  <section class="below-hero ">
+    <div class="heritage">
+      <span class="heritage-decoration">1924</span>
+      <div class="heritage-image heritage-image-real">
+        <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Storia Fureco" style="object-fit:cover; width:100%; aspect-ratio:4/3; border:1px solid var(--line);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Fureco World 1" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Fureco World 2" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+        </div>
+      </div>
+      <div class="heritage-content">
+        <div class="heritage-eyebrow">— 03  ·  Heritage</div>
+        <h2 class="heritage-title">L'arte della<br/>pellicceria<br/><em>dal 1924.</em></h2>
+        <p class="heritage-text">La storia di Fureco nasce in Italia nei primi anni '20, quando Cesare Gavazzi avviò un negozio di pelletteria a Seregno. Quattro generazioni dopo, la stessa passione anima il nostro lavoro.</p>
+        <p class="heritage-text">Oggi i fratelli Gavazzi guidano l'azienda: <em>Cesare</em> CEO, <em>Fabio</em> direttore creativo, <em>Alberto</em> commercial manager.</p>
+        <div class="heritage-stats">
+          <div>
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Anni di storia</div>
+          </div>
+          <div>
+            <div class="stat-number">04</div>
+            <div class="stat-label">Generazioni</div>
+          </div>
+          <div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Made in Italy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 04 — SERVIZI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-number">— 04</div>
+      <div class="section-title-group">
+        <h2 class="section-title">Servizi <em>esclusivi</em></h2>
+        <span class="section-link">Tutti i servizi</span>
+      </div>
+    </div>
+    <div class="servizi-grid">
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="6" r="3" stroke="#968671" stroke-width="1.5"/>
+  <line x1="16" y1="9" x2="16" y2="28" stroke="#968671" stroke-width="1.5"/>
+  <path d="M10 18 Q16 14 22 18" stroke="#968671" stroke-width="1.5" fill="none"/>
+  <path d="M8 24 Q16 19 24 24" stroke="#968671" stroke-width="1.5" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Bespoke</h3>
+          <p class="servizio-desc">Capo unico realizzato secondo le tue specifiche, dal modello agli accessori.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="13" width="24" height="6" rx="1" stroke="#968671" stroke-width="1.5"/>
+  <line x1="8" y1="13" x2="8" y2="10" stroke="#968671" stroke-width="1.5"/>
+  <line x1="12" y1="13" x2="12" y2="11" stroke="#968671" stroke-width="1.5"/>
+  <line x1="16" y1="13" x2="16" y2="10" stroke="#968671" stroke-width="1.5"/>
+  <line x1="20" y1="13" x2="20" y2="11" stroke="#968671" stroke-width="1.5"/>
+  <line x1="24" y1="13" x2="24" y2="10" stroke="#968671" stroke-width="1.5"/>
+</svg></div>
+          <h3 class="servizio-name">Made to <em>Measure</em></h3>
+          <p class="servizio-desc">Personalizza un modello della collezione per adattarlo alle tue esigenze.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="22" r="4" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="22" cy="22" r="4" stroke="#968671" stroke-width="1.5"/>
+  <line x1="13.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1.5"/>
+  <line x1="18.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="16" cy="8" r="1.5" fill="#968671"/>
+</svg></div>
+          <h3 class="servizio-name">Fur <em>Restyling</em></h3>
+          <p class="servizio-desc">Rinnova la tua pelliccia vintage secondo un'estetica moderna e attuale.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:36px;"><svg width="56" height="56" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 5 C16 5 16 8 13 10 L6 15 H26 L19 10 C16 8 16 5 16 5Z" stroke="#968671" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+  <line x1="16" y1="5" x2="16" y2="3" stroke="#968671" stroke-width="1.5"/>
+  <circle cx="16" cy="2.5" r="1.5" stroke="#968671" stroke-width="1.5"/>
+  <path d="M22 22 C22 25.3 19.3 28 16 28 C12.7 28 10 25.3 10 22 C10 18.7 16 14 16 14 C16 14 22 18.7 22 22Z" stroke="#968671" stroke-width="1.5" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Cura &amp; <em>Conservazione</em></h3>
+          <p class="servizio-desc">Pulitura standard, antibatterica e custodia stagionale dei tuoi capi.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 05 — SHOWROOM -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-number">— 05</div>
+      <div class="section-title-group">
+        <h2 class="section-title">Visita i nostri <em>showroom</em></h2>
+        <span class="section-link">Prenota appuntamento</span>
+      </div>
+    </div>
+    <div class="showroom-split">
+      <div class="showroom-card featured">
+        <div>
+          <div class="showroom-tag">★ Boutique flagship</div>
+          <h3 class="showroom-name">Milano,<br/><em>Montenapoleone.</em></h3>
+          <p class="showroom-address">Palazzo Gavazzi<br/>Via Monte Napoleone 23<br/>20121 Milano</p>
+          <div class="showroom-info">
+            <div>
+              <div class="info-label">Orari</div>
+              <div class="info-value">10:00 — 18:00<br/>Lun–Ven · su appuntamento</div>
+            </div>
+            <div>
+              <div class="info-label">Contatti</div>
+              <div class="info-value">+39 02 870 38516<br/>WhatsApp 344 390 9855</div>
+            </div>
+          </div>
+        </div>
+        <button class="btn-primary" style="align-self: flex-start;">Prenota visita</button>
+      </div>
+      <div class="showroom-card">
+        <div>
+          <div class="showroom-tag">— Atelier &amp; produzione</div>
+          <h3 class="showroom-name">Seregno,<br/><em>headquarter.</em></h3>
+          <p class="showroom-address">Via Magenta 35<br/>20831 Seregno (MB)<br/>Italy</p>
+          <div class="showroom-info">
+            <div>
+              <div class="info-label">Sede storica</div>
+              <div class="info-value">L'atelier dove<br/>nascono le collezioni</div>
+            </div>
+            <div>
+              <div class="info-label">B2B / Wholesale</div>
+              <div class="info-value">Per buyer e<br/>professionisti</div>
+            </div>
+          </div>
+        </div>
+        <span class="collezione-link">Contatta l'atelier →</span>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- NEWSLETTER -->
