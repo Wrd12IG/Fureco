@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframe v6 FINAL — Fureco × Fabio Gavazzi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --paper: #fafaf8;
+    --bone: #f5f3ef;
+    --line: #e8e5df;
+    --line-soft: #efece6;
+    --tortora: #b8aa97;
+    --tortora-deep: #968671;
+    --tortora-light: #e0d8cb;
+    --ink: #1f1d1a;
+    --gray-1: #4a4844;
+    --gray-2: #7a766f;
+    --gray-3: #a8a39a;
+    --bordeaux: #6d212b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--gray-1);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  /* ==================== UTILITY BAR ==================== */
+  .utility-bar {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--paper);
+    color: var(--bordeaux);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ==================== MAIN NAVIGATION ==================== */
+  .main-nav {
+    padding: 28px 48px;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-right { justify-content: flex-end; }
+
+  .nav-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-1);
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .nav-item:hover {
+    border-bottom-color: var(--tortora);
+    color: var(--ink);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .nav-logo .accent {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: var(--bordeaux);
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+  }
+
+  .nav-icons {
+    display: flex;
+    gap: 18px;
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--gray-2);
+  }
+
+  /* ============================================================
+     HERO 50/50 SPLIT
+     ============================================================ */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 110px);
+    min-height: 680px;
+    max-height: 820px;
+    background: var(--paper);
+  }
+
+  /* LEFT — VIDEO/IMAGE */
+  .hero-media {
+    position: relative;
+    background: var(--bone);
+    overflow: hidden;
+    border-right: 1px solid var(--line);
+  }
+
+  .hero-media-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 30% 50%, rgba(184, 170, 151, 0.15), transparent 70%),
+      var(--bone);
+  }
+
+  .hero-media-placeholder { text-align: center; color: var(--gray-3); }
+
+  .hero-media-placeholder .icon {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--tortora);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 18px;
+    color: var(--bordeaux);
+  }
+
+  .hero-media-placeholder .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--bordeaux);
+  }
+
+  .hero-media-placeholder .desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gray-2);
+    max-width: 280px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  .hero-media-overlay {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    right: 48px;
+    z-index: 3;
+  }
+
+  .hero-overlay-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-overlay-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: rgba(255,255,255,0.60);
+  }
+
+  .hero-overlay-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  }
+
+  .hero-overlay-title em {
+    font-style: italic;
+  }
+
+  .hero-overlay-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  .hero-media-meta {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  /* RIGHT — 4 BRAND GRID */
+  .hero-brands {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: var(--paper);
+  }
+
+  .brand-tile {
+    position: relative;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background: var(--white);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    transition: background 0.4s ease;
+  }
+
+  .brand-tile:nth-child(2n) { border-right: none; }
+  .brand-tile:nth-child(3), .brand-tile:nth-child(4) { border-bottom: none; }
+
+  .brand-tile:hover { background: var(--ink); }
+
+  /* Testi dinamici in hover */
+  .brand-tile-num, .brand-tile-name, .brand-tile-name em, .brand-tile-desc {
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+  }
+  .brand-tile:hover .brand-tile-num { color: var(--bordeaux); }
+  .brand-tile:hover .brand-tile-name,
+  .brand-tile:hover .brand-tile-name em { color: var(--white); text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+  .brand-tile:hover .brand-tile-desc { color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+
+  .brand-tile-image-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--bone);
+    opacity: 0;
+    transition: all 0.6s ease;
+    z-index: 0;
+  }
+
+  .brand-tile:hover .brand-tile-image-bg {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  .brand-tile > * { position: relative; z-index: 1; }
+
+  .brand-tile-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .brand-tile-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--bordeaux);
+  }
+
+  .brand-tile-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    background: var(--tortora);
+    color: var(--white);
+    padding: 3px 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .brand-tile-bottom { margin-top: 24px; }
+
+  .brand-tile-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+
+  .brand-tile-name em { font-style: italic; }
+
+  .brand-tile-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--gray-2);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  .brand-tile-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    border-top: 1px solid var(--bordeaux);
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.4s ease, border-color 0.4s ease;
+  }
+
+  .brand-tile-cta .arrow { color: var(--bordeaux); transition: color 0.4s ease, transform 0.3s; }
+  .brand-tile:hover .brand-tile-cta { color: var(--white); border-top-color: rgba(255,255,255,0.3); }
+  .brand-tile:hover .brand-tile-cta .arrow { color: var(--white); transform: translateX(4px); }
+
+  /* ============================================================
+     SECTIONS (after hero)
+     ============================================================ */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  section.below-hero {
+    margin-top: 120px;
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--bordeaux);
+  }
+
+  .section-title-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+
+  .section-title em { font-style: italic; }
+
+  .section-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    border-bottom: 1px solid var(--bordeaux);
+    padding-bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .section-link:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ==================== SECTION 02 — COLLEZIONI ==================== */
+  .collezioni-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .collezione-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .collezione-card:hover { border-color: var(--tortora); }
+
+  .collezione-image {
+    aspect-ratio: 16/10;
+    background: var(--bone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+
+
+
+  .collezione-content { padding: 40px; }
+
+  .collezione-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--bordeaux);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .collezione-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .collezione-title em { font-style: italic; }
+
+  .collezione-desc {
+    font-size: 13px;
+    color: var(--gray-2);
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+
+  .collezione-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid var(--line);
+    color: var(--gray-2);
+  }
+
+  .collezione-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--bordeaux);
+    padding-bottom: 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--bordeaux);
+    transition: all 0.3s;
+  }
+  .collezione-link:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ==================== SHOP OPZIONI WOW ==================== */
+  .shop-opt-container { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px dashed var(--line); }
+  .shop-opt-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--bordeaux); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; background: var(--bone); padding: 4px 12px; border: 1px solid var(--bordeaux); }
+
+  /* OPT 1: MOODBOARD */
+  .shop-opt1 .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .shop-opt1 .shop-collage { position: relative; padding-bottom: 40px; padding-right: 40px; margin-bottom: 24px; }
+  .shop-opt1 .shop-img-vert { width: 85%; aspect-ratio: 3/4; overflow: hidden; }
+  .shop-opt1 .shop-img-side { position: absolute; right: 0; bottom: 0; width: 40%; display: flex; flex-direction: column; gap: 16px; z-index: 2; }
+  .shop-opt1 .shop-img-side > div { aspect-ratio: 1/1; overflow: hidden; border: 4px solid var(--bg); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .shop-opt1 .shop-collage img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .shop-opt1 .shop-img-vert:hover img, .shop-opt1 .shop-img-side > div:hover img { transform: scale(1.05); }
+  .shop-cta-wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--line); }
+  .shop-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--ink); }
+
+  /* OPT 2: HOTSPOT */
+  .shop-opt2 .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .shop-opt2 .shop-half { position: relative; margin-bottom: 24px; }
+  .shop-opt2 .shop-img-vert { width: 100%; height: 480px; overflow: visible; position: relative; border: 1px solid var(--line); }
+  .shop-opt2 .shop-img-vert img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .shop-opt2 .shop-img-vert:hover img { transform: scale(1.02); }
+  .hotspot { position: absolute; width: 32px; height: 32px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; color: var(--ink); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); animation: pulse 2s infinite; }
+  .hotspot::after { content: '+'; font-size: 18px; line-height: 1; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); } 70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+  .hotspot-card { position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%) translateY(10px); opacity: 0; pointer-events: none; transition: all 0.3s; background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); padding: 12px; width: 180px; text-align: center; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+  .hotspot:hover .hotspot-card { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+  .hotspot-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+  .hotspot-card span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid currentColor; display: inline-block; padding-bottom: 2px; }
+
+  /* OPT 3: ACCORDION */
+  .shop-opt3 { display: flex; gap: 16px; height: 600px; overflow: hidden; margin-bottom: 24px; }
+  .shop-opt3-half { flex: 1; position: relative; transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); overflow: hidden; cursor: pointer; }
+  .shop-opt3-half:hover { flex: 2.5; }
+  .shop-opt3-bg { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; transition: transform 0.6s; z-index: 0; }
+  .shop-opt3-half:hover .shop-opt3-bg { transform: scale(1.05); }
+  .shop-opt3-content { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); color: white; }
+  .shop-opt3-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; color: white; margin-bottom: 24px; }
+  .shop-opt3-macros { display: flex; gap: 16px; opacity: 0; transform: translateY(20px); transition: all 0.4s ease 0.1s; }
+  .shop-opt3-half:hover .shop-opt3-macros { opacity: 1; transform: translateY(0); }
+  .shop-opt3-macro { width: 120px; height: 120px; overflow: hidden; border: 2px solid white; position: relative; cursor: pointer; }
+  .shop-opt3-macro img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* OPT 4: VIDEO MIX */
+  .shop-opt4 .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .shop-opt4 .shop-collage { display: grid; gap: 16px; margin-bottom: 24px; grid-template-columns: 2fr 1fr; }
+  .shop-opt4 .shop-img-vert { aspect-ratio: 3/4; overflow: hidden; background: var(--bone); position: relative; }
+  .shop-opt4 .shop-img-vert video { width: 100%; height: 100%; object-fit: cover; }
+  .shop-opt4 .shop-img-side { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
+  .shop-opt4 .shop-img-side > div { overflow: hidden; background: var(--bone); position: relative; }
+  .shop-opt4 .shop-img-side img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .shop-opt4 .shop-img-side > div:hover img { transform: scale(1.05); }
+
+  .macro-donna-1 img { transform: scale(2.5); transform-origin: 30% 20%; }
+  .macro-donna-1:hover img { transform: scale(2.6); }
+  .macro-donna-2 img { transform: scale(2.5); transform-origin: 60% 70%; }
+  .macro-donna-2:hover img { transform: scale(2.6); }
+  .macro-uomo-1 img { transform: scale(2.5); transform-origin: 20% 30%; }
+  .macro-uomo-1:hover img { transform: scale(2.6); }
+  .macro-uomo-2 img { transform: scale(2.5); transform-origin: 70% 60%; }
+  .macro-uomo-2:hover img { transform: scale(2.6); }
+
+  /* ==================== SECTION 03 — HERITAGE ==================== */
+  .heritage {
+    background: var(--bone);
+    padding: 96px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--line);
+  }
+
+  .heritage-decoration {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 280px;
+    line-height: 1;
+    color: var(--bordeaux);
+    opacity: 0.08;
+    font-style: italic;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .heritage-image {
+    aspect-ratio: 4/5;
+    background: var(--white);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  .heritage-content { z-index: 2; }
+
+  .heritage-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .heritage-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--tortora);
+  }
+
+  .heritage-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  .heritage-title em { font-style: italic; }
+
+  .heritage-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray-1);
+    margin-bottom: 16px;
+    max-width: 520px;
+  }
+
+  .heritage-text em { color: var(--ink); font-style: normal; font-weight: 400; }
+
+  .heritage-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--bordeaux);
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    color: var(--gray-2);
+  }
+
+  /* ==================== SECTION 04 — SERVIZI ==================== */
+  .servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line);
+    background: var(--white);
+  }
+
+  .servizio-card {
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    cursor: pointer;
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s;
+  }
+
+  .servizio-card:hover { background: var(--bone); }
+  .servizio-card:last-child { border-right: none; }
+
+  .servizio-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--tortora);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--bordeaux);
+    margin-bottom: 32px;
+  }
+
+  .servizio-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .servizio-name em { font-style: italic; }
+
+  .servizio-desc {
+    font-size: 12px;
+    color: var(--gray-2);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .servizio-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    transition: color 0.3s;
+  }
+  .servizio-link:hover {
+    color: var(--ink);
+  }
+
+  /* ==================== SECTION 05 — SHOWROOM ==================== */
+  .showroom-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .showroom-card {
+    padding: 64px 56px;
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--white);
+    border: 1px solid var(--line);
+    transition: border-color 0.3s;
+  }
+
+  .showroom-card:hover { border-color: var(--tortora); }
+
+  .showroom-card.featured { background: var(--bone); }
+
+  .showroom-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    margin-bottom: 24px;
+  }
+
+  .showroom-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .showroom-name em { font-style: italic; }
+
+  .showroom-address {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    color: var(--gray-1);
+  }
+
+  .showroom-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    margin-bottom: 32px;
+  }
+
+  .info-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: var(--gray-3);
+  }
+
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gray-1);
+  }
+
+  .btn-primary {
+    background: var(--bordeaux);
+    color: var(--white);
+    border: 1px solid var(--bordeaux);
+    padding: 16px 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--bordeaux);
+    border-color: var(--bordeaux);
+  }
+
+
+
+  /* ==================== NEWSLETTER ==================== */
+  .newsletter {
+    margin-top: 96px;
+    padding: 80px 64px;
+    background: var(--bone);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .newsletter-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .newsletter-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--bordeaux);
+    margin-bottom: 16px;
+  }
+
+  .newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .newsletter-title em { font-style: italic; }
+
+  .newsletter-desc {
+    font-size: 13px;
+    color: var(--gray-2);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--gray-1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+
+  .newsletter-form input::placeholder { color: var(--gray-3); }
+
+  /* ==================== FOOTER ==================== */
+  .footer {
+    background: var(--paper);
+    color: var(--gray-1);
+    padding: 80px 48px 40px;
+    margin-top: 96px;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-brand h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .footer-brand h3 em { font-style: italic; }
+
+  .footer-brand p {
+    font-size: 12px;
+    color: var(--gray-2);
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .footer-social {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-social a {
+    border: 1px solid var(--line);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-2);
+    text-decoration: none;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .footer-social a:hover {
+    color: var(--bordeaux);
+    border-color: var(--bordeaux);
+  }
+
+  .footer-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--bordeaux);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li {
+    font-size: 12px;
+    color: var(--gray-1);
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .footer-col li:hover { color: var(--bordeaux); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray-3);
+    letter-spacing: 0.15em;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ==================== SLIDER ==================== */
+  .slider-wrap { position:relative; overflow:hidden; aspect-ratio:16/10; border-bottom:1px solid var(--line); }
+  .slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); height:100%; }
+  .slider-track img { width:100%; flex-shrink:0; object-fit:cover; }
+  .slider-btn {
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(250,250,248,.85); border:1px solid var(--line);
+    width:38px; height:38px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:14px; color:var(--ink); z-index:5;
+    transition:background .2s;
+  }
+  .slider-btn:hover { background:var(--bordeaux); color:var(--white); border-color:var(--bordeaux); }
+  .slider-prev { left:16px; }
+  .slider-next { right:16px; }
+  .slider-dots { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; }
+  .slider-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:var(--tortora); opacity:.4; cursor:pointer; transition:opacity .3s;
+  }
+  .slider-dot.active { opacity:1; }
+  /* ── heritage gallery ─────────────────────────── */
+  .heritage-gallery { display:flex; flex-direction:column; gap:8px; }
+  .heritage-gallery img { width:100%; object-fit:cover; border:1px solid var(--line); }
+  .heritage-gallery img:first-child { flex:2; }
+  .heritage-gallery img:not(:first-child) { flex:1; }
+  .heritage-image-real { aspect-ratio:unset; background:none; border:none; display:flex; flex-direction:column; gap:8px; }
+  .heritage-image-real::before { display:none; }
+  /* ── video hero ───────────────────────────────── */
+  .hero-video-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+  .hero-media-overlay { z-index:4; }
+  .hero-media-meta { z-index:5; }
+  /* ── brand tile real bg ───────────────────────── */
+  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.4; filter: contrast(0.9) grayscale(20%); transition:all .6s ease; z-index:0; }
+  .brand-tile:hover .brand-tile-image-bg-real { opacity:0.65; filter: contrast(1.15) grayscale(0%); transform: scale(1.03); }
+
+
+  /* ── Showroom con foto sfondo ── */
+  .showroom-card.featured {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .showroom-card.featured.milano {
+    background-image: url('showroom-milano.png');
+  }
+  .showroom-card.featured.seregno {
+    background-image: url("L'arte della pellicceria/02_img_furecoworld.jpg");
+  }
+  .showroom-card.featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(245,243,239,0.92) 0%,
+      rgba(245,243,239,0.85) 50%,
+      rgba(245,243,239,0.60) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  .showroom-card.featured > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ==================== BOUTIQUE ONLINE NUOVA ==================== */
+  .shop-new-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto 48px auto;
+  }
+
+  .shop-new-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--bone);
+  }
+
+  .shop-new-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shop-new-brand {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .shop-new-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bone);
+    position: relative;
+    padding: 40px;
+  }
+
+  .shop-new-product-card {
+    background: var(--white);
+    padding: 32px;
+    width: 60%;
+    max-width: 320px;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shop-new-product-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .shop-new-arrow {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--gray-2);
+    font-size: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .shop-new-arrow:hover {
+    color: var(--bordeaux);
+  }
+
+  .shop-new-caption {
+    margin-top: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--bordeaux);
+    font-style: italic;
+    text-align: center;
+    max-width: 60%;
+    line-height: 1.4;
+  }
+  
+  /* ==================== VIDEO FULL WIDTH ==================== */
+  .hero-video-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-full video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-video-full .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(15,13,10,0.15) 0%,
+      rgba(15,13,10,0.35) 40%,
+      rgba(15,13,10,0.65) 75%,
+      rgba(15,13,10,0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-split {
+    position: relative;
+    background: transparent !important;
+  }
+
+  .hero-media {
+    background: transparent !important;
+    border-right: none !important;
+  }
+  
+  
+
+
+  .brand-tile {
+    justify-content: flex-end !important;
+    padding-bottom: 40px !important;
+    aspect-ratio: 1 / 1;
+  }
+
+  
+  /* ==================== MOBILE ==================== */
+  @media (max-width: 768px) {
+
+    /* --- UTILITY BAR --- */
+    .utility-bar {
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px 16px;
+      font-size: 8px;
+    }
+
+    /* --- NAV --- */
+    .main-nav {
+      grid-template-columns: 1fr;
+      padding: 16px;
+      gap: 12px;
+    }
+    .nav-left, .nav-right {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-item { font-size: 10px; letter-spacing: 0.12em; }
+    .nav-logo { font-size: 22px; }
+
+    /* --- HERO SPLIT --- */
+    .hero-split {
+      grid-template-columns: 1fr;
+      height: auto;
+      min-height: auto;
+      max-height: none;
+    }
+    .hero-media {
+      height: 55vh;
+      min-height: 320px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-media-overlay {
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
+    .hero-overlay-title { font-size: 32px; margin-bottom: 12px; }
+    .hero-overlay-subtitle { font-size: 14px; }
+    .hero-media-meta { top: 16px; right: 16px; gap: 12px; }
+
+    /* --- HERO BRAND TILES --- */
+    .hero-brands {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+    .brand-tile {
+      padding: 24px 16px;
+      min-height: 200px;
+    }
+    .brand-tile-name { font-size: 22px; }
+    .brand-tile-desc { font-size: 10px; margin-bottom: 12px; }
+    .brand-tile-cta { font-size: 8px; padding-top: 10px; }
+
+    /* --- HERO FULL VIDEO --- */
+    .hero-split {
+      grid-template-columns: 1fr;
+      height: auto;
+      min-height: auto;
+      max-height: none;
+    }
+    .hero-media {
+      height: 50vh;
+      min-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-media-overlay {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+    }
+    .hero-overlay-title { font-size: 28px; margin-bottom: 10px; }
+    .hero-overlay-subtitle { font-size: 13px; max-width: 100%; }
+    .hero-overlay-eyebrow { font-size: 8px; }
+    .hero-media-meta { top: 80px; right: 16px; gap: 10px; font-size: 8px; }
+
+    /* --- HERO BRAND TILES (over video) --- */
+    .hero-brands {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      padding-top: 80px !important;
+    }
+    .brand-tile {
+      padding: 20px 14px !important;
+      padding-bottom: 28px !important;
+      min-height: 180px;
+    }
+    .brand-tile-name { font-size: 20px !important; }
+    .brand-tile-desc { font-size: 9px !important; margin-bottom: 10px; line-height: 1.4; }
+    .brand-tile-cta { font-size: 8px; padding-top: 8px; }
+    .brand-tile-mini-img { width: 40px; height: 40px; }
+
+    
+    /* --- SECTIONS GENERAL --- */
+    section.below-hero { margin-top: 48px; }
+    .container { padding: 0 16px; }
+    .section-header {
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+    }
+    .section-title-group {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .section-title { font-size: 28px; }
+    .section-link { font-size: 11px; }
+
+    /* --- COLLEZIONI SPLIT --- */
+    .collezioni-split {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .collezione-image { aspect-ratio: 16/9; }
+    .collezione-content { padding: 24px 16px; }
+    .collezione-eyebrow { font-size: 11px; }
+    .collezione-title { font-size: 28px; }
+    .collezione-desc { font-size: 12px; }
+    .collezione-tags { justify-content: center; }
+
+    /* --- HERITAGE --- */
+    .heritage {
+      grid-template-columns: 1fr;
+      padding: 40px 20px;
+      gap: 32px;
+    }
+    .heritage-decoration { font-size: 120px; top: 16px; right: 16px; }
+    .heritage-title { font-size: 32px; margin-bottom: 20px; }
+    .heritage-text { font-size: 13px; max-width: 100%; }
+    .heritage-image { aspect-ratio: 4/3; }
+    .heritage-stats {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .stat-number { font-size: 28px; }
+    .stat-label { font-size: 8px; }
+
+    /* --- SERVIZI --- */
+    .servizi-grid {
+      grid-template-columns: 1fr;
+    }
+    .servizio-card {
+      min-height: auto;
+      padding: 28px 20px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .servizio-card:last-child { border-bottom: none; }
+    .servizio-name { font-size: 20px; }
+    .servizio-desc { font-size: 12px; }
+
+    /* --- SHOWROOM --- */
+    .showroom-split {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .showroom-card {
+      padding: 32px 20px;
+      min-height: auto;
+    }
+    .showroom-name { font-size: 32px; }
+    .showroom-address { font-size: 13px; }
+
+    /* --- BOUTIQUE ONLINE --- */
+    .shop-new-row {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+    .shop-new-image { aspect-ratio: 3/4; }
+    .shop-new-brand { font-size: 22px; bottom: 24px; }
+    .shop-new-carousel { padding: 24px 16px; }
+    .shop-new-product-card {
+      width: 70%;
+      padding: 20px;
+    }
+    .shop-new-caption { font-size: 14px; margin-top: 20px; max-width: 80%; }
+    .shop-new-arrow { right: 16px; width: 28px; height: 28px; }
+
+    /* --- RECENSIONI (inline styles override) --- */
+    .below-hero div[style*="grid-template-columns: repeat(3"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    .below-hero div[style*="padding: 40px"] {
+      padding: 24px 16px !important;
+    }
+
+    /* --- FURMARK / INLINE GRIDS --- */
+    .below-hero div[style*="grid-template-columns: repeat(4"] {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* --- NEWSLETTER --- */
+    .newsletter {
+      padding: 40px 20px;
+      margin-top: 48px;
+    }
+    .newsletter-title { font-size: 28px; }
+    .newsletter-desc { font-size: 12px; }
+    .newsletter-form {
+      flex-direction: column;
+    }
+    .newsletter-form input { width: 100%; }
+    .newsletter-form .btn-primary { width: 100%; text-align: center; }
+
+    /* --- FOOTER --- */
+    .footer {
+      padding: 40px 20px 24px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      text-align: center;
+    }
+    .footer-brand p { max-width: 100%; margin: 0 auto; }
+    .footer-social { justify-content: center; }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+    .footer-brand h3 { font-size: 22px; }
+
+    /* --- SHOP OPTIONS (legacy) --- */
+    .shop-opt1 .shop-grid,
+    .shop-opt2 .shop-grid,
+    .shop-opt4 .shop-grid {
+      grid-template-columns: 1fr;
+    }
+    .shop-opt3 {
+      flex-direction: column;
+      height: auto;
+    }
+    .shop-opt3-half { min-height: 300px; }
+  }
+</style>
+</head>
+<body>
+
+
+
+<!-- ==================== UTILITY BAR ==================== -->
+<div class="utility-bar">
+  <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+  <a href="#" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+  <span>IT / EN</span>
+</div>
+
+<!-- ==================== MAIN NAVIGATION ==================== -->
+<nav class="main-nav">
+  <div class="nav-left">
+    <span class="nav-item">Brand</span>
+    <span class="nav-item">Collezioni</span>
+    <span class="nav-item">Servizi</span>
+  </div>
+  <div class="nav-logo">
+    FURECO
+    <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+  </div>
+  <div class="nav-right">
+    <span class="nav-item">Showroom</span>
+    <span class="nav-item">Contatti</span>
+    <span class="nav-item">Sostenibilità</span>
+    <div class="nav-icons">
+      <div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">⌕</div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO 50/50 — VIDEO LEFT, 4 BRANDS RIGHT
+     ============================================================ -->
+<section class="hero-split" style="display: flex; align-items: center; justify-content: center; position: relative; width: 100%; border: none;">
+
+  <!-- Sfondo video full width -->
+  <div class="hero-video-full">
+    <video autoplay muted loop playsinline>
+      <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+
+  
+
+  
+<div class="hero-media-overlay" style="position: relative; z-index: 2; text-align: center; padding: 0 40px; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; left: auto; right: auto; bottom: auto; top: auto; transform: none; width: 100%; height: 100%;">
+      <h1 class="hero-overlay-title" style="font-family:'Inter', sans-serif; font-weight:400;">Tradizione artigianale,<br/><span style="font-weight:200;">lusso senza tempo.</span></h1>
+      <p class="hero-overlay-subtitle" style="font-size: 18px; letter-spacing: 0.05em; font-weight: 300; max-width: 450px; line-height: 1.6; color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
+    </div>
+</section>
+
+<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
+<div class="container">
+
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="hero-brands" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fabio Gavazzi <em>Donna</em></h3>
+        <p class="brand-tile-desc">Alta moda donna · haute couture</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Uomo">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fabio Gavazzi <em>Uomo</em></h3>
+        <p class="brand-tile-desc">Pellicce e cashmere uomo</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/Mavina.jpg" alt="Mavina">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Mavina</h3>
+        <p class="brand-tile-desc">Pellicceria contemporanea</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-tile ">
+      <div class="brand-tile-image-bg"></div>
+      <img class="brand-tile-image-bg-real" src="Home/home-2.jpg.webp" alt="Fureco Home">
+      
+      
+      <div class="brand-tile-bottom">
+        <h3 class="brand-tile-name">Fureco <em>Home</em></h3>
+        <p class="brand-tile-desc">Pelliccia per la casa</p>
+        <div class="brand-tile-cta">
+          <span>Scopri il brand</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero">
+    <div class="section-header">
+
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="collezioni-split">
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-donna">
+          <div class="slider-track" id="track-donna">
+            <img src="Donna/FG2296PIVR_A.jpg" alt="Collezione Donna 1">
+            <img src="Donna/FG2343FDOR_B.jpg" alt="Collezione Donna 2">
+            <img src="Donna/FG2355PIVR_B.jpg" alt="Collezione Donna 3">
+            <img src="Donna/FG2368FDOR_B.jpg" alt="Collezione Donna 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('donna',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('donna',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-donna">
+            <div class="slider-dot active" onclick="goTo('donna',0)"></div>
+            <div class="slider-dot" onclick="goTo('donna',1)"></div>
+            <div class="slider-dot" onclick="goTo('donna',2)"></div>
+            <div class="slider-dot" onclick="goTo('donna',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">Fabio Gavazzi Donna</div>
+          <h3 class="collezione-title">Visone, zibellino,<br/><em>chinchilla.</em></h3>
+          <p class="collezione-desc">Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture.</p>
+          <div class="collezione-tags">
+            <span class="tag">Visone</span>
+            <span class="tag">Zibellino</span>
+            <span class="tag">Chinchilla</span>
+            <span class="tag">Cashmere</span>
+            <span class="tag">Shearling</span>
+          </div>
+          <span class="collezione-link">Esplora donna</span>
+        </div>
+      </div>
+      <div class="collezione-card">
+        <div class="slider-wrap" id="slider-uomo">
+          <div class="slider-track" id="track-uomo">
+            <img src="Uomo/FG2230PIVR_B.jpg" alt="Collezione Uomo 1">
+            <img src="Uomo/FG2231PIVR_B.jpg" alt="Collezione Uomo 2">
+            <img src="Uomo/FG2259PIVR_B.jpg" alt="Collezione Uomo 3">
+            <img src="Uomo/FG2260PIVR_B.jpg" alt="Collezione Uomo 4">
+          </div>
+          <button class="slider-btn slider-prev" onclick="slide('uomo',-1)">&#8592;</button>
+          <button class="slider-btn slider-next" onclick="slide('uomo',1)">&#8594;</button>
+          <div class="slider-dots" id="dots-uomo">
+            <div class="slider-dot active" onclick="goTo('uomo',0)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',1)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',2)"></div>
+            <div class="slider-dot" onclick="goTo('uomo',3)"></div>
+          </div>
+        </div>
+        <div class="collezione-content">
+          <div class="collezione-eyebrow">Fabio Gavazzi Uomo</div>
+          <h3 class="collezione-title">Eleganza<br/><em>maschile.</em></h3>
+          <p class="collezione-desc">Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani con oltre 30 anni di esperienza.</p>
+          <div class="collezione-tags">
+            <span class="tag">Cashmere</span>
+            <span class="tag">Pelliccia</span>
+            <span class="tag">Tailoring</span>
+          </div>
+          <span class="collezione-link">Esplora uomo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 03 — HERITAGE -->
+  <section class="below-hero">
+    <div class="heritage">
+      <span class="heritage-decoration">1924</span>
+      <div class="heritage-image heritage-image-real">
+        <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Storia Fureco" style="object-fit:cover; width:100%; aspect-ratio:4/3; border:1px solid var(--line);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Fureco World 1" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Fureco World 2" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+        </div>
+      </div>
+      <div class="heritage-content">
+        <div class="heritage-eyebrow">Heritage</div>
+        <h2 class="heritage-title">L'arte della<br/>pellicceria<br/><em>dal 1924.</em></h2>
+        <p class="heritage-text">La storia di Fureco nasce in Italia nei primi anni '20, quando Cesare Gavazzi avviò un negozio di pelletteria a Seregno. Quattro generazioni dopo, la stessa passione anima il nostro lavoro.</p>
+        <p class="heritage-text">Oggi i fratelli Gavazzi guidano l'azienda: <em>Cesare</em> CEO, <em>Fabio</em> direttore creativo, <em>Alberto</em> commercial manager.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 04 — SHOWROOM -->
+  <section class="below-hero">
+    <div class="section-header">
+
+      <div class="section-title-group">
+        <h2 class="section-title">Visita i nostri <em>showroom</em></h2>
+        <span class="section-link">Prenota appuntamento</span>
+      </div>
+    </div>
+    <div class="showroom-split">
+      <div class="showroom-card featured milano">
+        <div>
+          <div class="showroom-tag">★ Boutique flagship</div>
+          <h3 class="showroom-name">Milano,<br/><em>Montenapoleone.</em></h3>
+          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Palazzo Gavazzi — Via Monte Napoleone 23, 20121 Milano<br/><br/>Ti accogliamo nel nostro salotto milanese per scoprire le collezioni in un'atmosfera intima e riservata. Visite esclusivamente su appuntamento.</p>
+        </div>
+        <span class="collezione-link">Prenota visita &rarr;</span>
+      </div>
+      <div class="showroom-card featured seregno">
+        <div>
+          <div class="showroom-tag">— Atelier &amp; produzione</div>
+          <h3 class="showroom-name">Seregno,<br/><em>headquarter.</em></h3>
+          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Via Magenta 35, 20831 Seregno (MB)<br/><br/>Il cuore pulsante dove la tradizione artigianale prende forma. Spazio dedicato ai professionisti del settore e buyer internazionali.</p>
+        </div>
+        <span class="collezione-link">Contatta l'atelier →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 07 — SERVIZI -->
+  <section class="below-hero">
+    <div class="section-header">
+
+      <div class="section-title-group">
+        <h2 class="section-title">Servizi <em>esclusivi</em></h2>
+        <span class="section-link">Tutti i servizi</span>
+      </div>
+    </div>
+    <div class="servizi-grid">
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:28px;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="6" r="3" stroke="#968671" stroke-width="1"/>
+  <line x1="16" y1="9" x2="16" y2="28" stroke="#968671" stroke-width="1"/>
+  <path d="M10 18 Q16 14 22 18" stroke="#968671" stroke-width="1" fill="none"/>
+  <path d="M8 24 Q16 19 24 24" stroke="#968671" stroke-width="1" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Bespoke</h3>
+          <p class="servizio-desc">Capo unico realizzato secondo le tue specifiche, dal modello agli accessori.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:28px;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="13" width="24" height="6" rx="1" stroke="#968671" stroke-width="1"/>
+  <line x1="8" y1="13" x2="8" y2="10" stroke="#968671" stroke-width="1"/>
+  <line x1="12" y1="13" x2="12" y2="11" stroke="#968671" stroke-width="1"/>
+  <line x1="16" y1="13" x2="16" y2="10" stroke="#968671" stroke-width="1"/>
+  <line x1="20" y1="13" x2="20" y2="11" stroke="#968671" stroke-width="1"/>
+  <line x1="24" y1="13" x2="24" y2="10" stroke="#968671" stroke-width="1"/>
+</svg></div>
+          <h3 class="servizio-name">Made to <em>Measure</em></h3>
+          <p class="servizio-desc">Personalizza un modello della collezione per adattarlo alle tue esigenze.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:28px;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="22" r="4" stroke="#968671" stroke-width="1"/>
+  <circle cx="22" cy="22" r="4" stroke="#968671" stroke-width="1"/>
+  <line x1="13.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1"/>
+  <line x1="18.5" y1="19.5" x2="16" y2="8" stroke="#968671" stroke-width="1"/>
+  <circle cx="16" cy="8" r="1.5" fill="#968671"/>
+</svg></div>
+          <h3 class="servizio-name">Fur <em>Restyling</em></h3>
+          <p class="servizio-desc">Rinnova la tua pelliccia vintage secondo un'estetica moderna e attuale.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+      <div class="servizio-card">
+        <div>
+          <div class="servizio-icon" style="border:none; width:auto; height:auto; margin-bottom:28px;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 5 C16 5 16 8 13 10 L6 15 H26 L19 10 C16 8 16 5 16 5Z" stroke="#968671" stroke-width="1" fill="none" stroke-linejoin="round"/>
+  <line x1="16" y1="5" x2="16" y2="3" stroke="#968671" stroke-width="1"/>
+  <circle cx="16" cy="2.5" r="1.5" stroke="#968671" stroke-width="1"/>
+  <path d="M22 22 C22 25.3 19.3 28 16 28 C12.7 28 10 25.3 10 22 C10 18.7 16 14 16 14 C16 14 22 18.7 22 22Z" stroke="#968671" stroke-width="1" fill="none"/>
+</svg></div>
+          <h3 class="servizio-name">Cura &amp; <em>Conservazione</em></h3>
+          <p class="servizio-desc">Pulitura standard, antibatterica e custodia stagionale dei tuoi capi.</p>
+        </div>
+        <span class="servizio-link">Scopri →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 08 — FURMARK -->
+  <section class="below-hero">
+    <div class="section-header">
+
+      <div class="section-title-group">
+        <h2 class="section-title">Certificazione <em>Furmark®</em></h2>
+        <span class="section-link">Sostenibilità</span>
+      </div>
+    </div>
+    <div style="display:flex; gap:48px; align-items:center; border: 1px solid var(--line); padding: 56px; background: var(--white);">
+      <div style="flex: 0 0 160px; text-align:center;">
+        <img src="https://www.fureco.it/wp-content/uploads/2021/02/furmark.png" alt="Furmark Logo" style="max-width: 100%; height: auto; max-height: 60px;" />
+      </div>
+      <div style="flex: 1; padding-left: 48px; border-left: 1px solid var(--line-soft);">
+        <h3 style="font-size:20px; font-weight:300; margin-bottom:12px; line-height:1.4;">Fureco è stata tra le prime aziende ad adottare la certificazione Furmark®</h3>
+        <p style="font-size:14px; color:var(--gray-2); line-height:1.6; max-width: 600px;">Selezioniamo pellami provenienti da Paesi in cui vigono rigorose normative sul benessere animale e stringenti standard ambientali. Da diversi anni partecipiamo attivamente a un programma globale per la tracciabilità delle pelli, che adottiamo lungo tutta la filiera produttiva per garantire la massima trasparenza e la più alta qualità ai nostri clienti.</p>
+        <div style="margin-top: 24px;">
+          <a href="#" class="collezione-link" style="text-decoration:none;">Scopri la certificazione &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">— FUR JOURNAL</div>
+      <h2 class="newsletter-title">Iscriviti alla nostra<br/><em>newsletter privata.</em></h2>
+      <p class="newsletter-desc">Anteprime collezioni, eventi privati, accesso esclusivo allo showroom e contenuti editoriali dedicati.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="LA TUA EMAIL">
+        <button class="btn-primary">Iscriviti</button>
+      </div>
+    </div>
+  </section>
+
+<!-- SEZIONE 05 — SHOP ONLINE -->
+  <section class="below-hero">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Boutique <em>online</em></h2>
+        <span class="section-link">Esplora lo shop</span>
+      </div>
+    </div>
+
+    <!-- RIGA 1: Immagine sinistra, Carosello destra -->
+    <div class="shop-new-row">
+      <div class="shop-new-image">
+        <img src="https://www.fureco.it/wp-content/uploads/2022/09/1157FDOR_01-800x1000.jpeg" alt="Fabio Gavazzi Donna" />
+        <div class="shop-new-brand">FABIO GAVAZZI</div>
+      </div>
+      <div class="shop-new-carousel">
+        <div class="shop-new-product-card">
+          <img src="https://www.fureco.it/wp-content/uploads/2022/09/FG1157PIOR_Front-800x1000.jpg" alt="Cashmere Coat with Mink" />
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center;">
+          <div onclick="changeShopImage(this)" style="width: 48px; height: 60px; border: 1px solid var(--bordeaux); padding: 4px; background: var(--white); cursor: pointer; transition: all 0.3s;"><img src="https://www.fureco.it/wp-content/uploads/2022/09/FG1157PIOR_Front-800x1000.jpg" style="width:100%; height:100%; object-fit:contain;" /></div>
+          <div onclick="changeShopImage(this)" style="width: 48px; height: 60px; border: 1px solid var(--line); padding: 4px; background: var(--white); opacity: 0.6; cursor: pointer; transition: all 0.3s;"><img src="https://www.fureco.it/wp-content/uploads/2022/09/FG1157PIOR_Back-800x1000.jpg" style="width:100%; height:100%; object-fit:contain;" /></div>
+        </div>
+        <div class="shop-new-caption">Cashmere Coat<br/>with Mink</div>
+        <div class="shop-new-arrow" onclick="nextShopImage(this)">▶</div>
+      </div>
+    </div>
+
+    <!-- RIGA 2: Carosello sinistra, Immagine destra -->
+    <div class="shop-new-row">
+      <div class="shop-new-carousel">
+        <div class="shop-new-product-card">
+          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cashmere Coat with Plucked Mink Bib" />
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center;">
+          <div onclick="changeShopImage(this)" style="width: 48px; height: 60px; border: 1px solid var(--bordeaux); padding: 4px; background: var(--white); cursor: pointer; transition: all 0.3s;"><img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" style="width:100%; height:100%; object-fit:contain;" /></div>
+          <div onclick="changeShopImage(this)" style="width: 48px; height: 60px; border: 1px solid var(--line); padding: 4px; background: var(--white); opacity: 0.6; cursor: pointer; transition: all 0.3s;"><img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg" style="width:100%; height:100%; object-fit:contain;" /></div>
+          <div onclick="changeShopImage(this)" style="width: 48px; height: 60px; border: 1px solid var(--line); padding: 4px; background: var(--white); opacity: 0.6; cursor: pointer; transition: all 0.3s;"><img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg" style="width:100%; height:100%; object-fit:contain;" /></div>
+        </div>
+        <div class="shop-new-caption">Cashmere Coat<br/>with Plucked Mink Bib</div>
+        <div class="shop-new-arrow" onclick="nextShopImage(this)">▶</div>
+      </div>
+      <div class="shop-new-image">
+        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_1-800x1000.jpg" alt="Fabio Gavazzi Uomo" />
+        <div class="shop-new-brand">FABIO GAVAZZI</div>
+      </div>
+    </div>
+    
+    <script>
+      function changeShopImage(element) {
+        const carousel = element.closest('.shop-new-carousel');
+        const mainImage = carousel.querySelector('.shop-new-product-card img');
+        
+        // Update main image source (fade effect could be added but simple swap for wireframe)
+        mainImage.style.opacity = '0.5';
+        setTimeout(() => {
+          mainImage.src = element.querySelector('img').src;
+          mainImage.style.opacity = '1';
+        }, 150);
+        
+        // Reset all siblings
+        const thumbnails = element.parentElement.children;
+        for(let i=0; i<thumbnails.length; i++) {
+          thumbnails[i].style.borderColor = 'var(--line)';
+          thumbnails[i].style.opacity = '0.6';
+        }
+        
+        // Highlight active
+        element.style.borderColor = 'var(--bordeaux)';
+        element.style.opacity = '1';
+      }
+      
+      function nextShopImage(arrow) {
+        const carousel = arrow.closest('.shop-new-carousel');
+        const thumbnailsContainer = carousel.querySelector('div[style*="display: flex"]');
+        const thumbnails = Array.from(thumbnailsContainer.children);
+        
+        let activeIndex = 0;
+        for(let i=0; i<thumbnails.length; i++) {
+          if (thumbnails[i].style.borderColor === 'var(--bordeaux)') {
+            activeIndex = i;
+            break;
+          }
+        }
+        
+        const nextIndex = (activeIndex + 1) % thumbnails.length;
+        thumbnails[nextIndex].click();
+      }
+    </script>
+  </section>
+
+  <!-- SEZIONE 06 — RECENSIONI -->
+  <section class="below-hero">
+    <div class="section-header">
+
+      <div class="section-title-group">
+        <h2 class="section-title">L'opinione dei <em>nostri clienti</em></h2>
+        <span class="section-link">Leggi le recensioni</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
+        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"Un'esperienza d'acquisto impeccabile. Il cappotto su misura è un capolavoro di sartoria e la qualità dei materiali è eccellente."</p>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Elena M.</span>
+      </div>
+      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
+        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"L'atelier di Seregno offre un servizio su misura senza pari. La consulenza per il restyling della mia pelliccia vintage è stata preziosissima."</p>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Sofia R.</span>
+      </div>
+      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
+        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"I dettagli in zibellino fanno la differenza. Ho acquistato la collezione uomo ed è diventato il mio punto di riferimento per il lusso invernale."</p>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Marco T.</span>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Brand</h4>
+      <ul>
+        <li>Fabio Gavazzi</li>
+        <li>Fabio Gavazzi Man</li>
+        <li>Mavina</li>
+        <li>Fureco Home</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Esplora</h4>
+      <ul>
+        <li>Collezioni</li>
+        <li>Shop online</li>
+        <li>Virtual Showroom</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servizi</h4>
+      <ul>
+        <li>Bespoke</li>
+        <li>Made to Measure</li>
+        <li>Fur Restyling</li>
+        <li>Cura &amp; Conservazione</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <ul>
+        <li>Chi siamo</li>
+        <li>Sostenibilità</li>
+        <li>Showroom</li>
+        <li>Contatti</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+    <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+  </div>
+</footer>
+
+
+
+<script>
+  const sliders = {
+    donna: { idx: 0, total: 4 },
+    uomo:  { idx: 0, total: 4 }
+  };
+  function updateSlider(id) {
+    const s = sliders[id];
+    document.getElementById('track-' + id).style.transform = 'translateX(-' + (s.idx * 100) + '%)';
+    document.querySelectorAll('#dots-' + id + ' .slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === s.idx);
+    });
+  }
+  function slide(id, dir) {
+    const s = sliders[id];
+    s.idx = (s.idx + dir + s.total) % s.total;
+    updateSlider(id);
+  }
+  function goTo(id, i) {
+    sliders[id].idx = i;
+    updateSlider(id);
+  }
+  // Auto-play
+  setInterval(() => slide('donna', 1), 4000);
+  setInterval(() => slide('uomo',  1), 4500);
+</script>
+
+  <div id="simple-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; cursor:pointer;" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; object-fit:contain; border: 4px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.5); transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.2,0.8,0.2,1);">
+  </div>
+  <script>
+  function openLightbox(src) {
+    var lb = document.getElementById('simple-lightbox');
+    var img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.style.transform = 'scale(0.9)';
+    lb.style.display = 'flex';
+    setTimeout(function() { img.style.transform = 'scale(1)'; }, 10);
+  }
+  </script>
+</body>
+</html>
