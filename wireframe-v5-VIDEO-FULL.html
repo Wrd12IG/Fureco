@@ -344,6 +344,7 @@
   }
 
   .brand-tile {
+    aspect-ratio: 1 / 1;
     position: relative;
     padding: 36px;
     display: flex;
@@ -1096,8 +1097,8 @@
   .hero-media-overlay { z-index:4; }
   .hero-media-meta { z-index:5; }
   /* ── brand tile real bg ───────────────────────── */
-  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease; z-index:0; }
-  .brand-tile:hover .brand-tile-image-bg-real { opacity:.18; }
+  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.4; filter: contrast(0.9) grayscale(20%); transition:all .6s ease; z-index:0; }
+  .brand-tile:hover .brand-tile-image-bg-real { opacity:0.65; filter: contrast(1.15) grayscale(0%); transform: scale(1.03); }
 
 
   /* ── Showroom Milano con foto sfondo ── */
@@ -1186,104 +1187,7 @@
     border-right: none !important;
   }
   
-  /* Nascondiamo l'inner del video originale */
-  .hero-media-inner {
-    display: none !important;
-  }
-
-  .hero-brands {
-    background: transparent !important;
-    padding-top: 140px;
-  }
-
-  .brand-tile {
-    background: transparent !important;
-    border-color: rgba(255,255,255,0.15) !important;
-  }
-
-  .brand-tile > * {
-    z-index: 3 !important;
-  }
-
-  /* Modifichiamo le scritte dei brand per farle risaltare sul video */
-  .brand-tile-name {
-    color: #ffffff !important;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-  .brand-tile-name em {
-    color: rgba(224,216,203,0.95) !important;
-  }
-  .brand-tile-desc {
-    color: rgba(255,255,255,0.8) !important;
-  }
-  .brand-tile-num {
-    color: rgba(255,255,255,0.9) !important;
-  }
-  .brand-tile-mini-img {
-    background: rgba(255,255,255,0.1) !important;
-    border-color: rgba(255,255,255,0.2) !important;
-    color: #ffffff !important;
-  }
-  .brand-tile-cta {
-    color: #ffffff !important;
-    border-color: rgba(255,255,255,0.2) !important;
-  }
-  .brand-tile-cta .arrow {
-    color: #ffffff !important;
-  }
-
-  /* L'immagine in hover: va sopra il video ma sotto il gradiente per le scritte,
-     oppure il tile ha un suo gradiente. Mettiamo il gradiente permanente dentro il tile */
-  .brand-tile-image-bg-real {
-    opacity: 0 !important;
-    transition: opacity 0.5s ease !important;
-    z-index: 1 !important;
-  }
-  .brand-tile:hover .brand-tile-image-bg-real {
-    opacity: 1 !important;
-  }
   
-  /* Gradiente scuro permanente interno al tile per garantire la leggibilità anche con la foto 100% visibile */
-  .brand-tile::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(15,13,10,0.1) 0%, rgba(15,13,10,0.7) 100%);
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .brand-tile:hover::before {
-    opacity: 1; /* Appare quando la foto compare, così le scritte si leggono */
-  }
-
-
-
-  /* ── Miglioramento leggibilità testi sui quadrati dei brand ── */
-  .brand-tile-name {
-    text-shadow: 0 4px 16px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6) !important;
-    font-weight: 400 !important;
-  }
-  .brand-tile-desc {
-    text-shadow: 0 2px 12px rgba(0,0,0,0.9) !important;
-    font-weight: 400 !important;
-    font-size: 13px !important;
-  }
-  .brand-tile-cta {
-    text-shadow: 0 2px 12px rgba(0,0,0,0.9) !important;
-  }
-  
-  /* Aggiungo un gradiente permanente alla base del quadrato, così i testi bianchi staccano 
-     sempre perfettamente dal video, anche se in quel punto l'immagine è chiara */
-  .brand-tile::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 60%;
-    background: linear-gradient(to top, rgba(15,13,10,0.85) 0%, rgba(15,13,10,0.3) 50%, transparent 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
 
 
   .brand-tile {
@@ -1514,7 +1418,7 @@
 <!-- ============================================================
      HERO 50/50 — VIDEO LEFT, 4 BRANDS RIGHT
      ============================================================ -->
-<section class="hero-split ">
+<section class="hero-split" style="display: flex; align-items: center; justify-content: center; position: relative; width: 100%; border: none;">
 
   <!-- Sfondo video full width -->
   <div class="hero-video-full">
@@ -1525,34 +1429,27 @@
   </div>
 
 
-  <div class="hero-media">
-    
+  
 
-    <div class="hero-media-inner" style="background:#000;">
-      <video class="hero-video-real" autoplay muted loop playsinline>
-        <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
-      </video>
-      <!-- Gradiente fisso: parte bassa sempre scura per leggibilità -->
-      <div style="
-        position:absolute; inset:0; z-index:2;
-        background: linear-gradient(
-          to bottom,
-          rgba(15,13,10,0.10) 0%,
-          rgba(15,13,10,0.08) 40%,
-          rgba(15,13,10,0.55) 75%,
-          rgba(15,13,10,0.78) 100%
-        );
-        pointer-events:none;
-      "></div>
-    </div>
-
-    <div class="hero-media-overlay">
+  
+<div class="hero-media-overlay" style="position: relative; z-index: 2; text-align: center; padding: 0 40px; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; left: auto; right: auto; bottom: auto; top: auto; transform: none; width: 100%; height: 100%;">
       <h1 class="hero-overlay-title" style="font-family:'Inter', sans-serif; font-weight:400;">Tradizione artigianale,<br/><span style="font-weight:200;">lusso senza tempo.</span></h1>
       <p class="hero-overlay-subtitle" style="font-size: 18px; letter-spacing: 0.05em; font-weight: 300; max-width: 450px; line-height: 1.6; color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
     </div>
-  </div>
+</section>
 
-  <div class="hero-brands">
+<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
+<div class="container">
+
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="hero-brands" style="max-width: 1200px; margin: 0 auto; width: 100%;">
     <div class="brand-tile ">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
@@ -1613,83 +1510,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
-<div class="container">
-
-  <!-- SEZIONE 02 — COLLEZIONI -->
-  <section class="below-hero ">
-    <div class="section-header">
-      <div class="section-title-group">
-        <h2 class="section-title">Collezione <em>2026</em></h2>
-        <span class="section-link">Tutte le collezioni</span>
-      </div>
-    </div>
-    <div class="collezioni-split">
-      <div class="collezione-card">
-        <div class="slider-wrap" id="slider-donna">
-          <div class="slider-track" id="track-donna">
-            <img src="Donna/FG2296PIVR_A.jpg" alt="Collezione Donna 1">
-            <img src="Donna/FG2343FDOR_B.jpg" alt="Collezione Donna 2">
-            <img src="Donna/FG2355PIVR_B.jpg" alt="Collezione Donna 3">
-            <img src="Donna/FG2368FDOR_B.jpg" alt="Collezione Donna 4">
-          </div>
-          <button class="slider-btn slider-prev" onclick="slide('donna',-1)">&#8592;</button>
-          <button class="slider-btn slider-next" onclick="slide('donna',1)">&#8594;</button>
-          <div class="slider-dots" id="dots-donna">
-            <div class="slider-dot active" onclick="goTo('donna',0)"></div>
-            <div class="slider-dot" onclick="goTo('donna',1)"></div>
-            <div class="slider-dot" onclick="goTo('donna',2)"></div>
-            <div class="slider-dot" onclick="goTo('donna',3)"></div>
-          </div>
-        </div>
-        <div class="collezione-content">
-          <div class="collezione-eyebrow">Fabio Gavazzi Donna</div>
-          <h3 class="collezione-title" id="title-donna" style="transition: opacity 0.3s ease;">Visone, zibellino,<br/><em>chinchilla.</em></h3>
-          <p class="collezione-desc" id="desc-donna" style="transition: opacity 0.3s ease;">Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture.</p>
-          <div class="collezione-tags">
-            <span class="tag">Visone</span>
-            <span class="tag">Zibellino</span>
-            <span class="tag">Chinchilla</span>
-            <span class="tag">Cashmere</span>
-            <span class="tag">Shearling</span>
-          </div>
-          <span class="collezione-link">Esplora donna</span>
-        </div>
-      </div>
-      <div class="collezione-card">
-        <div class="slider-wrap" id="slider-uomo">
-          <div class="slider-track" id="track-uomo">
-            <img src="Uomo/FG2230PIVR_B.jpg" alt="Collezione Uomo 1">
-            <img src="Uomo/FG2231PIVR_B.jpg" alt="Collezione Uomo 2">
-            <img src="Uomo/FG2259PIVR_B.jpg" alt="Collezione Uomo 3">
-            <img src="Uomo/FG2260PIVR_B.jpg" alt="Collezione Uomo 4">
-          </div>
-          <button class="slider-btn slider-prev" onclick="slide('uomo',-1)">&#8592;</button>
-          <button class="slider-btn slider-next" onclick="slide('uomo',1)">&#8594;</button>
-          <div class="slider-dots" id="dots-uomo">
-            <div class="slider-dot active" onclick="goTo('uomo',0)"></div>
-            <div class="slider-dot" onclick="goTo('uomo',1)"></div>
-            <div class="slider-dot" onclick="goTo('uomo',2)"></div>
-            <div class="slider-dot" onclick="goTo('uomo',3)"></div>
-          </div>
-        </div>
-        <div class="collezione-content">
-          <div class="collezione-eyebrow">Fabio Gavazzi Uomo</div>
-          <h3 class="collezione-title" id="title-uomo" style="transition: opacity 0.3s ease;">Eleganza<br/><em>maschile.</em></h3>
-          <p class="collezione-desc" id="desc-uomo" style="transition: opacity 0.3s ease;">Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani con oltre 30 anni di esperienza.</p>
-          <div class="collezione-tags">
-            <span class="tag">Cashmere</span>
-            <span class="tag">Pelliccia</span>
-            <span class="tag">Tailoring</span>
-          </div>
-          <span class="collezione-link">Esplora uomo</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SEZIONE 03 — HERITAGE -->
   <section class="below-hero ">
     <div class="heritage">

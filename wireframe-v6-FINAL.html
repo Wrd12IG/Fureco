@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wireframe v4 Media — Fureco × Fabio Gavazzi</title>
+<title>Wireframe v6 FINAL — Fureco × Fabio Gavazzi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -1167,6 +1167,54 @@
     line-height: 1.4;
   }
   
+  /* ==================== VIDEO FULL WIDTH ==================== */
+  .hero-video-full {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-full video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-video-full .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(15,13,10,0.15) 0%,
+      rgba(15,13,10,0.35) 40%,
+      rgba(15,13,10,0.65) 75%,
+      rgba(15,13,10,0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-split {
+    position: relative;
+    background: transparent !important;
+  }
+
+  .hero-media {
+    background: transparent !important;
+    border-right: none !important;
+  }
+  
+  
+
+
+  .brand-tile {
+    justify-content: flex-end !important;
+    padding-bottom: 40px !important;
+    aspect-ratio: 1 / 1;
+  }
+
+  
   /* ==================== MOBILE ==================== */
   @media (max-width: 768px) {
 
@@ -1227,6 +1275,46 @@
     .brand-tile-desc { font-size: 10px; margin-bottom: 12px; }
     .brand-tile-cta { font-size: 8px; padding-top: 10px; }
 
+    /* --- HERO FULL VIDEO --- */
+    .hero-split {
+      grid-template-columns: 1fr;
+      height: auto;
+      min-height: auto;
+      max-height: none;
+    }
+    .hero-media {
+      height: 50vh;
+      min-height: 280px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-media-overlay {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+    }
+    .hero-overlay-title { font-size: 28px; margin-bottom: 10px; }
+    .hero-overlay-subtitle { font-size: 13px; max-width: 100%; }
+    .hero-overlay-eyebrow { font-size: 8px; }
+    .hero-media-meta { top: 80px; right: 16px; gap: 10px; font-size: 8px; }
+
+    /* --- HERO BRAND TILES (over video) --- */
+    .hero-brands {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      padding-top: 80px !important;
+    }
+    .brand-tile {
+      padding: 20px 14px !important;
+      padding-bottom: 28px !important;
+      min-height: 180px;
+    }
+    .brand-tile-name { font-size: 20px !important; }
+    .brand-tile-desc { font-size: 9px !important; margin-bottom: 10px; line-height: 1.4; }
+    .brand-tile-cta { font-size: 8px; padding-top: 8px; }
+    .brand-tile-mini-img { width: 40px; height: 40px; }
+
+    
     /* --- SECTIONS GENERAL --- */
     section.below-hero { margin-top: 48px; }
     .container { padding: 0 16px; }
@@ -1411,46 +1499,43 @@
 <!-- ============================================================
      HERO 50/50 — VIDEO LEFT, 4 BRANDS RIGHT
      ============================================================ -->
-<section class="hero-split">
+<section class="hero-split" style="display: flex; align-items: center; justify-content: center; position: relative; width: 100%; border: none;">
 
-  <div class="hero-media">
-    <div class="hero-media-meta">
-      <span>FW · 2026</span>
-      <span>00:24 / 01:36</span>
-    </div>
-
-    <div class="hero-media-inner" style="background:#000;">
-      <video class="hero-video-real" autoplay muted loop playsinline>
-        <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
-      </video>
-      <!-- Gradiente fisso: parte bassa sempre scura per leggibilità -->
-      <div style="
-        position:absolute; inset:0; z-index:2;
-        background: linear-gradient(
-          to bottom,
-          rgba(15,13,10,0.10) 0%,
-          rgba(15,13,10,0.08) 40%,
-          rgba(15,13,10,0.55) 75%,
-          rgba(15,13,10,0.78) 100%
-        );
-        pointer-events:none;
-      "></div>
-    </div>
-
-    <div class="hero-media-overlay">
-      <div class="hero-overlay-eyebrow">Collezione 2026</div>
-      <h1 class="hero-overlay-title">Tradizione<br/>artigianale,<br/><em>lusso senza tempo.</em></h1>
-      <p class="hero-overlay-subtitle">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
-    </div>
+  <!-- Sfondo video full width -->
+  <div class="hero-video-full">
+    <video autoplay muted loop playsinline>
+      <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
   </div>
 
-  <div class="hero-brands">
-    <div class="brand-tile">
+
+  
+
+  
+<div class="hero-media-overlay" style="position: relative; z-index: 2; text-align: center; padding: 0 40px; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; left: auto; right: auto; bottom: auto; top: auto; transform: none; width: 100%; height: 100%;">
+      <h1 class="hero-overlay-title" style="font-family:'Inter', sans-serif; font-weight:400;">Tradizione artigianale,<br/><span style="font-weight:200;">lusso senza tempo.</span></h1>
+      <p class="hero-overlay-subtitle" style="font-size: 18px; letter-spacing: 0.05em; font-weight: 300; max-width: 450px; line-height: 1.6; color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
+    </div>
+</section>
+
+<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
+<div class="container">
+
+  <!-- SEZIONE 02 — COLLEZIONI -->
+  <section class="below-hero ">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Collezione <em>2026</em></h2>
+        <span class="section-link">Tutte le collezioni</span>
+      </div>
+    </div>
+    <div class="hero-brands" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <div class="brand-tile ">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
-      <div class="brand-tile-top">
-
-      </div>
+      
+      
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fabio Gavazzi <em>Donna</em></h3>
         <p class="brand-tile-desc">Alta moda donna · haute couture</p>
@@ -1461,12 +1546,11 @@
       </div>
     </div>
 
-    <div class="brand-tile">
+    <div class="brand-tile ">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Uomo">
-      <div class="brand-tile-top">
-
-      </div>
+      
+      
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fabio Gavazzi <em>Uomo</em></h3>
         <p class="brand-tile-desc">Pellicce e cashmere uomo</p>
@@ -1477,12 +1561,11 @@
       </div>
     </div>
 
-    <div class="brand-tile">
+    <div class="brand-tile ">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/Mavina.jpg" alt="Mavina">
-      <div class="brand-tile-top">
-
-      </div>
+      
+      
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Mavina</h3>
         <p class="brand-tile-desc">Pellicceria contemporanea</p>
@@ -1493,12 +1576,11 @@
       </div>
     </div>
 
-    <div class="brand-tile">
+    <div class="brand-tile ">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/home-2.jpg.webp" alt="Fureco Home">
-      <div class="brand-tile-top">
-
-      </div>
+      
+      
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fureco <em>Home</em></h3>
         <p class="brand-tile-desc">Pelliccia per la casa</p>
@@ -1509,11 +1591,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
-<div class="container">
-
   <!-- SEZIONE 02 — COLLEZIONI -->
   <section class="below-hero">
     <div class="section-header">
