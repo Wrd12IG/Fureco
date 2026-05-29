@@ -462,8 +462,89 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: var(--gray-2);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     letter-spacing: 0.1em;
+  }
+
+  /* COLOR SELECTOR STYLING */
+  .product-color-selector {
+    margin: 24px 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .selector-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--gray-2);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .selector-label strong {
+    color: var(--ink);
+    font-weight: 500;
+    margin-left: 4px;
+  }
+
+  .color-options {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+  }
+
+  .color-dot:hover {
+    transform: scale(1.15);
+  }
+
+  .color-dot.active {
+    transform: scale(1.05);
+  }
+
+  .color-dot.active::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* COLOR FILTERS ON IMAGES */
+  #main-gallery-img, .gallery-thumbs img, #lightbox-img {
+    transition: filter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+  }
+
+  /* Camel color: warm rich gold tones */
+  body.color-camel #main-gallery-img,
+  body.color-camel .gallery-thumbs img,
+  body.color-camel #lightbox-img {
+    filter: sepia(0.35) hue-rotate(5deg) saturate(1.2) brightness(0.92) contrast(1.02);
+  }
+
+  /* Charcoal color: elegant desaturated dark grey */
+  body.color-charcoal #main-gallery-img,
+  body.color-charcoal .gallery-thumbs img,
+  body.color-charcoal #lightbox-img {
+    filter: grayscale(0.85) brightness(0.55) contrast(1.15) sepia(0.05);
   }
 
   .product-description {
@@ -1056,6 +1137,16 @@
       <span class="product-brand">Fabio Gavazzi Donna</span>
       <h1 class="product-title">Cappotto in Cashmere Loro Piana <em>& Zibellino</em></h1>
       <div class="product-code">Mod. FG1320PIVR</div>
+
+      <!-- COLOR SELECTOR -->
+      <div class="product-color-selector">
+        <span class="selector-label">Colore:<strong id="selected-color-name">Avorio</strong></span>
+        <div class="color-options">
+          <div class="color-dot active" style="background-color: #f7f5f0; border: 1px solid #dcdad5;" onclick="changeColor(this, 'Avorio', '')" title="Avorio"></div>
+          <div class="color-dot" style="background-color: #c19a6b;" onclick="changeColor(this, 'Cammello', 'color-camel')" title="Cammello"></div>
+          <div class="color-dot" style="background-color: #3a3a3a;" onclick="changeColor(this, 'Antracite', 'color-charcoal')" title="Antracite"></div>
+        </div>
+      </div>
       
       <p class="product-description">
         Un capolavoro di morbidezza e rigore sartoriale. Questo cappotto combina la fluidità del cashmere double-face firmato Loro Piana con la maestosità e la calda raffinatezza dello zibellino russo. Realizzato interamente a mano nei nostri atelier in Italia, è pensato per offrire una silhouette avvolgente, classica ma contemporanea, impreziosita da dettagli sartoriali unici.
@@ -1247,6 +1338,23 @@
 </footer>
 
 <script>
+  function changeColor(dotElement, colorName, colorClass) {
+    // Update color label
+    document.getElementById('selected-color-name').textContent = colorName;
+    
+    // Update active dot styling
+    document.querySelectorAll('.color-options .color-dot').forEach(dot => {
+      dot.classList.remove('active');
+    });
+    dotElement.classList.add('active');
+    
+    // Apply body classes for CSS filters
+    document.body.classList.remove('color-camel', 'color-charcoal');
+    if (colorClass) {
+      document.body.classList.add(colorClass);
+    }
+  }
+
   function switchMainImage(thumbElement, imageUrl) {
     const mainImg = document.getElementById('main-gallery-img');
     const mainContainer = document.getElementById('main-gallery-container');
