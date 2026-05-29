@@ -173,31 +173,82 @@
     margin-bottom: 120px;
   }
 
-  /* LEFT SIDE: VERTICAL GALLERY SCROLL */
+  /* LEFT SIDE: ULTRA-MODERN LUXURY INTERACTIVE GALLERY */
   .product-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: 80px 1fr; /* left thumbnail bar, right main screen */
+    gap: 20px;
+    height: 680px; /* fixed height for elegance and alignment with info panel */
   }
 
-  .product-image-container {
-    width: 100%;
+  .gallery-thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  
+  .gallery-thumbs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+
+  .thumb-item {
+    aspect-ratio: 4/5;
     background: var(--bone);
     border: 1px solid var(--line);
+    cursor: pointer;
     overflow: hidden;
-    cursor: zoom-in;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     position: relative;
+    width: 100%;
   }
 
-  .product-image-container.hero-image {
-    grid-column: span 2;
+  .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: opacity 0.3s;
   }
 
-  .product-image-container::before {
+  .thumb-item:hover img,
+  .thumb-item.active img {
+    opacity: 1;
+  }
+
+  .thumb-item.active {
+    border-color: var(--bordeaux);
+    box-shadow: 0 4px 12px rgba(109, 33, 43, 0.1);
+  }
+
+  .gallery-main-display {
+    border: 1px solid var(--line);
+    background: var(--bone);
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+    height: 100%;
+  }
+
+  .gallery-main-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1), opacity 0.4s ease;
+    opacity: 1;
+  }
+
+  .gallery-main-display:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Elegant minimal overlay */
+  .gallery-main-display::before {
     content: 'ZOOM VIEW';
     position: absolute;
     inset: 0;
-    background: rgba(31, 29, 26, 0.2); /* very subtle elegant dark overlay */
+    background: rgba(31, 29, 26, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,20 +263,8 @@
     backdrop-filter: blur(2px);
   }
 
-  .product-image-container:hover::before {
+  .gallery-main-display:hover::before {
     opacity: 1;
-  }
-
-  .product-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
-  }
-
-  .product-image-container:hover img {
-    transform: scale(1.04);
   }
 
   /* RIGHT SIDE: STICKY INFO PANEL */
@@ -653,14 +692,29 @@
       margin-bottom: 60px;
     }
 
-    /* Gallery becomes an horizontal swipeable row (optional) or just blocks */
+    /* Gallery becomes thumbnails horizontal on mobile */
     .product-gallery {
       grid-template-columns: 1fr;
-      gap: 12px;
+      grid-template-rows: auto auto;
+      height: auto;
+      gap: 16px;
     }
 
-    .product-image-container.hero-image {
-      grid-column: span 1;
+    .gallery-thumbs {
+      flex-direction: row;
+      order: 2;
+      justify-content: center;
+    }
+
+    .thumb-item {
+      width: 60px;
+      height: 75px;
+    }
+
+    .gallery-main-display {
+      order: 1;
+      aspect-ratio: 4/5;
+      height: auto;
     }
 
     .product-info-panel {
@@ -757,16 +811,24 @@
   <!-- PRODUCT DETAIL SECTION -->
   <main class="product-detail">
     
-    <!-- LEFT SIDE: SCROLLING IMAGES -->
+    <!-- LEFT SIDE: ULTRA-MODERN GALLERY WITH INTERACTIVE THUMBNAILS -->
     <div class="product-gallery">
-      <div class="product-image-container hero-image" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
-        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Vista Frontale">
+      <!-- Thumbnail Column -->
+      <div class="gallery-thumbs">
+        <div class="thumb-item active" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
+          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Miniatura Frontale">
+        </div>
+        <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg')">
+          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg" alt="Miniatura Retro">
+        </div>
+        <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg')">
+          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg" alt="Miniatura Dettaglio Collo">
+        </div>
       </div>
-      <div class="product-image-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg')">
-        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Vista Retro">
-      </div>
-      <div class="product-image-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg')">
-        <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Dettaglio Collo">
+
+      <!-- Main Showcase Display -->
+      <div class="gallery-main-display" id="main-gallery-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
+        <img id="main-gallery-img" src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Fabio Gavazzi">
       </div>
     </div>
 
@@ -966,6 +1028,27 @@
 </footer>
 
 <script>
+  function switchMainImage(thumbElement, imageUrl) {
+    const mainImg = document.getElementById('main-gallery-img');
+    const mainContainer = document.getElementById('main-gallery-container');
+    
+    // Smooth transition
+    mainImg.style.opacity = '0';
+    
+    setTimeout(() => {
+      mainImg.src = imageUrl;
+      // Update lightbox link dynamically
+      mainContainer.onclick = function() { openLightbox(imageUrl); };
+      mainImg.style.opacity = '1';
+    }, 200);
+    
+    // Update active state
+    document.querySelectorAll('.thumb-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    thumbElement.classList.add('active');
+  }
+
   function toggleAccordion(id) {
     const item = document.getElementById(id);
     const wasActive = item.classList.contains('active');
