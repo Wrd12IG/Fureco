@@ -352,11 +352,12 @@
     background: var(--bone);
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/3;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 2px;
+    height: 100%;
+    min-height: 400px; /* aligns heights perfectly with the left text details */
   }
 
   /* Abstract minimalist road grid styling */
@@ -417,15 +418,15 @@
     font-weight: 500;
   }
 
-  /* Specific pin coordinate placement */
+  /* Specific pin coordinate placement (Seregno is directly north of Milan) */
   .map-pin.milan {
-    top: 58%;
-    left: 35%;
+    top: 68%;
+    left: 48%;
   }
 
   .map-pin.seregno {
     top: 22%;
-    left: 62%;
+    left: 52%;
   }
 
   /* RIGHT SIDE: STICKY INFO PANEL */
@@ -987,6 +988,8 @@
 
     .map-visual-container {
       aspect-ratio: 16/9;
+      height: auto;
+      min-height: auto;
     }
 
     .product-info-panel {
