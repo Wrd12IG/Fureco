@@ -235,12 +235,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1), opacity 0.4s ease;
+    transition: opacity 0.4s ease; /* smooth opacity for image swaps, no transform transition during interactive zoom for optimal performance */
     opacity: 1;
+    transform-origin: center center;
   }
 
-  .gallery-main-display:hover img {
-    transform: scale(1.05);
+  /* Active zooming class applied dynamically via JS */
+  .gallery-main-display.zoomed img {
+    transform: scale(2.2); /* elegant 2.2x luxury zoom */
+    transition: opacity 0.4s ease, transform 0.1s ease-out; /* minor smoothing for interactive movement */
   }
 
   /* Elegant minimal overlay */
@@ -265,6 +268,11 @@
 
   .gallery-main-display:hover::before {
     opacity: 1;
+  }
+
+  /* Hide zoom instructions when actively zooming in */
+  .gallery-main-display.zoomed::before {
+    opacity: 0 !important;
   }
 
   /* RIGHT SIDE: STICKY INFO PANEL */
@@ -1062,6 +1070,39 @@
       item.classList.add('active');
     }
   }
+
+  // INTERACTIVE ZOOM MAGNIFIER LOUPE EFFECT
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('main-gallery-container');
+    const img = document.getElementById('main-gallery-img');
+
+    if (container && img) {
+      container.addEventListener('mousemove', function(e) {
+        // Only trigger zoom on desktop screens (width > 768px)
+        if (window.innerWidth <= 768) return;
+
+        const rect = container.getBoundingClientRect();
+        
+        // Get mouse position relative to container
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate coordinates as percentages
+        const xPercent = (x / rect.width) * 100;
+        const yPercent = (y / rect.height) * 100;
+        
+        // Dynamically adjust the transform origin and apply zoom scale
+        img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+        container.classList.add('zoomed');
+      });
+
+      container.addEventListener('mouseleave', function() {
+        container.classList.remove('zoomed');
+        img.style.transformOrigin = 'center center';
+        img.style.transform = ''; // reset transform scale
+      });
+    }
+  });
 </script>
 
 <div id="simple-lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; cursor:pointer;" onclick="this.style.display='none'">
