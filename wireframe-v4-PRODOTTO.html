@@ -271,8 +271,161 @@
   }
 
   /* Hide zoom instructions when actively zooming in */
+  .gallery-main-display:hover::before {
+    opacity: 1;
+  }
+
+  /* Hide zoom instructions when actively zooming in */
   .gallery-main-display.zoomed::before {
     opacity: 0 !important;
+  }
+
+  .product-detail-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ==================== SHOWROOM MAP WIDGET ==================== */
+  .product-showroom-map {
+    margin-top: 40px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+  }
+
+  .map-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .map-info h3 em {
+    font-style: italic;
+  }
+
+  .map-info p {
+    font-size: 12px;
+    color: var(--gray-2);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .showroom-location {
+    margin-bottom: 20px;
+  }
+
+  .showroom-location:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--bordeaux);
+    margin-bottom: 6px;
+  }
+
+  .location-address {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .location-phone {
+    font-size: 12px;
+    color: var(--gray-2);
+    margin-top: 4px;
+  }
+
+  /* STYLIZED ABSTRACT CSS MAP OF MILAN AREA */
+  .map-visual-container {
+    border: 1px solid var(--line);
+    background: var(--bone);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+
+  /* Abstract minimalist road grid styling */
+  .map-road {
+    position: absolute;
+    background: var(--white);
+    opacity: 0.75;
+  }
+  
+  .map-road.h1 { top: 30%; left: 0; width: 100%; height: 2px; transform: rotate(-5deg); }
+  .map-road.h2 { top: 65%; left: 0; width: 100%; height: 2px; transform: rotate(10deg); }
+  .map-road.v1 { left: 35%; top: 0; height: 100%; width: 2px; transform: rotate(-15deg); }
+  .map-road.v2 { left: 70%; top: 0; height: 100%; width: 2px; transform: rotate(20deg); }
+  .map-road.diag { left: 10%; top: 10%; width: 120%; height: 1px; transform: rotate(35deg); background: rgba(255,255,255,0.4); }
+
+  /* Pins */
+  .map-pin {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.3s ease;
+  }
+
+  .map-pin:hover {
+    transform: scale(1.1);
+  }
+
+  .pin-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--bordeaux);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(109, 33, 43, 0.4);
+    animation: pinPulse 2.5s infinite;
+  }
+
+  @keyframes pinPulse {
+    0% { box-shadow: 0 0 0 0 rgba(109, 33, 43, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(109, 33, 43, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(109, 33, 43, 0); }
+  }
+
+  .pin-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    background: var(--ink);
+    color: var(--white);
+    padding: 3px 6px;
+    border-radius: 2px;
+    margin-top: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-weight: 500;
+  }
+
+  /* Specific pin coordinate placement */
+  .map-pin.milan {
+    top: 55%;
+    left: 30%;
+  }
+
+  .map-pin.cinisello {
+    top: 25%;
+    left: 65%;
   }
 
   /* RIGHT SIDE: STICKY INFO PANEL */
@@ -725,6 +878,18 @@
       height: auto;
     }
 
+    /* Showroom map mobile view styling */
+    .product-showroom-map {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .map-visual-container {
+      aspect-ratio: 16/9;
+    }
+
     .product-info-panel {
       position: static;
       padding-bottom: 0;
@@ -819,25 +984,71 @@
   <!-- PRODUCT DETAIL SECTION -->
   <main class="product-detail">
     
-    <!-- LEFT SIDE: ULTRA-MODERN GALLERY WITH INTERACTIVE THUMBNAILS -->
-    <div class="product-gallery">
-      <!-- Thumbnail Column -->
-      <div class="gallery-thumbs">
-        <div class="thumb-item active" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
-          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Miniatura Frontale">
+    <!-- LEFT COLUMN: GALLERY + MAP -->
+    <div class="product-detail-left">
+      
+      <!-- ULTRA-MODERN GALLERY WITH INTERACTIVE THUMBNAILS -->
+      <div class="product-gallery">
+        <!-- Thumbnail Column -->
+        <div class="gallery-thumbs">
+          <div class="thumb-item active" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
+            <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Miniatura Frontale">
+          </div>
+          <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg')">
+            <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg" alt="Miniatura Retro">
+          </div>
+          <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg')">
+            <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg" alt="Miniatura Dettaglio Collo">
+          </div>
         </div>
-        <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg')">
-          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg" alt="Miniatura Retro">
-        </div>
-        <div class="thumb-item" onclick="switchMainImage(this, 'https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg')">
-          <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_R_Front-800x1000.jpg" alt="Miniatura Dettaglio Collo">
+
+        <!-- Main Showcase Display -->
+        <div class="gallery-main-display" id="main-gallery-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
+          <img id="main-gallery-img" src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Fabio Gavazzi">
         </div>
       </div>
 
-      <!-- Main Showcase Display -->
-      <div class="gallery-main-display" id="main-gallery-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
-        <img id="main-gallery-img" src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Fabio Gavazzi">
+      <!-- MINIMAL SHOWROOM & ATELIER MAP WIDGET -->
+      <div class="product-showroom-map">
+        <div class="map-info">
+          <h3>I nostri Atelier <em>& Showroom</em></h3>
+          <p>Prenota una prova esclusiva in Atelier o vieni a trovarci nel Quadrilatero della Moda a Milano.</p>
+          
+          <div class="showroom-location">
+            <div class="location-name">Milano Showroom (B2C)</div>
+            <div class="location-address">Via Sant'Andrea, 2 — Quadrilatero della Moda</div>
+            <div class="location-phone">Tel: +39 02 7600 3456 | Lun - Sab, 10:00 - 19:00</div>
+          </div>
+          
+          <div class="showroom-location" style="margin-top: 16px;">
+            <div class="location-name">Atelier &amp; HQ (B2B / Produzione)</div>
+            <div class="location-address">Via de Vizzi, 46 — Cinisello Balsamo (MI)</div>
+            <div class="location-phone">Tel: +39 02 6129 1234 | Lun - Ven, 09:00 - 18:00</div>
+          </div>
+        </div>
+        
+        <!-- Stylized CSS Map Visualizer -->
+        <div class="map-visual-container">
+          <!-- Abstract grid representing Milan roads -->
+          <div class="map-road h1"></div>
+          <div class="map-road h2"></div>
+          <div class="map-road v1"></div>
+          <div class="map-road v2"></div>
+          <div class="map-road diag"></div>
+          
+          <!-- Hotspot Pins -->
+          <div class="map-pin milan" onclick="alert('Milano Showroom - Via Sant\'Andrea 2')">
+            <div class="pin-dot"></div>
+            <div class="pin-label">MILANO SHOWROOM</div>
+          </div>
+          
+          <div class="map-pin cinisello" onclick="alert('Fureco Atelier & HQ - Via de Vizzi 46')">
+            <div class="pin-dot"></div>
+            <div class="pin-label">ATELIER &amp; HQ</div>
+          </div>
+        </div>
       </div>
+
     </div>
 
     <!-- RIGHT SIDE: STICKY PANEL -->
