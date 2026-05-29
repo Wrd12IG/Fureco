@@ -178,7 +178,6 @@
     display: grid;
     grid-template-columns: 80px 1fr; /* left thumbnail bar, right main screen */
     gap: 20px;
-    height: 680px; /* fixed height for elegance and alignment with info panel */
   }
 
   .gallery-thumbs {
@@ -228,7 +227,8 @@
     overflow: hidden;
     position: relative;
     cursor: zoom-in;
-    height: 100%;
+    aspect-ratio: 4/5;
+    width: 100%;
   }
 
   .gallery-main-display img {
