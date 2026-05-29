@@ -1166,6 +1166,134 @@
     max-width: 60%;
     line-height: 1.4;
   }
+
+  /* ==================== SECTION 02B — ATELIER & TRADE ==================== */
+  .b2b-section {
+    background: #1c1a17; /* rich warm dark charcoal */
+    border: 1px solid var(--line);
+    padding: 60px 48px;
+    margin-top: 120px;
+    color: var(--white);
+  }
+
+  .b2b-section .section-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .b2b-section .section-title {
+    color: var(--white);
+  }
+
+  .b2b-section .section-link {
+    color: var(--tortora);
+    border-bottom-color: var(--tortora);
+  }
+
+  .b2b-section .section-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+  }
+
+  .b2b-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .b2b-card {
+    background: #252320; /* slightly lighter card dark */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .b2b-card:hover {
+    border-color: var(--bordeaux);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .b2b-image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+    background: #151412;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .b2b-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+    filter: grayscale(30%);
+  }
+
+  .b2b-card:hover .b2b-image img {
+    opacity: 0.95;
+    transform: scale(1.04);
+    filter: grayscale(0%);
+  }
+
+  .b2b-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .b2b-card-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--tortora);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .b2b-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+
+  .b2b-card-title em {
+    font-style: italic;
+  }
+
+  .b2b-card-desc {
+    font-size: 13px;
+    color: var(--gray-3);
+    margin-bottom: 24px;
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  .b2b-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--bordeaux);
+    padding-bottom: 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--bordeaux);
+    align-self: flex-start;
+    transition: all 0.3s;
+  }
+
+  .b2b-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+  }
   
   /* ==================== MOBILE ==================== */
   @media (max-width: 768px) {
@@ -1373,6 +1501,25 @@
       height: auto;
     }
     .shop-opt3-half { min-height: 300px; }
+
+    /* --- B2B SECTION --- */
+    .b2b-section {
+      padding: 40px 20px;
+      margin-top: 48px;
+    }
+    .b2b-split {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .b2b-content {
+      padding: 24px 20px;
+    }
+    .b2b-card-title {
+      font-size: 26px;
+    }
+    .b2b-card-desc {
+      font-size: 12px;
+    }
   }
 </style>
 </head>
@@ -1582,6 +1729,42 @@
             <span class="tag">Tailoring</span>
           </div>
           <span class="collezione-link">Esplora uomo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 02B — ATELIER & TRADE -->
+  <section class="below-hero b2b-section">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Atelier <em>& Trade</em></h2>
+        <span class="section-link">B2B Services</span>
+      </div>
+    </div>
+    
+    <div class="b2b-split">
+      <div class="b2b-card">
+        <div class="b2b-image">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Commercio Pellami">
+        </div>
+        <div class="b2b-content">
+          <span class="b2b-card-eyebrow">Manufacture & Raw Materials</span>
+          <h3 class="b2b-card-title">Commercio <em>Pellami</em></h3>
+          <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità ed eccellenza qualitativa per l'industria.</p>
+          <span class="b2b-link">Scopri il sourcing</span>
+        </div>
+      </div>
+      
+      <div class="b2b-card">
+        <div class="b2b-image">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni & Private Label">
+        </div>
+        <div class="b2b-content">
+          <span class="b2b-card-eyebrow">Private Label Production</span>
+          <h3 class="b2b-card-title">Collaborazioni <em>& Private Label</em></h3>
+          <p class="b2b-card-desc">Sviluppo prototipi e produzione in outsourcing ad alto livello per le grandi maison del lusso, combinando visione contemporanea ed eccellenza sartoriale.</p>
+          <span class="b2b-link">Esplora l'Atelier</span>
         </div>
       </div>
     </div>

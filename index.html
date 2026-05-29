@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wireframe v6 FINAL — Fureco × Fabio Gavazzi</title>
+<title>Wireframe v4 Media — Fureco × Fabio Gavazzi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -1166,54 +1166,134 @@
     max-width: 60%;
     line-height: 1.4;
   }
-  
-  /* ==================== VIDEO FULL WIDTH ==================== */
-  .hero-video-full {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
+
+  /* ==================== SECTION 02B — ATELIER & TRADE ==================== */
+  .b2b-section {
+    background: #1c1a17; /* rich warm dark charcoal */
+    border: 1px solid var(--line);
+    padding: 60px 48px;
+    margin-top: 120px;
+    color: var(--white);
   }
-  .hero-video-full video {
+
+  .b2b-section .section-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .b2b-section .section-title {
+    color: var(--white);
+  }
+
+  .b2b-section .section-link {
+    color: var(--tortora);
+    border-bottom-color: var(--tortora);
+  }
+
+  .b2b-section .section-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+  }
+
+  .b2b-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .b2b-card {
+    background: #252320; /* slightly lighter card dark */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .b2b-card:hover {
+    border-color: var(--bordeaux);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .b2b-image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+    background: #151412;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .b2b-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  .hero-video-full .video-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(15,13,10,0.15) 0%,
-      rgba(15,13,10,0.35) 40%,
-      rgba(15,13,10,0.65) 75%,
-      rgba(15,13,10,0.85) 100%
-    );
-    z-index: 1;
-    pointer-events: none;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+    filter: grayscale(30%);
   }
 
-  .hero-split {
-    position: relative;
-    background: transparent !important;
+  .b2b-card:hover .b2b-image img {
+    opacity: 0.95;
+    transform: scale(1.04);
+    filter: grayscale(0%);
   }
 
-  .hero-media {
-    background: transparent !important;
-    border-right: none !important;
-  }
-  
-  
-
-
-  .brand-tile {
-    justify-content: flex-end !important;
-    padding-bottom: 40px !important;
-    aspect-ratio: 1 / 1;
+  .b2b-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
+  .b2b-card-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--tortora);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .b2b-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+
+  .b2b-card-title em {
+    font-style: italic;
+  }
+
+  .b2b-card-desc {
+    font-size: 13px;
+    color: var(--gray-3);
+    margin-bottom: 24px;
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  .b2b-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--bordeaux);
+    padding-bottom: 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--bordeaux);
+    align-self: flex-start;
+    transition: all 0.3s;
+  }
+
+  .b2b-link:hover {
+    color: var(--white);
+    border-bottom-color: var(--white);
+  }
   
   /* ==================== MOBILE ==================== */
   @media (max-width: 768px) {
@@ -1275,46 +1355,6 @@
     .brand-tile-desc { font-size: 10px; margin-bottom: 12px; }
     .brand-tile-cta { font-size: 8px; padding-top: 10px; }
 
-    /* --- HERO FULL VIDEO --- */
-    .hero-split {
-      grid-template-columns: 1fr;
-      height: auto;
-      min-height: auto;
-      max-height: none;
-    }
-    .hero-media {
-      height: 50vh;
-      min-height: 280px;
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .hero-media-overlay {
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-    }
-    .hero-overlay-title { font-size: 28px; margin-bottom: 10px; }
-    .hero-overlay-subtitle { font-size: 13px; max-width: 100%; }
-    .hero-overlay-eyebrow { font-size: 8px; }
-    .hero-media-meta { top: 80px; right: 16px; gap: 10px; font-size: 8px; }
-
-    /* --- HERO BRAND TILES (over video) --- */
-    .hero-brands {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      padding-top: 80px !important;
-    }
-    .brand-tile {
-      padding: 20px 14px !important;
-      padding-bottom: 28px !important;
-      min-height: 180px;
-    }
-    .brand-tile-name { font-size: 20px !important; }
-    .brand-tile-desc { font-size: 9px !important; margin-bottom: 10px; line-height: 1.4; }
-    .brand-tile-cta { font-size: 8px; padding-top: 8px; }
-    .brand-tile-mini-img { width: 40px; height: 40px; }
-
-    
     /* --- SECTIONS GENERAL --- */
     section.below-hero { margin-top: 48px; }
     .container { padding: 0 16px; }
@@ -1461,6 +1501,25 @@
       height: auto;
     }
     .shop-opt3-half { min-height: 300px; }
+
+    /* --- B2B SECTION --- */
+    .b2b-section {
+      padding: 40px 20px;
+      margin-top: 48px;
+    }
+    .b2b-split {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .b2b-content {
+      padding: 24px 20px;
+    }
+    .b2b-card-title {
+      font-size: 26px;
+    }
+    .b2b-card-desc {
+      font-size: 12px;
+    }
   }
 </style>
 </head>
@@ -1499,43 +1558,46 @@
 <!-- ============================================================
      HERO 50/50 — VIDEO LEFT, 4 BRANDS RIGHT
      ============================================================ -->
-<section class="hero-split" style="display: flex; align-items: center; justify-content: center; position: relative; width: 100%; border: none;">
+<section class="hero-split">
 
-  <!-- Sfondo video full width -->
-  <div class="hero-video-full">
-    <video autoplay muted loop playsinline>
-      <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay"></div>
+  <div class="hero-media">
+    <div class="hero-media-meta">
+      <span>FW · 2026</span>
+      <span>00:24 / 01:36</span>
+    </div>
+
+    <div class="hero-media-inner" style="background:#000;">
+      <video class="hero-video-real" autoplay muted loop playsinline>
+        <source src="Home/EMOTIONAL_2.mp4" type="video/mp4">
+      </video>
+      <!-- Gradiente fisso: parte bassa sempre scura per leggibilità -->
+      <div style="
+        position:absolute; inset:0; z-index:2;
+        background: linear-gradient(
+          to bottom,
+          rgba(15,13,10,0.10) 0%,
+          rgba(15,13,10,0.08) 40%,
+          rgba(15,13,10,0.55) 75%,
+          rgba(15,13,10,0.78) 100%
+        );
+        pointer-events:none;
+      "></div>
+    </div>
+
+    <div class="hero-media-overlay">
+      <div class="hero-overlay-eyebrow">Collezione 2026</div>
+      <h1 class="hero-overlay-title">Tradizione<br/>artigianale,<br/><em>lusso senza tempo.</em></h1>
+      <p class="hero-overlay-subtitle">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
+    </div>
   </div>
 
-
-  
-
-  
-<div class="hero-media-overlay" style="position: relative; z-index: 2; text-align: center; padding: 0 40px; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; left: auto; right: auto; bottom: auto; top: auto; transform: none; width: 100%; height: 100%;">
-      <h1 class="hero-overlay-title" style="font-family:'Inter', sans-serif; font-weight:400;">Tradizione artigianale,<br/><span style="font-weight:200;">lusso senza tempo.</span></h1>
-      <p class="hero-overlay-subtitle" style="font-size: 18px; letter-spacing: 0.05em; font-weight: 300; max-width: 450px; line-height: 1.6; color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
-    </div>
-</section>
-
-<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
-<div class="container">
-
-  <!-- SEZIONE 02 — COLLEZIONI -->
-  <section class="below-hero ">
-    <div class="section-header">
-      <div class="section-title-group">
-        <h2 class="section-title">Collezione <em>2026</em></h2>
-        <span class="section-link">Tutte le collezioni</span>
-      </div>
-    </div>
-    <div class="hero-brands" style="max-width: 1200px; margin: 0 auto; width: 100%;">
-    <div class="brand-tile ">
+  <div class="hero-brands">
+    <div class="brand-tile">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
-      
-      
+      <div class="brand-tile-top">
+
+      </div>
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fabio Gavazzi <em>Donna</em></h3>
         <p class="brand-tile-desc">Alta moda donna · haute couture</p>
@@ -1546,11 +1608,12 @@
       </div>
     </div>
 
-    <div class="brand-tile ">
+    <div class="brand-tile">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Uomo">
-      
-      
+      <div class="brand-tile-top">
+
+      </div>
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fabio Gavazzi <em>Uomo</em></h3>
         <p class="brand-tile-desc">Pellicce e cashmere uomo</p>
@@ -1561,11 +1624,12 @@
       </div>
     </div>
 
-    <div class="brand-tile ">
+    <div class="brand-tile">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/Mavina.jpg" alt="Mavina">
-      
-      
+      <div class="brand-tile-top">
+
+      </div>
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Mavina</h3>
         <p class="brand-tile-desc">Pellicceria contemporanea</p>
@@ -1576,11 +1640,12 @@
       </div>
     </div>
 
-    <div class="brand-tile ">
+    <div class="brand-tile">
       <div class="brand-tile-image-bg"></div>
       <img class="brand-tile-image-bg-real" src="Home/home-2.jpg.webp" alt="Fureco Home">
-      
-      
+      <div class="brand-tile-top">
+
+      </div>
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Fureco <em>Home</em></h3>
         <p class="brand-tile-desc">Pelliccia per la casa</p>
@@ -1591,6 +1656,11 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ==================== CONTENUTO SOTTO HERO ==================== -->
+<div class="container">
+
   <!-- SEZIONE 02 — COLLEZIONI -->
   <section class="below-hero">
     <div class="section-header">
@@ -1659,6 +1729,42 @@
             <span class="tag">Tailoring</span>
           </div>
           <span class="collezione-link">Esplora uomo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE 02B — ATELIER & TRADE -->
+  <section class="below-hero b2b-section">
+    <div class="section-header">
+      <div class="section-title-group">
+        <h2 class="section-title">Atelier <em>& Trade</em></h2>
+        <span class="section-link">B2B Services</span>
+      </div>
+    </div>
+    
+    <div class="b2b-split">
+      <div class="b2b-card">
+        <div class="b2b-image">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Commercio Pellami">
+        </div>
+        <div class="b2b-content">
+          <span class="b2b-card-eyebrow">Manufacture & Raw Materials</span>
+          <h3 class="b2b-card-title">Commercio <em>Pellami</em></h3>
+          <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità ed eccellenza qualitativa per l'industria.</p>
+          <span class="b2b-link">Scopri il sourcing</span>
+        </div>
+      </div>
+      
+      <div class="b2b-card">
+        <div class="b2b-image">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni & Private Label">
+        </div>
+        <div class="b2b-content">
+          <span class="b2b-card-eyebrow">Private Label Production</span>
+          <h3 class="b2b-card-title">Collaborazioni <em>& Private Label</em></h3>
+          <p class="b2b-card-desc">Sviluppo prototipi e produzione in outsourcing ad alto livello per le grandi maison del lusso, combinando visione contemporanea ed eccellenza sartoriale.</p>
+          <span class="b2b-link">Esplora l'Atelier</span>
         </div>
       </div>
     </div>
