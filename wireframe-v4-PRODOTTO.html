@@ -175,9 +175,9 @@
 
   /* LEFT SIDE: VERTICAL GALLERY SCROLL */
   .product-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
   .product-image-container {
@@ -189,6 +189,33 @@
     position: relative;
   }
 
+  .product-image-container.hero-image {
+    grid-column: span 2;
+  }
+
+  .product-image-container::before {
+    content: 'ZOOM VIEW';
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 29, 26, 0.2); /* very subtle elegant dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+  }
+
+  .product-image-container:hover::before {
+    opacity: 1;
+  }
+
   .product-image-container img {
     width: 100%;
     height: auto;
@@ -198,7 +225,7 @@
   }
 
   .product-image-container:hover img {
-    transform: scale(1.03);
+    transform: scale(1.04);
   }
 
   /* RIGHT SIDE: STICKY INFO PANEL */
@@ -628,7 +655,12 @@
 
     /* Gallery becomes an horizontal swipeable row (optional) or just blocks */
     .product-gallery {
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .product-image-container.hero-image {
+      grid-column: span 1;
     }
 
     .product-info-panel {
@@ -727,7 +759,7 @@
     
     <!-- LEFT SIDE: SCROLLING IMAGES -->
     <div class="product-gallery">
-      <div class="product-image-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
+      <div class="product-image-container hero-image" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg')">
         <img src="https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Front-800x1000.jpg" alt="Cappotto Cashmere e Zibellino - Vista Frontale">
       </div>
       <div class="product-image-container" onclick="openLightbox('https://www.fureco.it/wp-content/uploads/2024/07/FG1320PIVR_Back-800x1000.jpg')">
