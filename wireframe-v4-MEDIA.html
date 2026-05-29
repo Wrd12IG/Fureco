@@ -1169,15 +1169,15 @@
 
   /* ==================== SECTION 02B — ATELIER & TRADE ==================== */
   .b2b-section {
-    background: #1c1a17; /* rich warm dark charcoal */
-    border: 1px solid var(--line);
+    background: var(--bordeaux); /* brand bordeaux background */
+    border: 1px solid var(--bordeaux);
     padding: 60px 48px;
     margin-top: 120px;
     color: var(--white);
   }
 
   .b2b-section .section-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .b2b-section .section-title {
@@ -1185,8 +1185,8 @@
   }
 
   .b2b-section .section-link {
-    color: var(--tortora);
-    border-bottom-color: var(--tortora);
+    color: var(--tortora-light);
+    border-bottom-color: var(--tortora-light);
   }
 
   .b2b-section .section-link:hover {
@@ -1201,8 +1201,8 @@
   }
 
   .b2b-card {
-    background: #252320; /* slightly lighter card dark */
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #56151e; /* deeper rich bordeaux card background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
     transition: all 0.4s ease;
     display: flex;
@@ -1210,9 +1210,9 @@
   }
 
   .b2b-card:hover {
-    border-color: var(--bordeaux);
+    border-color: var(--tortora-light);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   }
 
   .b2b-image {
@@ -1250,7 +1250,7 @@
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: var(--tortora);
+    color: var(--tortora-light);
     margin-bottom: 16px;
     text-transform: uppercase;
   }
@@ -1270,7 +1270,7 @@
 
   .b2b-card-desc {
     font-size: 13px;
-    color: var(--gray-3);
+    color: #f2ede4; /* high-contrast cream color for excellent readability on bordeaux */
     margin-bottom: 24px;
     line-height: 1.7;
     flex-grow: 1;
@@ -1281,11 +1281,11 @@
     font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--tortora);
+    border-bottom: 1px solid var(--tortora-light);
     padding-bottom: 4px;
     cursor: pointer;
     display: inline-block;
-    color: var(--tortora);
+    color: var(--tortora-light);
     align-self: flex-start;
     transition: all 0.3s;
   }
@@ -1738,7 +1738,7 @@
   <section class="below-hero b2b-section">
     <div class="section-header">
       <div class="section-title-group">
-        <h2 class="section-title">Atelier <em>& Trade</em></h2>
+        <h2 class="section-title">Atelier &amp; Trade</h2>
         <span class="section-link">B2B Services</span>
       </div>
     </div>
@@ -1749,8 +1749,8 @@
           <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Commercio Pellami">
         </div>
         <div class="b2b-content">
-          <span class="b2b-card-eyebrow">Manufacture & Raw Materials</span>
-          <h3 class="b2b-card-title">Commercio <em>Pellami</em></h3>
+          <span class="b2b-card-eyebrow">Manufacture &amp; Raw Materials</span>
+          <h3 class="b2b-card-title">Commercio Pellami</h3>
           <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità ed eccellenza qualitativa per l'industria.</p>
           <span class="b2b-link">Scopri il sourcing</span>
         </div>
@@ -1758,11 +1758,11 @@
       
       <div class="b2b-card">
         <div class="b2b-image">
-          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni & Private Label">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni &amp; Private Label">
         </div>
         <div class="b2b-content">
           <span class="b2b-card-eyebrow">Private Label Production</span>
-          <h3 class="b2b-card-title">Collaborazioni <em>& Private Label</em></h3>
+          <h3 class="b2b-card-title">Collaborazioni &amp; Private Label</h3>
           <p class="b2b-card-desc">Sviluppo prototipi e produzione in outsourcing ad alto livello per le grandi maison del lusso, combinando visione contemporanea ed eccellenza sartoriale.</p>
           <span class="b2b-link">Esplora l'Atelier</span>
         </div>

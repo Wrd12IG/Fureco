@@ -657,8 +657,8 @@
   }
 
   .btn-primary:hover {
-    background: var(--ink);
-    border-color: var(--ink);
+    background: #822733; /* rich warm bordeaux, not black */
+    border-color: #822733;
     box-shadow: 0 8px 24px rgba(109, 33, 43, 0.15);
   }
 
@@ -828,8 +828,8 @@
 
   /* ==================== FOOTER ==================== */
   .footer {
-    background: var(--ink);
-    color: var(--white);
+    background: var(--paper);
+    color: var(--gray-1);
     padding: 80px 48px 40px 48px;
     border-top: 1px solid var(--line);
   }
@@ -849,13 +849,14 @@
     letter-spacing: 0.15em;
     line-height: 1.1;
     margin-bottom: 24px;
+    color: var(--ink);
   }
 
   .footer-brand h3 em { font-style: italic; }
 
   .footer-brand p {
     font-size: 12px;
-    color: var(--gray-3);
+    color: var(--gray-2);
     line-height: 1.7;
     margin-bottom: 24px;
     max-width: 80%;
@@ -867,12 +868,12 @@
   }
 
   .footer-social a {
-    color: var(--gray-3);
+    color: var(--gray-2);
     transition: color 0.3s;
   }
 
   .footer-social a:hover {
-    color: var(--white);
+    color: var(--bordeaux);
   }
 
   .footer-col h4 {
@@ -881,7 +882,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--white);
+    color: var(--ink);
     margin-bottom: 24px;
   }
 
@@ -891,27 +892,27 @@
 
   .footer-col li {
     font-size: 12px;
-    color: var(--gray-3);
+    color: var(--gray-2);
     margin-bottom: 12px;
     cursor: pointer;
     transition: color 0.3s;
   }
 
   .footer-col li:hover {
-    color: var(--white);
+    color: var(--bordeaux);
   }
 
   .footer-bottom {
     max-width: 1400px;
     margin: 0 auto;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--line);
     padding-top: 32px;
     display: flex;
     justify-content: space-between;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.15em;
-    color: var(--gray-3);
+    color: var(--gray-2);
   }
 
 
