@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Seregno | Fureco HQ | Fureco</title>
+  <meta name="description" content="L'atelier storico di Fureco a Seregno (MB). Cuore produttivo dal 1924: pellicce artigianali, bespoke, restyling e archivio storico. Prenota la tua visita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design System Variables ─── */
+    :root {
+      --bordeaux:      #6d212b;
+      --paper:         #fafaf8;
+      --bone:          #f5f3ef;
+      --ink:           #1f1d1a;
+      --tortora:       #b8aa97;
+      --line:          #e8e5df;
+      --gray-1:        #4a4844;
+      --gray-2:        #7a766f;
+      --gray-3:        #a8a39a;
+      --white:         #ffffff;
+      --line-soft:     #efece6;
+      --tortora-deep:  #968671;
+      --tortora-light: #e0d8cb;
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── Utility Bar ─── */
+    .utility-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--ink);
+      color: var(--gray-3);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0 32px;
+      height: 36px;
+    }
+
+    .utility-bar span { flex: 1; }
+    .utility-bar span:last-child { text-align: right; }
+    .utility-bar a { transition: color 0.2s; }
+    .utility-bar a:hover { color: var(--bordeaux); }
+
+    /* ─── Main Nav ─── */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 0 32px;
+      height: 72px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left,
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex: 1;
+    }
+
+    .nav-right { justify-content: flex-end; }
+
+    .nav-item {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray-1);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-item:hover { color: var(--bordeaux); }
+
+    .nav-logo {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--ink);
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .nav-logo .accent {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.22em;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-icons { display: flex; align-items: center; gap: 12px; }
+    .nav-icon {
+      color: var(--gray-1);
+      cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+    .nav-icon:hover { color: var(--bordeaux); }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.70) 100%);
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 90px;
+      font-weight: 300;
+      line-height: 0.9;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ─── Section Eyebrow ─── */
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    /* ─── Section 01 — About Seregno ─── */
+    .section-about {
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .about-text-col { display: flex; flex-direction: column; justify-content: center; }
+
+    .about-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .about-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .info-grid {
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 32px;
+    }
+
+    .info-item { display: flex; flex-direction: column; gap: 6px; }
+
+    .info-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .info-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gray-1);
+      line-height: 1.4;
+    }
+
+    /* ─── Section 02 — Cosa Vedi in Atelier ─── */
+    .section-cards {
+      background: var(--bone);
+      padding: 80px 0;
+    }
+
+    .section-cards-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .cards-header { margin-bottom: 48px; }
+
+    .cards-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-top: 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 40px 32px;
+      transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(31,29,26,0.08);
+    }
+
+    .card-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: var(--bordeaux);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .card-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.8;
+    }
+
+    /* ─── CTA Section ─── */
+    .section-cta {
+      background: var(--bone);
+      border-top: 1px solid var(--line);
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .cta-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--bordeaux);
+      border: 1px solid var(--bordeaux);
+      padding: 16px 40px;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--bordeaux);
+    }
+
+    .cta-contacts {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cta-contact-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .cta-contact-link:hover { color: var(--bordeaux); }
+    .cta-contact-link .contact-icon { font-size: 15px; }
+    .cta-contact-separator {
+      width: 1px;
+      height: 16px;
+      background: var(--line);
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      background: var(--ink);
+      color: var(--gray-3);
+      padding: 72px 48px 0;
+    }
+
+    .footer-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .footer-brand h3 em {
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      color: var(--gray-3);
+    }
+
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--gray-3);
+      margin-bottom: 28px;
+    }
+
+    .footer-social { display: flex; gap: 16px; align-items: center; }
+    .footer-social a {
+      color: var(--gray-3);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social a:hover { color: var(--white); }
+
+    .footer-col h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-3);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .footer-col ul li:hover { color: var(--white); }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: rgba(168,163,154,0.5);
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ─── Mobile Responsive ─── */
+    @media (max-width: 768px) {
+
+      /* Utility bar */
+      .utility-bar {
+        padding: 0 16px;
+        font-size: 9px;
+        gap: 8px;
+      }
+      .utility-bar span:first-child { display: none; }
+
+      /* Nav */
+      .main-nav {
+        padding: 0 16px;
+        height: 60px;
+      }
+      .nav-left,
+      .nav-right { display: none; }
+      .nav-logo {
+        font-size: 22px;
+        flex: 1;
+        text-align: center;
+      }
+
+      /* Hero */
+      .hero-content {
+        padding: 40px 24px;
+      }
+      .hero-headline {
+        font-size: 52px;
+      }
+      .hero-subhead {
+        font-size: 16px;
+      }
+
+      /* Section 01 */
+      .section-about {
+        padding: 56px 24px;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-image {
+        aspect-ratio: 3/2;
+      }
+      .about-title {
+        font-size: 36px;
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      /* Section 02 */
+      .section-cards {
+        padding: 56px 0;
+      }
+      .section-cards-inner {
+        padding: 0 24px;
+      }
+      .cards-title {
+        font-size: 32px;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .card {
+        padding: 28px 24px;
+      }
+
+      /* CTA */
+      .section-cta {
+        padding: 56px 24px;
+      }
+      .cta-title {
+        font-size: 30px;
+      }
+      .cta-contacts {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cta-contact-separator { display: none; }
+
+      /* Footer */
+      .footer {
+        padding: 48px 24px 0;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <div class="utility-bar">
+    <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+    <a href="index.html" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+    <span>IT / EN</span>
+  </div>
+  <nav class="main-nav">
+    <div class="nav-left">
+      <span class="nav-item">Brand</span>
+      <span class="nav-item">Collezioni</span>
+      <span class="nav-item">Servizi</span>
+    </div>
+    <div class="nav-logo">
+      FURECO
+      <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-item">Showroom</span>
+      <span class="nav-item">Contatti</span>
+      <span class="nav-item">Sostenibilità</span>
+      <div class="nav-icons">
+        <div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">⌕</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <img
+      class="hero-bg"
+      src="L'arte della pellicceria/01_img_furecoworld-1.jpg"
+      alt="Atelier Fureco Seregno — La sede storica"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">— VIA MAGENTA, 35 · SEREGNO (MB)</p>
+      <h1 class="hero-headline">Atelier<br>Seregno</h1>
+      <p class="hero-subhead">La sede storica — dove nasce ogni capo Fureco</p>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 01 — ABOUT SEREGNO ─── -->
+  <section>
+    <div class="section-about">
+      <p class="section-eyebrow">01 — L'ATELIER STORICO</p>
+      <div class="about-grid">
+        <!-- Image -->
+        <div>
+          <img
+            class="about-image"
+            src="L'arte della pellicceria/02_img_furecoworld.jpg"
+            alt="L'atelier storico Fureco a Seregno"
+          />
+        </div>
+        <!-- Text -->
+        <div class="about-text-col">
+          <h2 class="about-title">L'Atelier Storico</h2>
+          <p class="about-body">L'atelier di Seregno è il cuore produttivo di Fureco. Qui, artigiani esperti lavorano quotidianamente alla creazione e trasformazione dei capi più esclusivi. È il luogo dove ogni pelliccia prende vita: dalla selezione delle pelli alla lavorazione manuale, fino al controllo qualità finale. Visitare l'atelier significa immergersi nel processo creativo che dal 1924 distingue la famiglia Gavazzi nel mondo della pellicceria italiana.</p>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">INDIRIZZO</span>
+              <span class="info-value">Via Magenta, 35 — Seregno (MB)</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">ORARI</span>
+              <span class="info-value">Lunedì–Venerdì 9:00–18:00 · Su appuntamento</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 02 — COSA VEDI IN ATELIER ─── -->
+  <section class="section-cards">
+    <div class="section-cards-inner">
+      <p class="section-eyebrow">02 — COSA VEDI IN ATELIER</p>
+      <div class="cards-header">
+        <h2 class="cards-title">Il laboratorio artigianale</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <p class="card-eyebrow">IL LABORATORIO</p>
+          <p class="card-text">Scopri le fasi di lavorazione artigianale delle pellicce più esclusive.</p>
+        </div>
+        <div class="card">
+          <p class="card-eyebrow">BESPOKE &amp; RESTYLING</p>
+          <p class="card-text">Consulenza personalizzata per capi su misura e rimessa a modello.</p>
+        </div>
+        <div class="card">
+          <p class="card-eyebrow">ARCHIVIO STORICO</p>
+          <p class="card-text">Un patrimonio di modelli e tecniche tramandato da quattro generazioni.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA SECTION ─── -->
+  <section class="section-cta">
+    <h2 class="cta-title">Visita l'Atelier</h2>
+    <p class="cta-desc">Prenota una visita esclusiva al cuore produttivo di Fureco a Seregno.</p>
+    <div class="cta-actions">
+      <a href="prenota.html" class="btn-primary">Prenota una Visita all'Atelier</a>
+      <div class="cta-contacts">
+        <a class="cta-contact-link" href="tel:+390287038516">
+          <span class="contact-icon">☎</span>
+          +39 02 87038516
+        </a>
+        <div class="cta-contact-separator"></div>
+        <a class="cta-contact-link" href="https://wa.me/393443909855">
+          <span class="contact-icon">💬</span>
+          +39 344 390 9855
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+        <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Brand</h4><ul><li>Fabio Gavazzi</li><li>Fabio Gavazzi Man</li><li>Mavina</li><li>Fureco Home</li></ul></div>
+      <div class="footer-col"><h4>Esplora</h4><ul><li>Collezioni</li><li>Shop online</li><li>Virtual Showroom</li></ul></div>
+      <div class="footer-col"><h4>Servizi</h4><ul><li>Bespoke</li><li>Made to Measure</li><li>Fur Restyling</li><li>Cura &amp; Conservazione</li></ul></div>
+      <div class="footer-col"><h4>Azienda</h4><ul><li>Chi siamo</li><li>Sostenibilità</li><li>Showroom</li><li>Contatti</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+      <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+    </div>
+  </footer>
+
+</body>
+</html>

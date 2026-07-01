@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showroom Milano Montenapoleone | Fabio Gavazzi | Fureco</title>
+  <meta name="description" content="Visita lo showroom Fabio Gavazzi in Via Montenapoleone 23, Milano. Collezioni esclusive, bespoke e restyling pellicce. Solo su appuntamento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens ─────────────────────────────────────────── */
+    :root {
+      --bordeaux:       #6d212b;
+      --paper:          #fafaf8;
+      --bone:           #f5f3ef;
+      --ink:            #1f1d1a;
+      --tortora:        #b8aa97;
+      --line:           #e8e5df;
+      --gray-1:         #4a4844;
+      --gray-2:         #7a766f;
+      --gray-3:         #a8a39a;
+      --white:          #ffffff;
+      --line-soft:      #efece6;
+      --tortora-deep:   #968671;
+      --tortora-light:  #e0d8cb;
+    }
+
+    /* ── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Utility Bar ────────────────────────────────────────────── */
+    .utility-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--ink);
+      color: var(--white);
+      padding: 8px 48px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .utility-bar span { opacity: 0.75; }
+
+    /* ── Main Nav ───────────────────────────────────────────────── */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-item {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-1);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-item:hover { color: var(--bordeaux); }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+    .nav-logo .accent {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      color: var(--gray-3);
+      margin-top: 5px;
+      font-weight: 400;
+    }
+    .nav-icons { display: flex; align-items: center; gap: 16px; }
+    .nav-icon {
+      cursor: pointer;
+      color: var(--gray-2);
+      transition: color 0.2s;
+    }
+    .nav-icon:hover { color: var(--bordeaux); }
+
+    /* ── HERO ───────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('showroom-milano.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 100%);
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 80px;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 90px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 0.9;
+      margin-bottom: 24px;
+    }
+    .hero-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── Section Eyebrow Shared ─────────────────────────────────── */
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    /* ── Section 01 — Info Showroom ─────────────────────────────── */
+    .section-info {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 0;
+      margin-bottom: 48px;
+    }
+    .info-text {
+      padding-right: 64px;
+    }
+    .info-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.8;
+    }
+    .info-image {
+      overflow: hidden;
+    }
+    .info-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Info boxes 2×2 */
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      margin-top: 48px;
+    }
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+    .info-box-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 12px;
+    }
+    .info-box-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gray-1);
+      line-height: 1.4;
+    }
+
+    /* ── Section 02 — Servizi ───────────────────────────────────── */
+    .section-servizi {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .section-servizi .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .servizi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .servizi-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 40px 32px;
+      min-height: 260px;
+      transition: background 0.25s ease;
+      cursor: default;
+    }
+    .servizi-card:hover { background: var(--bone); }
+    .servizi-card-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 20px;
+    }
+    .servizi-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    /* ── CTA Section ────────────────────────────────────────────── */
+    .section-cta {
+      padding: 80px 48px;
+      text-align: center;
+      background: var(--bone);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-cta .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .section-cta .cta-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--bordeaux);
+      padding: 14px 32px;
+      border: 1px solid var(--bordeaux);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover {
+      background: #5a1a22;
+      border-color: #5a1a22;
+    }
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      background: var(--white);
+      padding: 14px 32px;
+      border: 1px solid var(--bordeaux);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: var(--bordeaux);
+      color: var(--white);
+    }
+    .cta-tel {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--bordeaux);
+      letter-spacing: 0.1em;
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .cta-tel:hover { opacity: 0.7; }
+
+    /* ── Recensioni ─────────────────────────────────────────────── */
+    .section-recensioni {
+      background: var(--bone);
+      padding: 80px 48px;
+    }
+    .recensioni-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .recensioni-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 12px;
+    }
+    .recensioni-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 48px;
+    }
+    .recensioni-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .recensione-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 40px;
+    }
+    .recensione-stars {
+      color: var(--bordeaux);
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+    .recensione-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gray-1);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .recensione-author {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--gray-3);
+      text-transform: uppercase;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      color: var(--white);
+      padding: 72px 48px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1400px;
+      margin: 0 auto 56px;
+    }
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .footer-brand h3 em {
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      opacity: 0.6;
+    }
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.55);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover {
+      border-color: var(--tortora);
+      color: var(--tortora);
+    }
+    .footer-col h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+    .footer-col ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .footer-col ul li:hover { color: var(--tortora); }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── Mobile Responsive ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      /* Utility bar */
+      .utility-bar {
+        padding: 8px 20px;
+        font-size: 9px;
+        gap: 8px;
+      }
+      .utility-bar span:first-child { display: none; }
+
+      /* Nav */
+      .main-nav {
+        padding: 0 20px;
+        height: 60px;
+      }
+      .nav-left, .nav-right { display: none; }
+      .nav-logo { font-size: 20px; }
+
+      /* Hero */
+      .hero-content { padding: 40px 24px; }
+      .hero-headline { font-size: 56px; }
+      .hero-subhead { font-size: 16px; }
+
+      /* Section 01 */
+      .section-info { padding: 56px 24px; }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-text { padding-right: 0; margin-bottom: 32px; }
+      .info-image { height: 260px; }
+      .info-boxes { grid-template-columns: 1fr; }
+
+      /* Section 02 */
+      .section-servizi .container { padding: 0 24px; }
+      .servizi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      /* CTA */
+      .section-cta { padding: 56px 24px; }
+      .section-cta .cta-title { font-size: 30px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+
+      /* Recensioni */
+      .section-recensioni { padding: 56px 24px; }
+      .recensioni-title { font-size: 36px; }
+      .recensioni-grid { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer { padding: 48px 24px 24px; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      /* Section titles */
+      .section-title { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Utility Bar ──────────────────────────────────────────── -->
+  <div class="utility-bar">
+    <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+    <a href="index.html" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+    <span>IT / EN</span>
+  </div>
+
+  <!-- ── Main Nav ─────────────────────────────────────────────── -->
+  <nav class="main-nav">
+    <div class="nav-left">
+      <span class="nav-item">Brand</span>
+      <span class="nav-item">Collezioni</span>
+      <span class="nav-item">Servizi</span>
+    </div>
+    <div class="nav-logo">
+      FURECO
+      <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-item">Showroom</span>
+      <span class="nav-item">Contatti</span>
+      <span class="nav-item">Sostenibilità</span>
+      <div class="nav-icons">
+        <div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">⌕</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero Showroom Milano">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">— VIA MONTENAPOLEONE, 23 · MILANO</p>
+      <h1 class="hero-headline">Showroom<br>Milano</h1>
+      <p class="hero-subhead">Palazzo Gavazzi — il cuore della moda italiana</p>
+    </div>
+  </section>
+
+  <!-- ── Section 01 — Info Showroom ───────────────────────────── -->
+  <section aria-labelledby="section01-title">
+    <div class="section-info">
+      <p class="section-eyebrow">01 — LO SHOWROOM</p>
+      <h2 class="section-title" id="section01-title">Exclusivity in the heart of Milan</h2>
+
+      <div class="info-grid">
+        <div class="info-text">
+          <p>Fabio Gavazzi creations are available at the prestigious Milan showroom on Via Montenapoleone 23, housed in the eponymous Palazzo Gavazzi, a historic building dating back to the early 19th century. Here, you can experience the elegance of Made in Italy and the remarkable versatility of handcrafted garments, with a high level of personalization and bespoke design. Visit our Milan showroom to explore the latest collections and enjoy a truly personalized luxury experience.</p>
+        </div>
+        <div class="info-image">
+          <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Interno showroom Fabio Gavazzi — Palazzo Gavazzi, Via Montenapoleone 23 Milano" />
+        </div>
+      </div>
+
+      <!-- Info boxes 2×2 -->
+      <div class="info-boxes">
+        <div class="info-box">
+          <p class="info-box-label">Indirizzo</p>
+          <p class="info-box-value">Via Montenapoleone, 23 — Milano</p>
+        </div>
+        <div class="info-box">
+          <p class="info-box-label">Orari</p>
+          <p class="info-box-value">Lunedì–Venerdì 10:00–18:00 · Solo su appuntamento</p>
+        </div>
+        <div class="info-box">
+          <p class="info-box-label">Telefono</p>
+          <p class="info-box-value">+39 02 87038516</p>
+        </div>
+        <div class="info-box">
+          <p class="info-box-label">WhatsApp</p>
+          <p class="info-box-value">+39 344 390 9855</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 02 — Servizi Disponibili ─────────────────────── -->
+  <section class="section-servizi" aria-labelledby="section02-title">
+    <div class="container">
+      <p class="section-eyebrow">02 — SERVIZI IN SHOWROOM</p>
+      <h2 class="section-title" id="section02-title">Cosa puoi fare da noi</h2>
+
+      <div class="servizi-grid">
+        <div class="servizi-card">
+          <p class="servizi-card-eyebrow">Collezione FW</p>
+          <h3 class="servizi-card-title">Esplora i capi della stagione in corso</h3>
+        </div>
+        <div class="servizi-card">
+          <p class="servizi-card-eyebrow">Bespoke</p>
+          <h3 class="servizi-card-title">Progetta il tuo capo su misura con i nostri esperti</h3>
+        </div>
+        <div class="servizi-card">
+          <p class="servizi-card-eyebrow">Restyling</p>
+          <h3 class="servizi-card-title">Porta la tua pelliccia per un consulto gratuito</h3>
+        </div>
+        <div class="servizi-card">
+          <p class="servizi-card-eyebrow">Virtual Preview</p>
+          <h3 class="servizi-card-title">Prima visita? Prenota una video-call</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Section ───────────────────────────────────────────── -->
+  <section class="section-cta" aria-label="Prenota un appuntamento">
+    <h2 class="cta-title">Prenota la tua visita</h2>
+    <p class="cta-desc">Contattaci per fissare un appuntamento esclusivo nel nostro showroom.</p>
+    <div class="cta-buttons">
+      <a href="prenota.html" class="btn-primary">Prenota un Appuntamento</a>
+      <a href="https://wa.me/393443909855" class="btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+    <a href="tel:+390287038516" class="cta-tel">+39 02 87038516</a>
+  </section>
+
+  <!-- ── Recensioni ────────────────────────────────────────────── -->
+  <section class="section-recensioni" aria-labelledby="recensioni-title">
+    <div class="recensioni-container">
+      <p class="recensioni-eyebrow">L'OPINIONE DEI NOSTRI CLIENTI</p>
+      <h2 class="recensioni-title" id="recensioni-title">Cosa dicono di noi</h2>
+
+      <div class="recensioni-grid">
+        <article class="recensione-card">
+          <div class="recensione-stars" aria-label="5 stelle">★★★★★</div>
+          <blockquote class="recensione-quote">"Un'esperienza d'acquisto impeccabile. Il cappotto su misura è un capolavoro di sartoria e la qualità dei materiali è eccellente."</blockquote>
+          <p class="recensione-author">— Elena M.</p>
+        </article>
+        <article class="recensione-card">
+          <div class="recensione-stars" aria-label="5 stelle">★★★★★</div>
+          <blockquote class="recensione-quote">"L'atelier di Seregno offre un servizio su misura senza pari. La consulenza per il restyling della mia pelliccia vintage è stata preziosissima."</blockquote>
+          <p class="recensione-author">— Sofia R.</p>
+        </article>
+        <article class="recensione-card">
+          <div class="recensione-stars" aria-label="5 stelle">★★★★★</div>
+          <blockquote class="recensione-quote">"I dettagli in zibellino fanno la differenza. Ho acquistato la collezione uomo ed è diventato il mio punto di riferimento per il lusso invernale."</blockquote>
+          <p class="recensione-author">— Marco T.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+        <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Brand</h4><ul><li>Fabio Gavazzi</li><li>Fabio Gavazzi Man</li><li>Mavina</li><li>Fureco Home</li></ul></div>
+      <div class="footer-col"><h4>Esplora</h4><ul><li>Collezioni</li><li>Shop online</li><li>Virtual Showroom</li></ul></div>
+      <div class="footer-col"><h4>Servizi</h4><ul><li>Bespoke</li><li>Made to Measure</li><li>Fur Restyling</li><li>Cura &amp; Conservazione</li></ul></div>
+      <div class="footer-col"><h4>Azienda</h4><ul><li>Chi siamo</li><li>Sostenibilità</li><li>Showroom</li><li>Contatti</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+      <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+    </div>
+  </footer>
+
+</body>
+</html>

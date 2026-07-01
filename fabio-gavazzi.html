@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabio Gavazzi — Alta Moda Donna · Fureco</title>
+  <meta name="description" content="Fabio Gavazzi è il brand di punta di Fureco: alta moda donna in visone, zibellino e cincillà, artigianato italiano dal 1924. Scopri le collezioni e il nostro showroom di Via Montenapoleone, Milano." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bordeaux:#6d212b; --paper:#fafaf8; --bone:#f5f3ef; --ink:#1f1d1a;
+      --tortora:#b8aa97; --line:#e8e5df; --gray-1:#4a4844; --gray-2:#7a766f;
+      --gray-3:#a8a39a; --white:#ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* UTILITY BAR */
+    .utility-bar { display:flex; align-items:center; justify-content:space-between; background:var(--bone); border-bottom:1px solid var(--line); color:var(--gray-2); padding:10px 48px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+    .utility-bar a { color:var(--bordeaux); }
+
+    /* MAIN NAV */
+    .main-nav { display:flex; align-items:center; justify-content:space-between; background:var(--white); border-bottom:1px solid var(--line); padding:0 48px; height:72px; position:sticky; top:0; z-index:100; }
+    .nav-left, .nav-right { display:flex; align-items:center; gap:32px; }
+    .nav-item { font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--gray-1); cursor:pointer; transition:color .2s; }
+    .nav-item:hover { color:var(--bordeaux); }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:400; letter-spacing:.25em; text-align:center; line-height:1; }
+    .nav-logo .accent { display:block; font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:.2em; color:var(--bordeaux); margin-top:4px; text-transform:uppercase; }
+    .nav-icon { cursor:pointer; color:var(--gray-1); transition:color .2s; font-size:18px; }
+    .nav-icon:hover { color:var(--bordeaux); }
+
+    /* LAYOUT */
+    .container { max-width:1400px; margin:0 auto; padding:0 48px; }
+    .eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); }
+
+    /* HERO */
+    .hero { position:relative; height:100vh; min-height:640px; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; z-index:0; }
+    .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(to right, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 100%); }
+    .hero-content { position:absolute; bottom:80px; left:80px; z-index:2; max-width:560px; }
+    .hero-eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); }
+    .hero-headline { font-family:'Cormorant Garamond',serif; font-size:90px; font-weight:300; line-height:.95; color:var(--white); margin-top:16px; }
+    .hero-subhead { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:28px; color:rgba(255,255,255,.80); margin-top:16px; line-height:1.3; }
+    .hero-cta { display:inline-block; margin-top:32px; padding:16px 40px; background:var(--bordeaux); color:var(--white); border:1px solid var(--bordeaux); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; transition:background .25s,color .25s; }
+    .hero-cta:hover { background:transparent; color:var(--bordeaux); border-color:var(--bordeaux); }
+    .hero-secondary { display:inline-block; margin-top:12px; margin-left:16px; font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.7); border-bottom:1px solid rgba(255,255,255,.4); padding-bottom:2px; transition:color .2s; }
+    .hero-secondary:hover { color:var(--white); border-color:var(--white); }
+
+    /* SECTIONS */
+    .section { padding:120px 0; }
+    .section-white { background:var(--white); }
+    .section-bone { background:var(--bone); }
+
+    /* BRAND GRID */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .section-heading { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:300; color:var(--ink); margin-top:16px; line-height:1.1; }
+    .section-body { font-family:'Inter',sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-top:24px; }
+    .text-link { display:inline-block; margin-top:32px; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:2px; transition:opacity .2s; }
+    .text-link:hover { opacity:.7; }
+    .aspect-45 { width:100%; aspect-ratio:4/5; object-fit:cover; }
+
+    /* PRODUCT GRID */
+    .grid-header { display:flex; justify-content:space-between; align-items:center; margin-top:16px; }
+    .grid-title { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--ink); }
+    .grid-link { font-family:'Inter',sans-serif; font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:1px; transition:opacity .2s; }
+    .grid-link:hover { opacity:.7; }
+    .product-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
+    .product-card { display:block; border:1px solid var(--line); transition:border-color .3s; background:var(--white); }
+    .product-card:hover { border-color:var(--tortora); }
+    .product-img-wrap { aspect-ratio:3/4; overflow:hidden; background:var(--bone); }
+    .product-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+    .product-card:hover .product-img-wrap img { transform:scale(1.04); }
+    .product-info { padding:20px; }
+    .product-code { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--bordeaux); letter-spacing:.12em; }
+    .product-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; color:var(--ink); margin-top:6px; line-height:1.2; }
+    .product-material { font-family:'Inter',sans-serif; font-size:11px; color:var(--gray-2); margin-top:4px; }
+    .product-cta { display:inline-block; margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:1px; }
+
+    /* SHOWROOM BOX */
+    .showroom-box { background:var(--white); border:1px solid var(--line); padding:40px; }
+    .showroom-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:24px; }
+    .showroom-address { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:20px; color:var(--ink); line-height:1.4; }
+    .showroom-contact { font-family:'Inter',sans-serif; font-size:13px; color:var(--gray-1); margin-top:16px; line-height:1.7; }
+    .showroom-hours { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gray-2); letter-spacing:.08em; margin-top:16px; line-height:1.6; }
+    .showroom-map { display:block; margin-top:24px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:1px; width:fit-content; transition:opacity .2s; }
+    .showroom-map:hover { opacity:.7; }
+
+    /* BTN */
+    .btn-primary { display:inline-block; margin-top:32px; padding:16px 40px; background:var(--bordeaux); color:var(--white); border:1px solid var(--bordeaux); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; transition:background .25s,color .25s; }
+    .btn-primary:hover { background:transparent; color:var(--bordeaux); }
+
+    /* REVIEWS */
+    .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+    .review-card { padding:40px; background:var(--bone); border:1px solid var(--line); }
+    .review-stars { font-size:18px; letter-spacing:2px; color:var(--bordeaux); }
+    .review-name { font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--bordeaux); margin-top:24px; }
+    .review-text { font-family:'Inter',sans-serif; font-size:13px; font-style:italic; color:var(--gray-2); line-height:1.7; margin-top:8px; }
+
+    /* FOOTER — CHIARO */
+    .footer { background:var(--paper); color:var(--gray-1); padding:80px 48px 40px; border-top:1px solid var(--line); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:48px; padding-bottom:60px; border-bottom:1px solid var(--line); max-width:1400px; margin:0 auto; }
+    .footer-brand h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; letter-spacing:.2em; margin-bottom:16px; color:var(--ink); }
+    .footer-brand p { font-size:12px; color:var(--gray-2); line-height:1.7; max-width:320px; }
+    .footer-social { margin-top:24px; display:flex; gap:12px; }
+    .footer-social a { border:1px solid var(--line); width:36px; height:36px; display:flex; align-items:center; justify-content:center; color:var(--gray-2); transition:color .3s,border-color .3s; }
+    .footer-social a:hover { color:var(--bordeaux); border-color:var(--bordeaux); }
+    .footer-col h4 { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:20px; }
+    .footer-col li { font-size:12px; color:var(--gray-1); margin-bottom:10px; cursor:pointer; transition:color .2s; }
+    .footer-col li:hover { color:var(--bordeaux); }
+    .footer-col a { color:inherit; }
+    .footer-bottom { display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--gray-3); letter-spacing:.15em; max-width:1400px; margin:32px auto 0; }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+      .utility-bar { padding:8px 24px; font-size:9px; }
+      .utility-bar span:first-child { display:none; }
+      .main-nav { padding:0 24px; height:60px; }
+      .nav-left, .nav-right { display:none; }
+      .hero-content { bottom:40px; left:24px; right:24px; max-width:100%; }
+      .hero-headline { font-size:54px; }
+      .hero-subhead { font-size:18px; }
+      .hero-secondary { display:block; margin-left:0; margin-top:12px; }
+      .container { padding:0 24px; }
+      .section { padding:60px 0; }
+      .two-col { grid-template-columns:1fr; gap:40px; }
+      .section-heading { font-size:36px; }
+      .product-grid { grid-template-columns:repeat(2,1fr); gap:16px; }
+      .grid-title { font-size:30px; }
+      .reviews-grid { grid-template-columns:1fr; }
+      .footer { padding:60px 24px 32px; }
+      .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
+      .footer-brand { grid-column:1/-1; }
+      .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+  <a href="prenota.html">Prenota una visita &rarr;</a>
+  <span>IT / EN</span>
+</div>
+
+<!-- MAIN NAV -->
+<nav class="main-nav">
+  <div class="nav-left">
+    <a href="about.html" class="nav-item">Azienda</a>
+    <a href="fabio-gavazzi.html" class="nav-item">Brand</a>
+    <a href="collezioni-donna.html" class="nav-item">Collezioni</a>
+  </div>
+  <a href="index.html" class="nav-logo">
+    FURECO
+    <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+  </a>
+  <div class="nav-right">
+    <a href="servizi.html" class="nav-item">Servizi</a>
+    <a href="showroom.html" class="nav-item">Showroom</a>
+    <a href="sostenibilita.html" class="nav-item">Sostenibilità</a>
+    <div style="display:flex;gap:12px;">
+      <span class="nav-icon">&#9906;</span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Alta Moda Donna — Collezione FW 2025" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">— BRAND DI PUNTA · ALTA MODA DONNA</p>
+    <h1 class="hero-headline">Fabio<br/>Gavazzi</h1>
+    <p class="hero-subhead">Tradizione artigianale.<br/>Lusso contemporaneo.</p>
+    <div style="margin-top:32px; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+      <a class="hero-cta" href="#collezione">Scopri la Collezione</a>
+      <a class="hero-secondary" href="prenota.html">Prenota una visita privata</a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 — IL BRAND -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow">01 — IL BRAND</p>
+        <h2 class="section-heading">Italian Excellence,<br/>dal 1924</h2>
+        <p class="section-body">Fabio Gavazzi è il brand di punta di Fureco, azienda italiana di famiglia nel campo della pellicceria di pregio da quattro generazioni. Un atelier storico dove l'arte della pellicceria si tramanda da oltre un secolo con la stessa passione e attenzione al dettaglio. Qui prendono forma creazioni di lusso in visone, zibellino e cincillà, insieme a raffinati cappotti in cashmere arricchiti da dettagli in pelliccia, tutti interamente realizzati a mano in Italia.</p>
+        <a class="text-link" href="about.html">La nostra storia &rarr;</a>
+      </div>
+      <div>
+        <img class="aspect-45" src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Artigianato Fureco — Fabio Gavazzi" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — COLLEZIONE DONNA FW 2025 -->
+<section class="section section-white" id="collezione">
+  <div class="container">
+    <p class="eyebrow">02 — COLLEZIONE DONNA FW 2025</p>
+    <div class="grid-header">
+      <h2 class="grid-title">Collezione Donna</h2>
+      <a class="grid-link" href="collezioni-donna.html">Vedi tutta la collezione &rarr;</a>
+    </div>
+    <div class="product-grid">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2296PIVR_A.jpg" alt="Cappotto in Visone FG2296PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2296PIVR</p>
+          <p class="product-name">Cappotto in Visone</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2343FDOR_B.jpg" alt="Cappotto in Zibellino FG2343FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2343FDOR</p>
+          <p class="product-name">Cappotto in Zibellino</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2355PIVR_B.jpg" alt="Gilet in Visone FG2355PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2355PIVR</p>
+          <p class="product-name">Gilet in Visone</p>
+          <p class="product-material">Visone · Cashmere LP</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2368FDOR_B.jpg" alt="Pelliccia Zibellino FG2368FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2368FDOR</p>
+          <p class="product-name">Pelliccia Zibellino</p>
+          <p class="product-material">Zibellino Dorato · Made in Italy</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — SHOWROOM MILANO -->
+<section class="section section-bone">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow">03 — SHOWROOM MILANO</p>
+        <h2 class="section-heading">Un'esperienza esclusiva nel cuore di Milano</h2>
+        <p class="section-body">Le creazioni Fabio Gavazzi sono disponibili nel prestigioso showroom di Milano in Via Montenapoleone 23, presso il Palazzo Gavazzi, edificio storico risalente ai primi dell'Ottocento. Qui potrai toccare con mano l'eleganza del Made in Italy e la straordinaria versatilità di capi fatti a mano.</p>
+        <a class="btn-primary" href="prenota.html">Prenota una Visita Privata</a>
+      </div>
+      <div>
+        <div class="showroom-box">
+          <p class="showroom-label">SHOWROOM FABIO GAVAZZI</p>
+          <p class="showroom-address">Via Montenapoleone, 23 — Milano</p>
+          <p class="showroom-contact">+39 02 87038516<br/>+39 344 390 9855</p>
+          <p class="showroom-hours">Lunedì–Venerdì 10:00–18:00<br/>Solo su appuntamento</p>
+          <a class="showroom-map" href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" rel="noopener noreferrer">Apri in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — RECENSIONI -->
+<section class="section section-white">
+  <div class="container">
+    <p class="eyebrow">04 — COSA DICONO DI NOI</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--ink); margin-top:16px;">Le voci dei nostri clienti</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-name">Veruska R.</p>
+        <p class="review-text">"Ho avuto il piacere di acquistare una splendida pelliccia di cincillà nello showroom di Via Montenapoleone. Sono rimasta molto soddisfatta dell'alta qualità e del servizio ricevuto."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-name">Lucilla C.</p>
+        <p class="review-text">"Conosco il marchio da molti anni e ho avuto il piacere di acquistare diverse creazioni, sia in pelliccia che in tessuto. Gavazzi è sinonimo di qualità ed eccellenza italiana."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-name">Elisabetta C.</p>
+        <p class="review-text">"Il brand Fabio Gavazzi rappresenta l'eccellenza della pelliccia di alta gamma e degli accessori, con un ottimo supporto clienti e perfettamente in linea con le tendenze del lusso."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — CHIARO -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>FURECO<br/><em style="font-style:italic; font-size:14px; color:var(--gray-2);">Fur Enterprise Co.</em></h3>
+      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/FabiogavazziMilano" target="_blank" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Brand</h4><ul>
+      <li><a href="fabio-gavazzi.html">Fabio Gavazzi</a></li>
+      <li><a href="fabio-gavazzi-man.html">Fabio Gavazzi Man</a></li>
+      <li><a href="mavina.html">Mavina</a></li>
+      <li><a href="fureco-home.html">Fureco Home</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Azienda</h4><ul>
+      <li><a href="about.html">Chi Siamo</a></li>
+      <li><a href="fureco-world.html">Mondo Fureco</a></li>
+      <li><a href="sostenibilita.html">Sostenibilità</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Servizi</h4><ul>
+      <li><a href="servizi.html">Bespoke</a></li>
+      <li><a href="servizi.html">Made to Measure</a></li>
+      <li><a href="servizi.html">Fur Restyling</a></li>
+      <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Showroom</h4><ul>
+      <li><a href="showroom-montenapoleone.html">Milano · Montenapoleone</a></li>
+      <li><a href="showroom-seregno.html">Seregno (MB)</a></li>
+      <li><a href="prenota.html">Prenota Visita</a></li>
+      <li><a href="press.html">Press &amp; News</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Fureco Srl &middot; P.IVA IT00794320960</span>
+    <span>Privacy &middot; Cookie &middot; Shipping &middot; Recesso</span>
+  </div>
+</footer>
+
+</body>
+</html>

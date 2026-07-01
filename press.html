@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press & Media | Fureco</title>
+  <meta name="description" content="Fureco sulla stampa internazionale. Vogue, Elle, Vanity Fair, Grazia — la stampa di moda ci ha scelto. Contatta il nostro ufficio stampa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────── */
+    :root {
+      --bordeaux:       #6d212b;
+      --paper:          #fafaf8;
+      --bone:           #f5f3ef;
+      --ink:            #1f1d1a;
+      --tortora:        #b8aa97;
+      --line:           #e8e5df;
+      --gray-1:         #4a4844;
+      --gray-2:         #7a766f;
+      --gray-3:         #a8a39a;
+      --white:          #ffffff;
+      --line-soft:      #efece6;
+      --tortora-deep:   #968671;
+      --tortora-light:  #e0d8cb;
+    }
+
+    /* ─────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─────────────────────────────────────────
+       UTILITY BAR
+    ───────────────────────────────────────── */
+    .utility-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 48px;
+      background: var(--ink);
+      color: var(--tortora);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────────────────────
+       MAIN NAV
+    ───────────────────────────────────────── */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left,
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-item {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-1);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .nav-item:hover { color: var(--bordeaux); }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .nav-logo .accent {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.18em;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-icon {
+      cursor: pointer;
+      color: var(--gray-1);
+      transition: color 0.2s ease;
+    }
+    .nav-icon:hover { color: var(--bordeaux); }
+
+    /* ─────────────────────────────────────────
+       SECTION EYEBROW
+    ───────────────────────────────────────── */
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    /* ─────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      background: var(--bordeaux);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--bordeaux);
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background: var(--white);
+      color: var(--bordeaux);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--bordeaux);
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover {
+      background: var(--bordeaux);
+      color: var(--white);
+    }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      background: var(--bone);
+      padding: 120px 48px;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 28px;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 300;
+      line-height: 0.9;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+
+    .hero-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--gray-2);
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION 01 — I MEDIA
+    ───────────────────────────────────────── */
+    .section-media {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .section-media .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .section-media .section-header {
+      margin-bottom: 56px;
+    }
+
+    .section-media .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    /* Press grid — NO outer border on container */
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .press-tile {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.25s ease;
+      min-height: 200px;
+    }
+
+    /* Remove right border on last column (every 3rd tile) */
+    .press-tile:nth-child(3n) {
+      border-right: none;
+    }
+
+    /* Remove bottom border on last row (tiles 4, 5, 6) */
+    .press-tile:nth-child(n+4) {
+      border-bottom: none;
+    }
+
+    .press-tile:hover {
+      background: var(--bone);
+    }
+
+    .press-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .press-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION 02 — CONTATTI STAMPA
+    ───────────────────────────────────────── */
+    .section-press-contact {
+      padding: 80px 0;
+      background: var(--bone);
+    }
+
+    .section-press-contact .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .press-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .press-contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .press-contact-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .contact-box {
+      background: var(--white);
+      padding: 40px;
+      border: 1px solid var(--line);
+    }
+
+    .contact-box-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .contact-box-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--line);
+      margin: 20px 0;
+    }
+
+    .contact-email {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--bordeaux);
+      display: block;
+      margin-bottom: 8px;
+      transition: opacity 0.2s ease;
+    }
+    .contact-email:hover { opacity: 0.75; }
+
+    .contact-tel {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gray-1);
+      display: block;
+      margin-bottom: 32px;
+      transition: color 0.2s ease;
+    }
+    .contact-tel:hover { color: var(--bordeaux); }
+
+    /* ─────────────────────────────────────────
+       SECTION 03 — NEWSLETTER
+    ───────────────────────────────────────── */
+    .section-newsletter {
+      padding: 80px 0;
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .section-newsletter .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .newsletter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-2);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .newsletter-input::placeholder { color: var(--gray-3); }
+    .newsletter-input:focus { border-color: var(--bordeaux); }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      color: var(--tortora);
+      padding: 72px 48px 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: 0.12em;
+    }
+    .footer-brand h3 em {
+      font-style: italic;
+      color: var(--tortora);
+      font-size: 18px;
+    }
+
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--gray-3);
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social a {
+      color: var(--gray-3);
+      transition: color 0.2s ease;
+    }
+    .footer-social a:hover { color: var(--white); }
+
+    .footer-col h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul li {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--gray-3);
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .footer-col ul li:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gray-3);
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE — 768px breakpoint
+    ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .press-contact-grid {
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Utility bar */
+      .utility-bar {
+        padding: 10px 20px;
+        font-size: 10px;
+        gap: 8px;
+      }
+      .utility-bar span:first-child {
+        display: none;
+      }
+
+      /* Nav */
+      .main-nav {
+        padding: 0 20px;
+        height: 60px;
+      }
+      .nav-left,
+      .nav-right {
+        display: none;
+      }
+      .nav-logo {
+        font-size: 22px;
+        margin: 0 auto;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 80px 24px;
+      }
+      .hero-headline {
+        font-size: 48px;
+        line-height: 1;
+      }
+      .hero-subhead {
+        font-size: 18px;
+      }
+
+      /* Section 01 — I Media */
+      .section-media {
+        padding: 56px 0;
+      }
+      .section-media .container {
+        padding: 0 24px;
+      }
+      .section-media .section-header {
+        margin-bottom: 40px;
+      }
+      .section-media .section-title {
+        font-size: 34px;
+      }
+
+      /* Press grid: 3 cols → 2 cols on tablet */
+      .press-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Re-apply border logic for 2-col layout */
+      .press-tile {
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .press-tile:nth-child(3n) {
+        border-right: 1px solid var(--line);
+      }
+      .press-tile:nth-child(n+4) {
+        border-bottom: 1px solid var(--line);
+      }
+      /* 2-col: remove right on even tiles */
+      .press-tile:nth-child(2n) {
+        border-right: none;
+      }
+      /* 2-col: remove bottom on last 2 tiles (5th, 6th for 6 total) */
+      .press-tile:nth-child(n+5) {
+        border-bottom: none;
+      }
+
+      /* Section 02 — Contatti Stampa */
+      .section-press-contact {
+        padding: 56px 0;
+      }
+      .section-press-contact .container {
+        padding: 0 24px;
+      }
+      .press-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 36px;
+      }
+      .press-contact-title {
+        font-size: 34px;
+      }
+      .press-contact-text {
+        max-width: 100%;
+      }
+
+      /* Section 03 — Newsletter */
+      .section-newsletter {
+        padding: 56px 0;
+      }
+      .section-newsletter .container {
+        padding: 0 24px;
+      }
+      .newsletter-title {
+        font-size: 34px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+        max-width: 100%;
+      }
+      .newsletter-input {
+        width: 100%;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 48px 24px 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Press grid: 2 cols → 1 col on mobile */
+      .press-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .press-tile {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+      .press-tile:nth-child(2n) {
+        border-right: none;
+      }
+      .press-tile:nth-child(n+5) {
+        border-bottom: 1px solid var(--line);
+      }
+      /* Last tile: no bottom border */
+      .press-tile:last-child {
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── UTILITY BAR ─── -->
+  <div class="utility-bar">
+    <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+    <a href="index.html" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+    <span>IT / EN</span>
+  </div>
+
+  <!-- ─── MAIN NAV ─── -->
+  <nav class="main-nav">
+    <div class="nav-left">
+      <span class="nav-item">Brand</span>
+      <span class="nav-item">Collezioni</span>
+      <span class="nav-item">Servizi</span>
+    </div>
+    <div class="nav-logo">
+      FURECO
+      <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-item">Showroom</span>
+      <span class="nav-item">Contatti</span>
+      <span class="nav-item">Sostenibilità</span>
+      <div class="nav-icons">
+        <div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">⌕</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <span class="eyebrow">— PRESS &amp; MEDIA</span>
+    <h1 class="hero-headline">Fureco sulla<br>stampa internazionale</h1>
+    <p class="hero-subhead">Vogue, Elle, Vanity Fair, Grazia — la stampa di moda ci ha scelto.</p>
+  </section>
+
+  <!-- ─── SECTION 01 — I MEDIA ─── -->
+  <section class="section-media">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">01 — I MEDIA</span>
+        <h2 class="section-title">Presenti su</h2>
+      </div>
+      <div class="press-grid">
+
+        <div class="press-tile">
+          <span class="press-name">Vogue Italia</span>
+          <span class="press-tagline">ALTA MODA E LIFESTYLE</span>
+        </div>
+
+        <div class="press-tile">
+          <span class="press-name">Elle</span>
+          <span class="press-tagline">MODA E CULTURA</span>
+        </div>
+
+        <div class="press-tile">
+          <span class="press-name">Vanity Fair</span>
+          <span class="press-tagline">LUSSO E STILE</span>
+        </div>
+
+        <div class="press-tile">
+          <span class="press-name">Grazia</span>
+          <span class="press-tagline">TENDENZE E ATTUALITÀ</span>
+        </div>
+
+        <div class="press-tile">
+          <span class="press-name">La Repubblica Moda</span>
+          <span class="press-tagline">ECONOMIA E MODA</span>
+        </div>
+
+        <div class="press-tile">
+          <span class="press-name">Il Corriere della Sera Stile</span>
+          <span class="press-tagline">TRADIZIONE E CONTEMPORANEO</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 02 — CONTATTI STAMPA ─── -->
+  <section class="section-press-contact">
+    <div class="container">
+      <span class="eyebrow">02 — UFFICIO STAMPA</span>
+      <div class="press-contact-grid">
+
+        <!-- Left: text -->
+        <div class="press-contact-left">
+          <h2 class="press-contact-title">Richieste Stampa</h2>
+          <p class="press-contact-text">Per richieste di interviste, shooting fotografici, campionature o collaborazioni editoriali, contatta il nostro ufficio stampa. Rispondiamo entro 48 ore lavorative.</p>
+        </div>
+
+        <!-- Right: contact box -->
+        <div class="press-contact-right">
+          <div class="contact-box">
+            <span class="contact-box-label">UFFICIO STAMPA FURECO</span>
+            <a class="contact-email" href="mailto:press@fureco.it">press@fureco.it</a>
+            <div class="contact-box-divider"></div>
+            <a class="contact-tel" href="tel:+390287038516">+39 02 87038516</a>
+            <a class="btn-secondary" href="#" download>Scarica il Press Kit</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 03 — NEWSLETTER ─── -->
+  <section class="section-newsletter">
+    <div class="container">
+      <span class="eyebrow">— FUR JOURNAL</span>
+      <h2 class="newsletter-title">Rimani aggiornato<br><em>sulle novità Fureco.</em></h2>
+      <p class="newsletter-desc">Anteprime collezioni, eventi esclusivi, apertura showroom e contenuti editoriali dedicati alla stampa.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input class="newsletter-input" type="email" placeholder="La tua email" aria-label="Indirizzo email" />
+        <button class="btn-primary" type="submit">Iscriviti</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+        <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Brand</h4><ul><li>Fabio Gavazzi</li><li>Fabio Gavazzi Man</li><li>Mavina</li><li>Fureco Home</li></ul></div>
+      <div class="footer-col"><h4>Esplora</h4><ul><li>Collezioni</li><li>Shop online</li><li>Virtual Showroom</li></ul></div>
+      <div class="footer-col"><h4>Servizi</h4><ul><li>Bespoke</li><li>Made to Measure</li><li>Fur Restyling</li><li>Cura &amp; Conservazione</li></ul></div>
+      <div class="footer-col"><h4>Azienda</h4><ul><li>Chi siamo</li><li>Sostenibilità</li><li>Showroom</li><li>Contatti</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+      <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+    </div>
+  </footer>
+
+</body>
+</html>

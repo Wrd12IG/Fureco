@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sostenibilit&agrave; | Furmark&reg; | Fureco</title>
+<meta name="description" content="Fureco e Furmark: la prima azienda italiana ad adottare la certificazione internazionale per la pelliccia naturale. Tracciabilita, etica e responsabilita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff; --paper: #fafaf8; --bone: #f5f3ef; --line: #e8e5df; --line-soft: #efece6;
+    --tortora: #b8aa97; --tortora-deep: #968671; --tortora-light: #e0d8cb;
+    --ink: #1f1d1a; --gray-1: #4a4844; --gray-2: #7a766f; --gray-3: #a8a39a; --bordeaux: #6d212b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--gray-1); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.5; -webkit-font-smoothing: antialiased; letter-spacing: 0.01em; }
+  .utility-bar { border-bottom: 1px solid var(--line); padding: 10px 48px; display: flex; justify-content: space-between; align-items: center; background: var(--paper); color: var(--bordeaux); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .main-nav { padding: 28px 48px; background: var(--paper); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; position: relative; border-bottom: 1px solid var(--line); }
+  .nav-left, .nav-right { display: flex; gap: 32px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  .nav-item { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-1); cursor: pointer; padding: 8px 0; border-bottom: 1px solid transparent; transition: all 0.3s; text-decoration: none; }
+  .nav-item:hover { border-bottom-color: var(--tortora); color: var(--ink); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; letter-spacing: 0.3em; text-align: center; color: var(--ink); text-decoration: none; display: block; }
+  .nav-logo .accent { display: block; font-size: 9px; letter-spacing: 0.4em; color: var(--bordeaux); margin-top: 4px; font-family: 'Inter', sans-serif; font-style: normal; }
+  .nav-icons { display: flex; gap: 18px; }
+  .nav-icon { width: 22px; height: 22px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--gray-2); }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+  .section-pad { padding: 120px 0; }
+  .section-pad.bg-bone { background: var(--bone); }
+  .section-pad.bg-white { background: var(--white); }
+  .hero-centered { padding: 160px 48px 120px; text-align: center; background: var(--bone); border-bottom: 1px solid var(--line); }
+  .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 24px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; line-height: 0.92; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 20px; }
+  .hero-subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; font-weight: 300; line-height: 1.2; color: var(--gray-1); margin-bottom: 24px; }
+  .hero-descriptor { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300; color: var(--gray-2); letter-spacing: 0.02em; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+  .section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .section-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--tortora); }
+  .section-title-lg { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; line-height: 1; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 32px; }
+  .body-text { font-size: 14px; line-height: 1.8; color: var(--gray-1); max-width: 560px; }
+  .section-header-center { text-align: center; margin-bottom: 64px; }
+  .section-header-center .section-eyebrow { justify-content: center; }
+  .section-header-center .section-eyebrow::before { display: none; }
+  .section-title-center { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; line-height: 1; color: var(--ink); margin-bottom: 0; }
+  .cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .pillar-card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--bordeaux); padding: 48px 40px; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .pillar-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 16px; }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--ink); margin-bottom: 16px; }
+  .pillar-text { font-size: 13px; line-height: 1.75; color: var(--gray-2); }
+  .pull-quote-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .pull-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; font-weight: 300; line-height: 1.3; color: var(--bordeaux); border-left: 3px solid var(--bordeaux); padding-left: 32px; }
+  .stats-bar { background: var(--bone); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); }
+  .stat-item { text-align: center; padding: 48px 24px; border-right: 1px solid var(--line); }
+  .stat-item:last-child { border-right: none; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; line-height: 1; color: var(--bordeaux); margin-bottom: 8px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-2); }
+  .footer-quote { background: var(--bone); padding: 96px 48px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .footer-quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 44px; font-weight: 300; color: var(--ink); }
+  .cta-section { padding: 96px 0; border-top: 1px solid var(--line); text-align: center; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--ink); margin-bottom: 12px; }
+  .cta-sub { font-size: 13px; color: var(--gray-2); margin-bottom: 48px; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--bordeaux); color: var(--white); border: 1px solid var(--bordeaux); padding: 16px 36px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: transparent; color: var(--bordeaux); border-color: var(--bordeaux); }
+  .footer { background: var(--paper); color: var(--gray-1); padding: 80px 48px 40px; border-top: 1px solid var(--line); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 64px; max-width: 1400px; margin-left: auto; margin-right: auto; }
+  .footer-brand h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; letter-spacing: 0.2em; margin-bottom: 16px; color: var(--ink); }
+  .footer-brand h3 em { font-style: italic; }
+  .footer-brand p { font-size: 12px; color: var(--gray-2); line-height: 1.7; max-width: 320px; }
+  .footer-social { margin-top: 24px; display: flex; gap: 12px; }
+  .footer-social a { border: 1px solid var(--line); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--gray-2); text-decoration: none; transition: color 0.3s, border-color 0.3s; }
+  .footer-social a:hover { color: var(--bordeaux); border-color: var(--bordeaux); }
+  .footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { font-size: 12px; color: var(--gray-1); margin-bottom: 10px; cursor: pointer; }
+  .footer-col li:hover { color: var(--bordeaux); }
+  .footer-bottom { border-top: 1px solid var(--line); padding-top: 32px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-3); letter-spacing: 0.15em; max-width: 1400px; margin: 0 auto; }
+  @media (max-width: 768px) {
+    .utility-bar { flex-direction: column; gap: 6px; padding: 10px 16px; font-size: 8px; }
+    .main-nav { grid-template-columns: 1fr; padding: 16px; gap: 12px; }
+    .nav-left, .nav-right { justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .nav-item { font-size: 10px; letter-spacing: 0.12em; }
+    .nav-logo { font-size: 22px; }
+    .hero-centered { padding: 80px 24px 60px; }
+    .hero-headline { font-size: 56px; }
+    .hero-subhead { font-size: 24px; }
+    .container { padding: 0 24px; }
+    .section-pad { padding: 60px 0; }
+    .section-title-center { font-size: 36px; }
+    .body-text { max-width: 100%; }
+    .cards-row { grid-template-columns: 1fr; gap: 16px; }
+    .pillar-card { padding: 32px 24px; }
+    .pull-quote-split { grid-template-columns: 1fr; gap: 40px; }
+    .pull-quote { font-size: 26px; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--line); padding: 32px 16px; }
+    .stat-item:last-child { border-bottom: none; }
+    .stat-number { font-size: 36px; }
+    .footer-quote-text { font-size: 28px; }
+    .cta-title { font-size: 30px; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .footer { padding: 40px 20px 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .footer-brand p { max-width: 100%; margin: 0 auto; }
+    .footer-social { justify-content: center; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+    .footer-brand h3 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="utility-bar">
+  <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
+  <a href="#" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+  <span>IT / EN</span>
+</div>
+<nav class="main-nav">
+  <div class="nav-left">
+    <a href="index.html" class="nav-item">Brand</a>
+    <span class="nav-item">Collezioni</span>
+    <span class="nav-item">Servizi</span>
+  </div>
+  <a href="index.html" class="nav-logo">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
+  <div class="nav-right">
+    <span class="nav-item">Showroom</span>
+    <span class="nav-item">Contatti</span>
+    <a href="sostenibilita.html" class="nav-item" style="color:var(--bordeaux);border-bottom-color:var(--bordeaux);">Sostenibilit&agrave;</a>
+    <div class="nav-icons"><div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">&#x2315;</div></div>
+  </div>
+</nav>
+
+<!-- HERO — no image, centered bone bg -->
+<section class="hero-centered">
+  <div class="container" style="max-width:800px;">
+    <div class="hero-eyebrow">CERTIFICAZIONE INTERNAZIONALE</div>
+    <h1 class="hero-headline">Furmark&reg;</h1>
+    <p class="hero-subhead">Il sigillo della tracciabilit&agrave;</p>
+    <p class="hero-descriptor">Fureco &egrave; stata la prima azienda italiana ad adottare Furmark&reg;, la certificazione internazionale per la pelliccia naturale.</p>
+  </div>
+</section>
+
+<!-- SECTION 01 — 3 PILASTRI -->
+<section class="section-pad bg-white">
+  <div class="container">
+    <div class="section-header-center">
+      <div class="section-eyebrow">01 &mdash; I PILASTRI DELLA SOSTENIBILIT&Agrave;</div>
+      <h2 class="section-title-center">Il Nostro Impegno</h2>
+    </div>
+    <div class="cards-row">
+      <div class="pillar-card">
+        <div class="pillar-label">Furmark&reg;</div>
+        <h3 class="pillar-title">Certificazione Internazionale</h3>
+        <p class="pillar-text">Il programma internazionale di certificazione del benessere animale e della sostenibilit&agrave; ambientale per la pelliccia naturale. Fureco &egrave; stata la prima azienda italiana ad adottarlo.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-label">Etica di Filiera</div>
+        <h3 class="pillar-title">Approvvigionamento Responsabile</h3>
+        <p class="pillar-text">La nostra politica di approvvigionamento si basa sulla trasparenza e sul rispetto del benessere animale, in linea con i pi&ugrave; alti standard ambientali internazionali.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-label">Tracciabilit&agrave;</div>
+        <h3 class="pillar-title">Origine Certificata</h3>
+        <p class="pillar-text">Ogni capo viene realizzato con pellicce certificate e tracciabili. Il cliente ha la certezza di scegliere pellicce autentiche e di verificarne l&rsquo;origine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 — TESTO LUNGO (pull quote split) -->
+<section class="section-pad bg-bone">
+  <div class="container">
+    <div class="pull-quote-split">
+      <div>
+        <blockquote class="pull-quote">&ldquo;La prima azienda italiana ad adottare Furmark&reg;&rdquo;</blockquote>
+      </div>
+      <div>
+        <div class="section-eyebrow">02 &mdash; IL NOSTRO APPROCCIO</div>
+        <p class="body-text" style="max-width:100%;">Fureco was the first Italian company to adopt Furmark&reg;, the international certification for natural fur. The company follows a strict sourcing policy based on transparency and respect for animal welfare, aligned with the highest international environmental standards, ensuring that each garment is made with certified, traceable, and responsibly sourced fur. This standard provides customers with the certainty of choosing authentic furs and verifying their origin, in full compliance with Fureco&rsquo;s ongoing commitment to responsible luxury.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03 — STAT BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number">#1</div><div class="stat-label">Prima azienda italiana Furmark&reg;</div></div>
+  <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Made in Italy</div></div>
+  <div class="stat-item"><div class="stat-number">1924</div><div class="stat-label">Tradizione artigianale</div></div>
+</div>
+
+<!-- FOOTER QUOTE -->
+<div class="footer-quote">
+  <div class="container" style="max-width:800px;">
+    <p class="footer-quote-text">&ldquo;Made in Italy furs since 1924.&rdquo;</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="hero-eyebrow" style="justify-content:center;margin-bottom:16px;">&mdash; SCOPRI LA NOSTRA STORIA</div>
+    <h2 class="cta-title">Quattro Generazioni di Heritage</h2>
+    <p class="cta-sub">Dal 1924, l&rsquo;arte della pellicceria italiana</p>
+    <div class="cta-buttons">
+      <a href="about.html" class="btn-primary">Scopri il Nostro Heritage</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
+      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Brand</h4><ul><li>Fabio Gavazzi</li><li>Fabio Gavazzi Man</li><li>Mavina</li><li>Fureco Home</li></ul></div>
+    <div class="footer-col"><h4>Esplora</h4><ul><li>Collezioni</li><li>Shop online</li><li>Virtual Showroom</li></ul></div>
+    <div class="footer-col"><h4>Servizi</h4><ul><li>Bespoke</li><li>Made to Measure</li><li>Fur Restyling</li><li>Cura &amp; Conservazione</li></ul></div>
+    <div class="footer-col"><h4>Azienda</h4><ul><li><a href="about.html" style="color:inherit;text-decoration:none;">Chi siamo</a></li><li><a href="sostenibilita.html" style="color:inherit;text-decoration:none;">Sostenibilit&agrave;</a></li><li>Showroom</li><li>Contatti</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 FURECO SRL &middot; P.IVA IT00794320960</span>
+    <span>PRIVACY &middot; COOKIE &middot; SHIPPING &middot; RECESSO</span>
+  </div>
+</footer>
+</body>
+</html>
