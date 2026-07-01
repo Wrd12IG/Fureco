@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collezioni Donna — Fabio Gavazzi | Fureco</title>
-  <meta name="description" content="Collezione donna Fabio Gavazzi FW 2025 — pellicce in visone, zibellino e cincillà. Artigianato italiano dal 1924. Scopri i capi e prenota una visita privata." />
+  <meta name="description" content="Scopri la collezione donna Fabio Gavazzi FW 2025: 75 capi in cincillà, visone, zibellino, shearling e cashmere Loro Piana. Artigianato italiano dal 1924." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -25,29 +25,28 @@
     .utility-bar a { color:var(--bordeaux); }
     .main-nav { display:flex; align-items:center; justify-content:space-between; background:var(--white); border-bottom:1px solid var(--line); padding:0 48px; height:72px; position:sticky; top:0; z-index:100; }
     .nav-left, .nav-right { display:flex; align-items:center; gap:32px; }
-    .nav-item { font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--gray-1); cursor:pointer; transition:color .2s; }
+    .nav-item { font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--gray-1); transition:color .2s; }
     .nav-item:hover, .nav-item.active { color:var(--bordeaux); }
     .nav-logo { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:400; letter-spacing:.25em; text-align:center; line-height:1; }
     .nav-logo .accent { display:block; font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:.2em; color:var(--bordeaux); margin-top:4px; text-transform:uppercase; }
-    .nav-icon { cursor:pointer; color:var(--gray-1); transition:color .2s; font-size:18px; }
-    .nav-icon:hover { color:var(--bordeaux); }
+    .nav-icon { cursor:pointer; color:var(--gray-1); font-size:18px; }
+
     .container { max-width:1400px; margin:0 auto; padding:0 48px; }
     .eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); }
 
-    /* HERO — compact, bone bg */
+    /* HERO */
     .hero-compact { background:var(--bone); padding:80px 0 60px; border-bottom:1px solid var(--line); }
-    .hero-compact .eyebrow { margin-bottom:20px; }
-    .hero-headline { font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:var(--ink); line-height:1; }
+    .hero-headline { font-family:'Cormorant Garamond',serif; font-size:72px; font-weight:300; color:var(--ink); line-height:1; margin-top:20px; }
     .hero-subhead { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:24px; color:var(--gray-2); margin-top:16px; }
     .hero-meta { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gray-3); letter-spacing:.2em; text-transform:uppercase; margin-top:24px; }
 
-    /* FILTER BAR */
-    .filter-bar { background:var(--white); border-bottom:1px solid var(--line); padding:20px 48px; display:flex; align-items:center; gap:32px; }
+    /* FILTER */
+    .filter-bar { background:var(--white); border-bottom:1px solid var(--line); padding:20px 48px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
     .filter-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-3); }
     .filter-btn { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--gray-1); padding:6px 16px; border:1px solid var(--line); cursor:pointer; transition:all .2s; background:transparent; }
     .filter-btn:hover, .filter-btn.active { border-color:var(--bordeaux); color:var(--bordeaux); }
 
-    /* PRODUCT GRID */
+    /* PRODUCTS */
     .products-section { padding:80px 0 120px; }
     .products-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:48px; }
     .products-title { font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:300; color:var(--ink); }
@@ -55,21 +54,20 @@
     .product-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
     .product-card { display:block; transition:transform .3s; }
     .product-card:hover { transform:translateY(-4px); }
-    .product-img-wrap { aspect-ratio:3/4; overflow:hidden; background:var(--bone); position:relative; }
+    .product-card.hidden { display:none; }
+    .product-img-wrap { aspect-ratio:3/4; overflow:hidden; background:var(--bone); }
     .product-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
     .product-card:hover .product-img-wrap img { transform:scale(1.04); }
-    .product-tag { position:absolute; top:16px; left:16px; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.15em; text-transform:uppercase; background:var(--bordeaux); color:var(--white); padding:4px 10px; }
     .product-info { padding:20px 0; }
     .product-code { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--bordeaux); letter-spacing:.12em; }
-    .product-name { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:400; color:var(--ink); margin-top:6px; line-height:1.2; }
+    .product-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; color:var(--ink); margin-top:6px; line-height:1.2; }
     .product-material { font-family:'Inter',sans-serif; font-size:11px; color:var(--gray-2); margin-top:4px; }
     .product-action { display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:16px; border-top:1px solid var(--line); }
-    .product-cta { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:1px; transition:opacity .2s; }
-    .product-cta:hover { opacity:.7; }
+    .product-cta { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:1px; }
     .product-wishlist { font-size:18px; color:var(--gray-3); cursor:pointer; transition:color .2s; }
     .product-wishlist:hover { color:var(--bordeaux); }
 
-    /* CTA SECTION */
+    /* CTA */
     .cta-section { background:var(--bordeaux); padding:80px 48px; text-align:center; }
     .cta-title { font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:300; color:var(--white); line-height:1.1; margin-bottom:16px; }
     .cta-sub { font-family:'Inter',sans-serif; font-size:13px; color:rgba(255,255,255,.7); letter-spacing:.15em; text-transform:uppercase; margin-bottom:40px; }
@@ -87,7 +85,7 @@
     .footer-social a { border:1px solid var(--line); width:36px; height:36px; display:flex; align-items:center; justify-content:center; color:var(--gray-2); transition:color .3s,border-color .3s; }
     .footer-social a:hover { color:var(--bordeaux); border-color:var(--bordeaux); }
     .footer-col h4 { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:20px; }
-    .footer-col li { font-size:12px; color:var(--gray-1); margin-bottom:10px; cursor:pointer; transition:color .2s; }
+    .footer-col li { font-size:12px; color:var(--gray-1); margin-bottom:10px; transition:color .2s; }
     .footer-col li:hover { color:var(--bordeaux); }
     .footer-col a { color:inherit; }
     .footer-bottom { display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--gray-3); letter-spacing:.15em; max-width:1400px; margin:32px auto 0; }
@@ -100,7 +98,7 @@
       .hero-compact { padding:60px 0 40px; }
       .hero-headline { font-size:48px; }
       .container { padding:0 24px; }
-      .filter-bar { padding:16px 24px; gap:16px; overflow-x:auto; }
+      .filter-bar { padding:16px 24px; overflow-x:auto; flex-wrap:nowrap; }
       .product-grid { grid-template-columns:repeat(2,1fr); gap:20px; }
       .products-title { font-size:32px; }
       .cta-section { padding:60px 24px; }
@@ -115,14 +113,12 @@
 </head>
 <body>
 
-<!-- UTILITY BAR -->
 <div class="utility-bar">
   <span>NEW COLLECTION FW 2025 — INTERAMENTE MADE IN ITALY</span>
   <a href="prenota.html">Prenota una visita &rarr;</a>
   <span>IT / EN</span>
 </div>
 
-<!-- MAIN NAV -->
 <nav class="main-nav">
   <div class="nav-left">
     <a href="about.html" class="nav-item">Azienda</a>
@@ -136,183 +132,953 @@
   <div class="nav-right">
     <a href="servizi.html" class="nav-item">Servizi</a>
     <a href="showroom.html" class="nav-item">Showroom</a>
-    <a href="sostenibilita.html" class="nav-item">Sostenibilità</a>
-    <div style="display:flex;gap:12px;">
-      <span class="nav-icon">&#9906;</span>
-    </div>
+    <a href="sostenibilita.html" class="nav-item">Sostenibilit&agrave;</a>
+    <span class="nav-icon">&#9906;</span>
   </div>
 </nav>
 
-<!-- HERO COMPACT -->
 <section class="hero-compact">
   <div class="container">
     <p class="eyebrow">— FABIO GAVAZZI · COLLEZIONE DONNA</p>
     <h1 class="hero-headline">Collezione<br/>Donna FW 2025</h1>
-    <p class="hero-subhead">Visone, zibellino e cincillà — l'eccellenza artigianale italiana</p>
-    <p class="hero-meta">Fabio Gavazzi · Milano · Made in Italy · Dal 1924</p>
+    <p class="hero-subhead">Cincill&agrave;, visone, zibellino, shearling e cashmere Loro Piana</p>
+    <p class="hero-meta">Fabio Gavazzi &middot; Milano &middot; Made in Italy &middot; Dal 1924 &middot; 75 capi</p>
   </div>
 </section>
 
-<!-- FILTER BAR -->
 <div class="filter-bar">
-  <span class="filter-label">Filtra per:</span>
-  <button class="filter-btn active">Tutti</button>
-  <button class="filter-btn">Visone</button>
-  <button class="filter-btn">Zibellino</button>
-  <button class="filter-btn">Cincillà</button>
-  <button class="filter-btn">Cashmere &amp; Pelliccia</button>
-  <button class="filter-btn">Nuovi Arrivi</button>
+  <span class="filter-label">Filtra:</span>
+  <button class="filter-btn active" data-filter="all">Tutti</button>
+  <button class="filter-btn" data-filter="chinchilla">Cincillà</button>
+  <button class="filter-btn" data-filter="fox">Volpe</button>
+  <button class="filter-btn" data-filter="shearling">Shearling</button>
+  <button class="filter-btn" data-filter="mink">Visone</button>
+  <button class="filter-btn" data-filter="sable">Zibellino</button>
+  <button class="filter-btn" data-filter="loro-piana-cashmere-with-fur">Cashmere Loro Piana</button>
 </div>
 
-<!-- PRODUCTS -->
 <section class="products-section">
   <div class="container">
     <div class="products-header">
       <h2 class="products-title">Tutti i capi</h2>
-      <span class="products-count">8 PEZZI · FW 2025</span>
+      <span class="products-count" id="count">75 CAPI · FW 2025</span>
     </div>
-    <div class="product-grid">
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2296PIVR_A.jpg" alt="Cappotto in Visone FG2296PIVR" loading="lazy" />
-        </div>
+    <div class="product-grid" id="grid">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2416FDOR_A.jpg" alt="FG2416FDOR FG2416FDOR" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2296PIVR</p>
-          <p class="product-name">Cappotto in Visone</p>
-          <p class="product-material">Visone · Made in Italy</p>
+          <p class="product-code">FG2416FDOR</p>
+          <p class="product-name">FG2416FDOR</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2343FDOR_B.jpg" alt="Cappotto in Zibellino FG2343FDOR" loading="lazy" />
-          <span class="product-tag">New</span>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2417FDOR_A.jpg" alt="FG2417FDOR FG2417FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2417FDOR</p>
+          <p class="product-name">FG2417FDOR</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
         </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2418FDOR_A.jpg" alt="FG2418FDOR FG2418FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2418FDOR</p>
+          <p class="product-name">FG2418FDOR</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2428FDOR_A.jpg" alt="FG2428FDOR FG2428FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2428FDOR</p>
+          <p class="product-name">FG2428FDOR</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2429FDOR_A.jpg" alt="Poncho in chinchilla con spacchi come apertura per le braccia. FG2429FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2429FDOR</p>
+          <p class="product-name">Poncho in chinchilla con spacchi come apertura per le braccia.</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2431FDOR_A.jpg" alt="Giacca in chinchilla con cappuccio FG2431FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2431FDOR</p>
+          <p class="product-name">Giacca in chinchilla con cappuccio</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="chinchilla">
+        <div class="product-img-wrap"><img src="prodotti/CHINCHILLA/FG2432FDOR_A.jpg" alt="FG2432FDOR FG2432FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2432FDOR</p>
+          <p class="product-name">FG2432FDOR</p>
+          <p class="product-material">Cincillà · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2140</p>
+          <p class="product-name">FG2140</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2341</p>
+          <p class="product-name">FG2341</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2342</p>
+          <p class="product-name">Gilet lungo in cashmere con maxi collo in pecan (martora)</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2371</p>
+          <p class="product-name">Cappotto lungo in cashmere interamente bordato in volpe e spacco po-</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2372</p>
+          <p class="product-name">FG2372</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2399</p>
+          <p class="product-name">FG2399</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2423PIVR</p>
+          <p class="product-name">FG2423PIVR</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="fox">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2433PIVR</p>
+          <p class="product-name">FG2433PIVR</p>
+          <p class="product-material">Volpe · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2265FDOR_A.jpg" alt="FG2265FDOR FG2265FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2265FDOR</p>
+          <p class="product-name">FG2265FDOR</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2273FDOR_A.jpg" alt="FG2273FDOR FG2273FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2273FDOR</p>
+          <p class="product-name">FG2273FDOR</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2276FDOR_A.jpg" alt="FG2276FDOR FG2276FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2276FDOR</p>
+          <p class="product-name">FG2276FDOR</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2326PIVR_A.jpg" alt="Mantella reversibile in shearling nappato con bordo in visone. FG2326PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2326PIVR</p>
+          <p class="product-name">Mantella reversibile in shearling nappato con bordo in visone.</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2328FDOR_A.jpg" alt="Cappotto in shearling scamosciato con bordo e polsi in visone realizzato FG2328FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2328FDOR</p>
+          <p class="product-name">Cappotto in shearling scamosciato con bordo e polsi in visone realizzato</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="shearling">
+        <div class="product-img-wrap"><img src="prodotti/SHEARLING/FG2329FDOR_A.jpg" alt="FG2329FDOR FG2329FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2329FDOR</p>
+          <p class="product-name">FG2329FDOR</p>
+          <p class="product-material">Shearling · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2334FDOR_A.jpg" alt="FG2334FDOR FG2334FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2334FDOR</p>
+          <p class="product-name">FG2334FDOR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2336VROR_A.jpg" alt="Mantella in visone grigio con lavorazione mista in verticale e orizzontale, FG2336VROR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2336VROR</p>
+          <p class="product-name">Mantella in visone grigio con lavorazione mista in verticale e orizzontale,</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2343FDOR_A.jpg" alt="FG2343FDOR FG2343FDOR" loading="lazy" /></div>
         <div class="product-info">
           <p class="product-code">FG2343FDOR</p>
-          <p class="product-name">Cappotto in Zibellino</p>
-          <p class="product-material">Zibellino · Made in Italy</p>
+          <p class="product-name">FG2343FDOR</p>
+          <p class="product-material">Visone · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2355PIVR_B.jpg" alt="Gilet in Visone FG2355PIVR" loading="lazy" />
-        </div>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2347PIVR_A.jpg" alt="FG2347PIVR FG2347PIVR" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2355PIVR</p>
-          <p class="product-name">Gilet in Visone</p>
-          <p class="product-material">Visone · Cashmere Loro Piana</p>
+          <p class="product-code">FG2347PIVR</p>
+          <p class="product-name">FG2347PIVR</p>
+          <p class="product-material">Visone · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2368FDOR_B.jpg" alt="Pelliccia Zibellino Dorato FG2368FDOR" loading="lazy" />
-          <span class="product-tag">Esclusivo</span>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2348FDDI_A.jpg" alt="Bomber in visone bianco con motivo diagonale FG2348FDDI" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2348FDDI</p>
+          <p class="product-name">Bomber in visone bianco con motivo diagonale</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
         </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2349PIVR_A.jpg" alt="FG2349PIVR FG2349PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2349PIVR</p>
+          <p class="product-name">FG2349PIVR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2363FDOR_A.jpg" alt="FG2363FDOR FG2363FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2363FDOR</p>
+          <p class="product-name">FG2363FDOR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2364PIVR_A.jpg" alt="Giacca classica in visone dai toni beige e rosati FG2364PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2364PIVR</p>
+          <p class="product-name">Giacca classica in visone dai toni beige e rosati</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2367PIVR_A.jpg" alt="FG2367PIVR FG2367PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2367PIVR</p>
+          <p class="product-name">FG2367PIVR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2368FDOR_A.jpg" alt="FG2368FDOR FG2368FDOR" loading="lazy" /></div>
         <div class="product-info">
           <p class="product-code">FG2368FDOR</p>
-          <p class="product-name">Pelliccia Zibellino Dorato</p>
-          <p class="product-material">Zibellino · Made in Italy</p>
-          <div class="product-action">
-            <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2296PIVR_B.jpg" alt="Giacca in Visone FG2296PIVR" loading="lazy" />
-        </div>
-        <div class="product-info">
-          <p class="product-code">FG2296PIVR-B</p>
-          <p class="product-name">Giacca in Visone</p>
+          <p class="product-name">FG2368FDOR</p>
           <p class="product-material">Visone · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2343FDOR_A.jpg" alt="Stola Zibellino FG2343FDOR" loading="lazy" />
-        </div>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2369FDOV_A.jpg" alt="FG2369FDOV FG2369FDOV" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2343FDOR-A</p>
-          <p class="product-name">Stola Zibellino</p>
-          <p class="product-material">Zibellino · Made in Italy</p>
-          <div class="product-action">
-            <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2355PIVR_A.jpg" alt="Gilet Visone FG2355PIVR-A" loading="lazy" />
-        </div>
-        <div class="product-info">
-          <p class="product-code">FG2355PIVR-A</p>
-          <p class="product-name">Gilet Visone Corto</p>
+          <p class="product-code">FG2369FDOV</p>
+          <p class="product-name">FG2369FDOV</p>
           <p class="product-material">Visone · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap">
-          <img src="Donna/FG2368FDOR_A.jpg" alt="Coprispalle Zibellino FG2368FDOR-A" loading="lazy" />
-          <span class="product-tag">Bespoke</span>
-        </div>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2370PIVR_A.jpg" alt="Cappotto lungo in visone marrone con intarsi FG2370PIVR" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2368FDOR-A</p>
-          <p class="product-name">Coprispalle Zibellino</p>
-          <p class="product-material">Zibellino Dorato · Made in Italy</p>
+          <p class="product-code">FG2370PIVR</p>
+          <p class="product-name">Cappotto lungo in visone marrone con intarsi</p>
+          <p class="product-material">Visone · Made in Italy</p>
           <div class="product-action">
             <span class="product-cta">Scopri il capo &rarr;</span>
-            <span class="product-wishlist">♡</span>
+            <span class="product-wishlist">&#9825;</span>
           </div>
         </div>
       </a>
-
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2381PIVR_A.jpg" alt="FG2381PIVR FG2381PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2381PIVR</p>
+          <p class="product-name">FG2381PIVR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2390PIVR_A.jpg" alt="Giacca in visone con collo a sciarpa staccabile e coulisse sul fondo FG2390PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2390PIVR</p>
+          <p class="product-name">Giacca in visone con collo a sciarpa staccabile e coulisse sul fondo</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2437PIVR_A.jpg" alt="FG2437PIVR FG2437PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2437PIVR</p>
+          <p class="product-name">FG2437PIVR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2441PIVR_A.jpg" alt="CAPPOTTO IN VISONE CON INTARSI FG2441PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2441PIVR</p>
+          <p class="product-name">CAPPOTTO IN VISONE CON INTARSI</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink">
+        <div class="product-img-wrap"><img src="prodotti/MINK/FG2445VROR_A.jpg" alt="FG2445VROR FG2445VROR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2445VROR</p>
+          <p class="product-name">FG2445VROR</p>
+          <p class="product-material">Visone · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2218FDOR_A.jpg" alt="FG2218FDOR FG2218FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2218FDOR</p>
+          <p class="product-name">FG2218FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2263FDOR_A.jpg" alt="FG2263FDOR FG2263FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2263FDOR</p>
+          <p class="product-name">FG2263FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2320FDDI_A.jpg" alt="Gilet lungo in zibellino con manica scesa, lavorazione delle pelli obliqua FG2320FDDI" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2320FDDI</p>
+          <p class="product-name">Gilet lungo in zibellino con manica scesa, lavorazione delle pelli obliqua</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2401FDOR_A.jpg" alt="FG2401FDOR FG2401FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2401FDOR</p>
+          <p class="product-name">FG2401FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2402FDOR_A.jpg" alt="FG2402FDOR FG2402FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2402FDOR</p>
+          <p class="product-name">FG2402FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2403FDOR_A.jpg" alt="FG2403FDOR FG2403FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2403FDOR</p>
+          <p class="product-name">FG2403FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2404FDOR_A.jpg" alt="Giacca in zibellino con cappuccio FG2404FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2404FDOR</p>
+          <p class="product-name">Giacca in zibellino con cappuccio</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2405FDOR_A.jpg" alt="FG2405FDOR FG2405FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2405FDOR</p>
+          <p class="product-name">FG2405FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2406FDOR_A.jpg" alt="FG2406FDOR FG2406FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2406FDOR</p>
+          <p class="product-name">FG2406FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2407FDOR_A.jpg" alt="FG2407FDOR FG2407FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2407FDOR</p>
+          <p class="product-name">FG2407FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2408FDOR_A.jpg" alt="FG2408FDOR FG2408FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2408FDOR</p>
+          <p class="product-name">FG2408FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2409FDOR_A.jpg" alt="FG2409FDOR FG2409FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2409FDOR</p>
+          <p class="product-name">FG2409FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2411FDOR_A.jpg" alt="FG2411FDOR FG2411FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2411FDOR</p>
+          <p class="product-name">FG2411FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2421FDVR_A.jpg" alt="FG2421FDVR FG2421FDVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2421FDVR</p>
+          <p class="product-name">FG2421FDVR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2422FDOR_A.jpg" alt="FG2422FDOR FG2422FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2422FDOR</p>
+          <p class="product-name">FG2422FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2425FDOR_A.jpg" alt="FG2425FDOR FG2425FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2425FDOR</p>
+          <p class="product-name">FG2425FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2427FDOR_A.jpg" alt="Cappotto in zibellino che si trasforma in giacca grazie al collo staccabile FG2427FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2427FDOR</p>
+          <p class="product-name">Cappotto in zibellino che si trasforma in giacca grazie al collo staccabile</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="sable">
+        <div class="product-img-wrap"><img src="prodotti/SABLE/FG2434FDOR_A.jpg" alt="FG2434FDOR FG2434FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2434FDOR</p>
+          <p class="product-name">FG2434FDOR</p>
+          <p class="product-material">Zibellino · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2222FDOR_A.jpg" alt="FG2222FDOR FG2222FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2222FDOR</p>
+          <p class="product-name">FG2222FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2223FDOR_A.jpg" alt="FG2223FDOR FG2223FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2223FDOR</p>
+          <p class="product-name">FG2223FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2224FDOR_A.jpg" alt="FG2224FDOR FG2224FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2224FDOR</p>
+          <p class="product-name">FG2224FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2293FDOR_A.jpg" alt="FG2293FDOR FG2293FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2293FDOR</p>
+          <p class="product-name">FG2293FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2294FDOR_A.jpg" alt="FG2294FDOR FG2294FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2294FDOR</p>
+          <p class="product-name">FG2294FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2299FDOR_A.jpg" alt="FG2299FDOR FG2299FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2299FDOR</p>
+          <p class="product-name">FG2299FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2332FDOR_A.jpg" alt="FG2332FDOR FG2332FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2332FDOR</p>
+          <p class="product-name">FG2332FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2340FDOR_A.jpg" alt="FG2340FDOR FG2340FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2340FDOR</p>
+          <p class="product-name">FG2340FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><img src="prodotti/LORO-PIANA/FG2344FDOR_A.jpg" alt="Giacca lunga in cashmere grigio con bordo in chinchilla. FG2344FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2344FDOR</p>
+          <p class="product-name">Giacca lunga in cashmere grigio con bordo in chinchilla.</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2356FDOR</p>
+          <p class="product-name">FG2356FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2359FDOR</p>
+          <p class="product-name">FG2359FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2360FDOR</p>
+          <p class="product-name">Mantella in cashmere con bordo in chinchilla, la sagomatura verticale</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2361FDOR</p>
+          <p class="product-name">FG2361FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2362FDOR</p>
+          <p class="product-name">FG2362FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2366FDOR</p>
+          <p class="product-name">Bomber in cashmere reversibile con zibellino</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2426FDOR</p>
+          <p class="product-name">FG2426FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2439PIVR</p>
+          <p class="product-name">FG2439PIVR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2444PIVR</p>
+          <p class="product-name">FG2444PIVR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="loro-piana-cashmere-with-fur">
+        <div class="product-img-wrap"><div style="width:100%;height:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;color:var(--gray-3);font-family:JetBrains Mono,monospace;font-size:10px;">IMMAGINE<br>IN ARRIVO</div></div>
+        <div class="product-info">
+          <p class="product-code">FG2452FDOR</p>
+          <p class="product-name">FG2452FDOR</p>
+          <p class="product-material">Cashmere Loro Piana · Made in Italy</p>
+          <div class="product-action">
+            <span class="product-cta">Scopri il capo &rarr;</span>
+            <span class="product-wishlist">&#9825;</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- CTA — PRENOTA -->
 <section class="cta-section">
   <h2 class="cta-title">Vivi la collezione<br/>in atelier</h2>
-  <p class="cta-sub">Visite private su appuntamento · Milano Montenapoleone &amp; Seregno</p>
+  <p class="cta-sub">Visite private su appuntamento &middot; Milano Montenapoleone &amp; Seregno</p>
   <a class="btn-white" href="prenota.html">Prenota una Visita Privata</a>
   <a class="btn-outline-white" href="collezioni-uomo.html">Scopri la Collezione Uomo</a>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <h3>FURECO<br/><em style="font-style:italic; font-size:14px; color:var(--gray-2);">Fur Enterprise Co.</em></h3>
+      <h3>FURECO<br/><em style="font-style:italic;font-size:14px;color:var(--gray-2);">Fur Enterprise Co.</em></h3>
       <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" aria-label="Instagram">
@@ -329,7 +1095,7 @@
     <div class="footer-col"><h4>Azienda</h4><ul>
       <li><a href="about.html">Chi Siamo</a></li>
       <li><a href="fureco-world.html">Mondo Fureco</a></li>
-      <li><a href="sostenibilita.html">Sostenibilità</a></li>
+      <li><a href="sostenibilita.html">Sostenibilit&agrave;</a></li>
     </ul></div>
     <div class="footer-col"><h4>Servizi</h4><ul>
       <li><a href="servizi.html">Bespoke</a></li>
@@ -338,10 +1104,9 @@
       <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
     </ul></div>
     <div class="footer-col"><h4>Showroom</h4><ul>
-      <li><a href="showroom-montenapoleone.html">Milano · Montenapoleone</a></li>
+      <li><a href="showroom-montenapoleone.html">Milano &middot; Montenapoleone</a></li>
       <li><a href="showroom-seregno.html">Seregno (MB)</a></li>
       <li><a href="prenota.html">Prenota Visita</a></li>
-      <li><a href="press.html">Press &amp; News</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -351,11 +1116,22 @@
 </footer>
 
 <script>
-  // Filter buttons
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+  const countEl = document.getElementById('count');
+
+  btns.forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
+      const filter = this.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.cat === filter;
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      countEl.textContent = visible + ' CAPI · FW 2025';
     });
   });
 </script>
