@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fabio Gavazzi Man | Alta Pellicceria Uomo — Cappotti e Capispalla Made in Italy</title>
-  <meta name="description" content="Fabio Gavazzi Man: cappotti uomo in cashmere Loro Piana e pelliccia. Sartorialità senza ostentazione, 100% Made in Italy. Bespoke disponibile." />
+  <title>Fabio Gavazzi | Alta Pellicceria Donna — Visone, Zibellino, Chinchilla Milano</title>
+  <meta name="description" content="Fabio Gavazzi: alta pellicceria donna in visone, zibellino e chinchilla. Sartorialità Made in Italy. Showroom privato Via Montenapoleone, Milano." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -49,6 +49,8 @@
     .hero-subhead { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:28px; color:rgba(255,255,255,.80); margin-top:16px; line-height:1.3; }
     .hero-cta { display:inline-block; margin-top:32px; padding:16px 40px; background:var(--bordeaux); color:var(--white); border:1px solid var(--bordeaux); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; transition:background .25s,color .25s; }
     .hero-cta:hover { background:transparent; color:var(--bordeaux); border-color:var(--bordeaux); }
+    .hero-secondary { display:inline-block; margin-top:12px; margin-left:16px; font-family:'Inter',sans-serif; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.7); border-bottom:1px solid rgba(255,255,255,.4); padding-bottom:2px; transition:color .2s; }
+    .hero-secondary:hover { color:var(--white); border-color:var(--white); }
 
     /* SECTIONS */
     .section { padding:120px 0; }
@@ -59,6 +61,8 @@
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
     .section-heading { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:300; color:var(--ink); margin-top:16px; line-height:1.1; }
     .section-body { font-family:'Inter',sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-top:24px; }
+    .text-link { display:inline-block; margin-top:32px; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--bordeaux); border-bottom:1px solid var(--bordeaux); padding-bottom:2px; transition:opacity .2s; }
+    .text-link:hover { opacity:.7; }
     .aspect-45 { width:100%; aspect-ratio:4/5; object-fit:cover; }
 
     /* PRODUCT GRID */
@@ -121,6 +125,7 @@
       .hero-content { bottom:40px; left:24px; right:24px; max-width:100%; }
       .hero-headline { font-size:54px; }
       .hero-subhead { font-size:18px; }
+      .hero-secondary { display:block; margin-left:0; margin-top:12px; }
       .container { padding:0 24px; }
       .section { padding:60px 0; }
       .two-col { grid-template-columns:1fr; gap:40px; }
@@ -139,24 +144,81 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Fureco – Fur Enterprise Company Srl",
+    "alternateName": "Fureco",
     "url": "https://fureco.vercel.app",
-    "foundingDate": "1924"
+    "logo": "https://fureco.vercel.app/FURECO_2026-04_Website 02.jpg",
+    "foundingDate": "1924",
+    "description": "Alta pellicceria artigianale italiana dal 1924. Brand: Fabio Gavazzi, Fabio Gavazzi Man, Mavina, Fureco Home.",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Magenta 35",
+        "addressLocality": "Seregno",
+        "addressRegion": "MB",
+        "postalCode": "20831",
+        "addressCountry": "IT"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Montenapoleone 23",
+        "addressLocality": "Milano",
+        "addressRegion": "MI",
+        "postalCode": "20121",
+        "addressCountry": "IT"
+      }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+39-0362-223236",
+        "contactType": "customer service",
+        "email": "info@fureco.it",
+        "availableLanguage": ["Italian", "English"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+39-02-87038516",
+        "contactType": "sales",
+        "email": "montenapoleone@fureco.it"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/fabiogavazziofficial",
+      "https://www.facebook.com/FabiogavazziMilano",
+      "https://www.fureco.it",
+      "https://www.fabiogavazzi.it"
+    ]
   }
   </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fabio Gavazzi | Alta Pellicceria Donna — Visone, Zibellino, Chinchilla Milano" />
+  <meta property="og:description" content="Scopri la collezione donna Fabio Gavazzi: visone, zibellino, chinchilla e cashmere Loro Piana. Alta pellicceria sartoriale Made in Italy. Showroom privato Via Montenapoleone, Milano." />
+  <meta property="og:site_name" content="Fureco — Fabio Gavazzi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Fureco Srl" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fureco.vercel.app/index.html" },
-      { "@type": "ListItem", "position": 2, "name": "Fabio Gavazzi Man", "item": "https://fureco.vercel.app/fabio-gavazzi-man.html" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://fureco.vercel.app/index.html"
+      },      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Brand",
+        "item": "https://fureco.vercel.app/fabio-gavazzi-woman.html"
+      }
     ]
   }
   </script>
-  <link rel="canonical" href="https://fureco.vercel.app/fabio-gavazzi-man.html" />
+  <link rel="canonical" href="https://fureco.vercel.app/fabio-gavazzi-woman.html" />
 </head>
 <body>
-<div aria-hidden="false" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;" itemprop="description">Fabio Gavazzi Man è il brand di alta pellicceria uomo di Fureco: cappotti in visone e cashmere Loro Piana, interamente Made in Italy. Visitabile su appuntamento al Palazzo Gavazzi di Via Montenapoleone 23, Milano.</div>
+<div aria-hidden="false" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;" itemprop="description">Fabio Gavazzi è il brand di alta pellicceria sartoriale di Fureco: visone, zibellino e chinchilla interamente Made in Italy. Visitabile su appuntamento al Palazzo Gavazzi di Via Montenapoleone 23, Milano.</div>
 
 <!-- UTILITY BAR -->
 <div class="utility-bar">
@@ -169,7 +231,7 @@
 <nav class="main-nav">
   <div class="nav-left">
     <a href="about.html" class="nav-item">Azienda</a>
-    <a href="collezioni-uomo.html" class="nav-item">Collezioni</a>
+    <a href="collezioni-donna.html" class="nav-item">Collezioni</a>
     <a href="servizi.html" class="nav-item">Servizi</a>
   </div>
   <a href="index.html" class="nav-logo">
@@ -188,11 +250,11 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="Home/FABIO GAVAZZI Coppia_opt.jpg" alt="Fabio Gavazzi Man — Collezione Uomo FW 2026" />
+  <img class="hero-bg" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Alta Moda Donna — Collezione FW 2026" />
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1 class="hero-headline">Fabio<br/>Gavazzi<br/>Man</h1>
-    <p class="hero-subhead">Eleganza sartoriale,<br/>per l'uomo contemporaneo.</p>
+    <h1 class="hero-headline">Fabio<br/>Gavazzi</h1>
+    <p class="hero-subhead">Tradizione artigianale,<br/>lusso contemporaneo.</p>
     <div style="margin-top:32px;">
       <a class="hero-cta" href="prenota.html">Prenota una visita</a>
     </div>
@@ -204,58 +266,58 @@
   <div class="container">
     <div class="two-col">
       <div>
-        <h2 class="section-heading">Eleganza sartoriale,<br/>per l'uomo contemporaneo.</h2>
-        <p class="section-body">Fabio Gavazzi Man è la linea uomo di Fureco, espressione della stessa tradizione artigianale che da quattro generazioni definisce il lusso della pelliccia italiana. Una proposta raffinata, pensata per un uomo che sceglie la qualità assoluta: cappotti e capispalla in visone, zibellino e cashmere Loro Piana, realizzati interamente nei laboratori di Seregno.</p>
-        <p class="section-body" style="margin-top:16px;">Silhouette pulite, costruzioni sartoriali di estrema precisione, volumi che avvolgono senza appesantire. Ogni capo è un atto di stile consapevole, pensato per durare nel tempo e attraversare le stagioni con eleganza invariata.</p>
+        <h2 class="section-heading">Tradizione artigianale,<br/>lusso contemporaneo.</h2>
+        <p class="section-body">Fabio Gavazzi &egrave; il marchio di alta gamma di Fureco. La reinterpretazione della pelliccia &egrave; al centro della visione creativa del marchio, costantemente proiettato verso la ricerca e la sperimentazione, ma sempre saldamente ancorato a quei valori che lo hanno reso cos&igrave; prestigioso e apprezzato in tutto il mondo.</p>
+        <p class="section-body" style="margin-top:16px;">Visoni, zibellini, chinchilla, oltre a cappotti in pregiato cashmere e pelliccia, realizzati con grande cura in Italia. Capi esclusivi e collezioni uniche, presenti nelle pi&ugrave; importanti boutique internazionali.</p>
       </div>
       <div>
-        <img class="aspect-45" src="Uomo/FG2230PIVR_B_opt.jpg" alt="Fabio Gavazzi Man — Cappotto Uomo" />
+        <img class="aspect-45" src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Artigianato Fureco — Fabio Gavazzi" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 — COLLEZIONE UOMO FW26 -->
+<!-- 02 — COLLEZIONE DONNA FW26 -->
 <section class="section section-white" id="collezione">
   <div class="container">
     <div class="grid-header">
-      <h2 class="grid-title">Collezione uomo FW26</h2>
-      <a class="grid-link" href="collezioni-uomo.html">Vedi tutta la collezione &rarr;</a>
+      <h2 class="grid-title">Collezione donna FW26</h2>
+      <a class="grid-link" href="collezioni-donna.html">Vedi tutta la collezione &rarr;</a>
     </div>
     <div class="product-grid">
       <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap"><img src="Uomo/FG2230PIVR_B_opt.jpg" alt="Giaccone in Visone FG2230PIVR" loading="lazy" /></div>
+        <div class="product-img-wrap"><img src="Donna/FG2296PIVR_A.jpg" alt="Cappotto in Visone FG2296PIVR" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2230PIVR</p>
-          <p class="product-name">Giaccone in Visone</p>
-          <p class="product-material">Visone</p>
-          <span class="product-cta">Scopri &rarr;</span>
-        </div>
-      </a>
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap"><img src="Uomo/FG2231PIVR_B_opt.jpg" alt="Cappotto in Visone FG2231PIVR" loading="lazy" /></div>
-        <div class="product-info">
-          <p class="product-code">FG2231PIVR</p>
+          <p class="product-code">FG2296PIVR</p>
           <p class="product-name">Cappotto in Visone</p>
-          <p class="product-material">Visone &middot; Seta</p>
-          <span class="product-cta">Scopri &rarr;</span>
-        </div>
-      </a>
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap"><img src="Uomo/FG2259PIVR_B_opt.jpg" alt="Pelliccia Uomo FG2259PIVR" loading="lazy" /></div>
-        <div class="product-info">
-          <p class="product-code">FG2259PIVR</p>
-          <p class="product-name">Pelliccia Uomo</p>
           <p class="product-material">Visone</p>
           <span class="product-cta">Scopri &rarr;</span>
         </div>
       </a>
       <a class="product-card" href="wireframe-v4-PRODOTTO.html">
-        <div class="product-img-wrap"><img src="Uomo/FG2260PIVR_B_opt.jpg" alt="Giubbotto in Visone FG2260PIVR" loading="lazy" /></div>
+        <div class="product-img-wrap"><img src="Donna/FG2343FDOR_B.jpg" alt="Cappotto in Zibellino FG2343FDOR" loading="lazy" /></div>
         <div class="product-info">
-          <p class="product-code">FG2260PIVR</p>
-          <p class="product-name">Giubbotto in Visone</p>
+          <p class="product-code">FG2343FDOR</p>
+          <p class="product-name">Cappotto in Zibellino</p>
+          <p class="product-material">Zibellino</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2355PIVR_B.jpg" alt="Gilet in Visone FG2355PIVR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2355PIVR</p>
+          <p class="product-name">Gilet in Visone</p>
           <p class="product-material">Visone &middot; Cashmere Loro Piana</p>
+          <span class="product-cta">Scopri &rarr;</span>
+        </div>
+      </a>
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+        <div class="product-img-wrap"><img src="Donna/FG2368FDOR_B.jpg" alt="Pelliccia Zibellino FG2368FDOR" loading="lazy" /></div>
+        <div class="product-info">
+          <p class="product-code">FG2368FDOR</p>
+          <p class="product-name">Pelliccia Zibellino</p>
+          <p class="product-material">Zibellino Dorato</p>
           <span class="product-cta">Scopri &rarr;</span>
         </div>
       </a>
@@ -268,31 +330,31 @@
   <div class="container">
     <div style="max-width:800px;">
       <h2 class="section-heading">Press Release FW 26</h2>
-      <p class="section-body" style="margin-top:32px; font-style:italic; font-family:'Cormorant Garamond',serif; font-size:18px; line-height:1.8; color:var(--gray-1);">Fabio Gavazzi Man Fall/Winter 2026 &mdash; Comunicato Stampa</p>
-      <p class="section-body" style="margin-top:16px;">La linea uomo Fabio Gavazzi FW 2026 porta avanti la ricerca sul connubio tra pelliccia e fibre tessili di eccellenza. Il cashmere Loro Piana &mdash; in tutte le sue declinazioni &mdash; dialoga con il visone in un equilibrio raffinato, dove ogni dettaglio costruttivo rivela la precisione dell&rsquo;atelier di Seregno.</p>
-      <p class="section-body" style="margin-top:16px;">La palette si concentra su toni naturali e profondi: cioccolato, cognac, antracite. Silhouette ampie ma controllate, volumi che avvolgono senza appesantire, per un guardaroba maschile di altissimo profilo.</p>
-      <p class="section-body" style="margin-top:16px;">Ogni capo è concepito e realizzato interamente in Italia, nei laboratori di Seregno, con pelli selezionate alle principali aste internazionali.</p>
+      <p class="section-body" style="margin-top:32px; font-style:italic; font-family:'Cormorant Garamond',serif; font-size:18px; line-height:1.8; color:var(--gray-1);">Fabio Gavazzi Fall/Winter 2026 &mdash; Comunicato Stampa</p>
+      <p class="section-body" style="margin-top:16px;">La collezione Fabio Gavazzi FW 2026 si sviluppa attorno al tema della memoria materica: le pelli pi&ugrave; pregiate &mdash; visone, zibellino e chinchilla &mdash; vengono esplorate nelle loro infinite declinazioni cromatiche e tattili, in un dialogo costante tra tradizione artigianale e linguaggio contemporaneo.</p>
+      <p class="section-body" style="margin-top:16px;">Silhouette pulite, costruzioni sartoriali di estrema precisione e un uso sapiente del volume definiscono una collezione che parla a una donna consapevole, che sceglie la qualit&agrave; assoluta come atto estetico e personale.</p>
+      <p class="section-body" style="margin-top:16px;">Ogni capo &egrave; concepito e realizzato interamente in Italia, nei laboratori di Seregno, con pelli selezionate alle principali aste internazionali.</p>
       <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bordeaux);margin-top:40px;">Per richieste stampa: press@fureco.it</p>
     </div>
   </div>
 </section>
 
-<!-- SHOWROOM SEREGNO -->
+<!-- SHOWROOM MILANO -->
 <section class="section section-bone">
   <div class="container">
     <div class="two-col">
       <div>
-        <h2 class="section-heading">L&rsquo;atelier di Seregno</h2>
-        <p class="section-body">La collezione uomo Fabio Gavazzi è disponibile presso l&rsquo;atelier di Seregno, in Via Magenta 35, a pochi minuti da Milano. Qui, all&rsquo;interno del laboratorio storico, è possibile scoprire la collezione uomo, ricevere consulenza personalizzata e accedere al servizio bespoke per creazioni su misura.</p>
+        <h2 class="section-heading">Esclusivit&agrave; nel cuore di Milano</h2>
+        <p class="section-body">Le creazioni Fabio Gavazzi sono disponibili nel prestigioso showroom di Milano in Via Montenapoleone 23, presso il Palazzo Gavazzi, edificio storico risalente ai primi dell&rsquo;Ottocento. Qui scoprirete l&rsquo;eleganza del Made in Italy e la straordinaria versatilità dei capi realizzati a mano, potendo contare anche su servizi di personalizzazione per creazioni su misura.</p>
         <a class="btn-primary" href="prenota.html" style="margin-top:32px;">Prenota una visita</a>
       </div>
       <div>
         <div class="showroom-box">
-          <p class="showroom-label">SHOWROOM SEREGNO</p>
-          <p class="showroom-address">Via Magenta, 35 &mdash; Seregno (MB)</p>
-          <p class="showroom-contact">+39 0362 223236<br/>info@fureco.it</p>
-          <p class="showroom-hours">Luned&igrave;&ndash;Venerd&igrave; 09:00&ndash;18:00<br/>Sabato su appuntamento</p>
-          <a class="showroom-map" href="https://maps.app.goo.gl/seregno" target="_blank" rel="noopener noreferrer">Apri in Google Maps &rarr;</a>
+          <p class="showroom-label">SHOWROOM FABIO GAVAZZI</p>
+          <p class="showroom-address">Via Montenapoleone, 23 &mdash; Milano</p>
+          <p class="showroom-contact">+39 02 87038516<br/>+39 344 390 9855</p>
+          <p class="showroom-hours">Luned&igrave;&ndash;Venerd&igrave; 10:00&ndash;18:00<br/>Solo su appuntamento</p>
+          <a class="showroom-map" href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" rel="noopener noreferrer">Apri in Google Maps &rarr;</a>
         </div>
       </div>
     </div>
@@ -306,18 +368,18 @@
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-name">Giorgio A.</p>
-        <p class="review-text">&ldquo;Excellent staff – remarkable experience – it&rsquo;s always nice to stop by the showroom for a great coffee and see the latest collections. Congratulations!&rdquo;</p>
+        <p class="review-name">Veruska R.</p>
+        <p class="review-text">"Ho avuto il piacere di acquistare una splendida pelliccia di cincillà nello showroom di Via Montenapoleone. Sono rimasta molto soddisfatta dell'alta qualità e del servizio ricevuto."</p>
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-name">Andrew H.</p>
-        <p class="review-text">&ldquo;Excellent designs, quality, service and reliability. The Man collection is outstanding — sophisticated and timeless.&rdquo;</p>
+        <p class="review-name">Lucilla C.</p>
+        <p class="review-text">"Conosco il marchio da molti anni e ho avuto il piacere di acquistare diverse creazioni, sia in pelliccia che in tessuto. Gavazzi è sinonimo di qualità ed eccellenza italiana."</p>
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-name">Francesco R.</p>
-        <p class="review-text">&ldquo;Very kind, professional, perfect! Il cappotto in visone è semplicemente straordinario, indossarlo è un&rsquo;esperienza unica.&rdquo;</p>
+        <p class="review-name">Elisabetta C.</p>
+        <p class="review-text">"Il brand Fabio Gavazzi rappresenta l'eccellenza della pelliccia di alta gamma e degli accessori, con un ottimo supporto clienti e perfettamente in linea con le tendenze del lusso."</p>
       </div>
     </div>
   </div>
