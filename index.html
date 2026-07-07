@@ -343,7 +343,7 @@
     letter-spacing: -0.005em;
   }
 
-  .brand-tile-name em { font-style: italic; }
+  .brand-tile-name em { font-style: normal; }
 
   .brand-tile-desc {
     font-family: 'Inter', sans-serif;
@@ -1168,31 +1168,31 @@
     line-height: 1.4;
   }
 
-  /* ==================== SECTION 02B — ATELIER & TRADE ==================== */
+  /* ==================== SECTION 02B — INSIDE FURECO ==================== */
   .b2b-section {
-    background: var(--bordeaux); /* brand bordeaux background */
-    border: 1px solid var(--bordeaux);
+    background: var(--bone);
+    border: 1px solid var(--line);
     padding: 60px 48px;
     margin-top: 120px;
-    color: var(--white);
+    color: var(--ink);
   }
 
   .b2b-section .section-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid var(--line);
   }
 
   .b2b-section .section-title {
-    color: var(--white);
+    color: var(--ink);
   }
 
   .b2b-section .section-link {
-    color: var(--tortora-light);
-    border-bottom-color: var(--tortora-light);
+    color: var(--bordeaux);
+    border-bottom-color: var(--bordeaux);
   }
 
   .b2b-section .section-link:hover {
-    color: var(--white);
-    border-bottom-color: var(--white);
+    color: var(--ink);
+    border-bottom-color: var(--ink);
   }
 
   .b2b-split {
@@ -1202,8 +1202,8 @@
   }
 
   .b2b-card {
-    background: #56151e; /* deeper rich bordeaux card background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--white);
+    border: 1px solid var(--line);
     overflow: hidden;
     transition: all 0.4s ease;
     display: flex;
@@ -1211,32 +1211,32 @@
   }
 
   .b2b-card:hover {
-    border-color: var(--tortora-light);
+    border-color: var(--tortora);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   }
 
   .b2b-image {
     aspect-ratio: 16/10;
     overflow: hidden;
     position: relative;
-    background: #151412;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bone);
+    border-bottom: 1px solid var(--line);
   }
 
   .b2b-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 1;
     transition: all 0.5s ease;
-    filter: grayscale(30%);
+    filter: none;
   }
 
   .b2b-card:hover .b2b-image img {
     opacity: 0.95;
     transform: scale(1.04);
-    filter: grayscale(0%);
+    filter: none;
   }
 
   .b2b-content {
@@ -1246,23 +1246,13 @@
     flex-grow: 1;
   }
 
-  .b2b-card-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    color: var(--tortora-light);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
   .b2b-card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
     font-weight: 300;
     line-height: 1.1;
     margin-bottom: 16px;
-    color: var(--white);
+    color: var(--ink);
   }
 
   .b2b-card-title em {
@@ -1271,7 +1261,7 @@
 
   .b2b-card-desc {
     font-size: 13px;
-    color: #f2ede4; /* high-contrast cream color for excellent readability on bordeaux */
+    color: var(--gray-2);
     margin-bottom: 24px;
     line-height: 1.7;
     flex-grow: 1;
@@ -1279,21 +1269,21 @@
 
   .b2b-link {
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--tortora-light);
+    border-bottom: 1px solid var(--bordeaux);
     padding-bottom: 4px;
     cursor: pointer;
     display: inline-block;
-    color: var(--tortora-light);
+    color: var(--bordeaux);
     align-self: flex-start;
     transition: all 0.3s;
   }
 
   .b2b-link:hover {
-    color: var(--white);
-    border-bottom-color: var(--white);
+    color: var(--ink);
+    border-bottom-color: var(--ink);
   }
   
   /* ==================== MOBILE ==================== */
@@ -1590,14 +1580,14 @@
 <!-- ==================== UTILITY BAR ==================== -->
 <div class="utility-bar">
   <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
-  <a href="contatti.html" style="font-family:'Inter', sans-serif; font-size:12px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none;">Contattaci &rarr;</a>
+  <a href="contatti.html" style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none; letter-spacing:0.15em;">Contattaci &rarr;</a>
   <span>IT / EN</span>
 </div>
 
 <!-- ==================== MAIN NAVIGATION ==================== -->
 <nav class="main-nav">
   <div class="nav-left">
-    <a href="fabio-gavazzi.html" class="nav-item">Brand</a>
+    <a href="azienda.html" class="nav-item">Azienda</a>
     <a href="collezioni-donna.html" class="nav-item">Collezioni</a>
     <a href="servizi.html" class="nav-item">Servizi</a>
   </div>
@@ -1645,9 +1635,7 @@
     </div>
 
     <div class="hero-media-overlay">
-      <div class="hero-overlay-eyebrow">Collezione 2026</div>
-      <h1 class="hero-overlay-title">Tradizione<br/>artigianale,<br/><em>lusso senza tempo.</em></h1>
-      <p class="hero-overlay-subtitle">Quattro generazioni Gavazzi reinterpretano l'arte della pellicceria italiana. Dal 1924.</p>
+      <h1 class="hero-overlay-title">Tradizione artigianale,<br/>lusso senza tempo.<br/><em>L’arte della pellicceria italiana. Dal 1924.</em></h1>
     </div>
   </div>
 
@@ -1657,8 +1645,7 @@
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Donna.jpg" alt="Fabio Gavazzi Donna">
       <div class="brand-tile-top"></div>
       <div class="brand-tile-bottom">
-        <h3 class="brand-tile-name">Fabio Gavazzi <em>Donna</em></h3>
-        <p class="brand-tile-desc">Alta moda donna · haute couture</p>
+        <h3 class="brand-tile-name">Fabio Gavazzi Donna</h3>
         <div class="brand-tile-cta">
           <span>Scopri il brand</span>
           <span class="arrow">→</span>
@@ -1671,8 +1658,7 @@
       <img class="brand-tile-image-bg-real" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Uomo">
       <div class="brand-tile-top"></div>
       <div class="brand-tile-bottom">
-        <h3 class="brand-tile-name">Fabio Gavazzi <em>Uomo</em></h3>
-        <p class="brand-tile-desc">Pellicce e cashmere uomo</p>
+        <h3 class="brand-tile-name">Fabio Gavazzi Uomo</h3>
         <div class="brand-tile-cta">
           <span>Scopri il brand</span>
           <span class="arrow">→</span>
@@ -1686,7 +1672,6 @@
       <div class="brand-tile-top"></div>
       <div class="brand-tile-bottom">
         <h3 class="brand-tile-name">Mavina</h3>
-        <p class="brand-tile-desc">Pellicceria contemporanea</p>
         <div class="brand-tile-cta">
           <span>Scopri il brand</span>
           <span class="arrow">→</span>
@@ -1699,8 +1684,7 @@
       <img class="brand-tile-image-bg-real" src="Home/home-2.jpg.webp" alt="Fureco Home">
       <div class="brand-tile-top"></div>
       <div class="brand-tile-bottom">
-        <h3 class="brand-tile-name">Fureco <em>Home</em></h3>
-        <p class="brand-tile-desc">Pelliccia per la casa</p>
+        <h3 class="brand-tile-name">Fureco Home</h3>
         <div class="brand-tile-cta">
           <span>Scopri il brand</span>
           <span class="arrow">→</span>
@@ -1716,10 +1700,8 @@
   <!-- SEZIONE 02 — COLLEZIONI -->
   <section class="below-hero">
     <div class="section-header">
-
       <div class="section-title-group">
-        <h2 class="section-title">Collezione <em>2026</em></h2>
-        <a href="collezioni-donna.html" class="section-link" style="text-decoration:none;">Tutte le collezioni →</a>
+        <h2 class="section-title"><a href="collezioni-donna.html" style="text-decoration:none; color:inherit;">Collezioni 2026</a></h2>
       </div>
     </div>
     <div class="collezioni-split">
@@ -1741,17 +1723,16 @@
           </div>
         </div>
         <div class="collezione-content">
-          <div class="collezione-eyebrow">Fabio Gavazzi Donna</div>
-          <h3 class="collezione-title">Visone, zibellino,<br/><em>chinchilla.</em></h3>
-          <p class="collezione-desc">Le pelli più nobili lavorate a mano nei nostri atelier. Cashmere Loro Piana con dettagli in pelliccia, shearling e creazioni haute couture.</p>
+          <div class="collezione-eyebrow">Fabio Gavazzi Donna FW 26</div>
+          <h3 class="collezione-title">Elegante e sofisticata.</h3>
           <div class="collezione-tags">
             <span class="tag">Visone</span>
             <span class="tag">Zibellino</span>
             <span class="tag">Chinchilla</span>
-            <span class="tag">Cashmere</span>
+            <span class="tag">Cashmere Loro Piana</span>
             <span class="tag">Shearling</span>
           </div>
-          <a href="collezioni-donna.html" class="collezione-link" style="cursor:pointer;">Esplora donna</a>
+          <a href="collezioni-donna.html" class="collezione-link" style="cursor:pointer;">Scopri la collezione →</a>
         </div>
       </div>
       <div class="collezione-card">
@@ -1772,51 +1753,47 @@
           </div>
         </div>
         <div class="collezione-content">
-          <div class="collezione-eyebrow">Fabio Gavazzi Uomo</div>
-          <h3 class="collezione-title">Eleganza<br/><em>maschile.</em></h3>
-          <p class="collezione-desc">Cappotti in cashmere Loro Piana impreziositi da pelliccia, capi sartoriali realizzati interamente in Italia da artigiani con oltre 30 anni di esperienza.</p>
+          <div class="collezione-eyebrow">Fabio Gavazzi Uomo FW 26</div>
+          <h3 class="collezione-title">Eleganza maschile.</h3>
           <div class="collezione-tags">
-            <span class="tag">Cashmere</span>
+            <span class="tag">Cashmere Loro Piana</span>
             <span class="tag">Pelliccia</span>
-            <span class="tag">Tailoring</span>
+            <span class="tag">Sartoria Made in Italy</span>
           </div>
-          <a href="collezioni-uomo.html" class="collezione-link">Esplora uomo</a>
+          <a href="collezioni-uomo.html" class="collezione-link">Scopri la collezione →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEZIONE 02B — ATELIER & TRADE -->
+  <!-- SEZIONE 02B — INSIDE FURECO -->
   <section class="below-hero b2b-section">
     <div class="section-header">
       <div class="section-title-group">
-        <h2 class="section-title">Atelier &amp; Trade</h2>
-        <a href="contatti.html" class="section-link" style="text-decoration:none;">B2B Services →</a>
+        <h2 class="section-title">Inside Fureco</h2>
       </div>
     </div>
     
     <div class="b2b-split">
       <div class="b2b-card">
         <div class="b2b-image">
-          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Commercio Pellami">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Commercio Pelli">
         </div>
         <div class="b2b-content">
-          <span class="b2b-card-eyebrow">Manufacture &amp; Raw Materials</span>
-          <h3 class="b2b-card-title">Commercio Pellami</h3>
-          <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità ed eccellenza qualitativa per l'industria.</p>
-          <span class="b2b-link">Scopri il sourcing</span>
+          <h3 class="b2b-card-title">Commercio Pelli</h3>
+          <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità, qualità e trasparenza per l’industria.</p>
+          <span class="b2b-link">Scopri la filiera</span>
         </div>
       </div>
       
       <div class="b2b-card">
         <div class="b2b-image">
-          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni &amp; Private Label">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Collaborazioni e private label">
         </div>
         <div class="b2b-content">
-          <span class="b2b-card-eyebrow">Private Label Production</span>
-          <h3 class="b2b-card-title">Collaborazioni &amp; Private Label</h3>
-          <p class="b2b-card-desc">Sviluppo prototipi e produzione in outsourcing ad alto livello per le grandi maison del lusso, combinando visione contemporanea ed eccellenza sartoriale.</p>
-          <span class="b2b-link">Esplora l'Atelier</span>
+          <h3 class="b2b-card-title">Collaborazioni e private label</h3>
+          <p class="b2b-card-desc">Sviluppo e produzione di soluzioni su misura per i più prestigiosi marchi del lusso, con competenza tecnica e consolidata esperienza artigianale.</p>
+          <span class="b2b-link">Esplora l’atelier</span>
         </div>
       </div>
     </div>
@@ -1836,38 +1813,33 @@
       <div class="heritage-content">
         <div class="heritage-eyebrow">Heritage</div>
         <h2 class="heritage-title">L'arte della<br/>pellicceria<br/><em>dal 1924.</em></h2>
-        <p class="heritage-text">La storia di Fureco nasce in Italia nei primi anni '20, quando Cesare Gavazzi avviò un negozio di pelletteria a Seregno. Quattro generazioni dopo, la stessa passione anima il nostro lavoro.</p>
-        <p class="heritage-text">Oggi i fratelli Gavazzi guidano l'azienda: <em>Cesare</em> CEO, <em>Fabio</em> direttore creativo, <em>Alberto</em> commercial manager.</p>
-
+        <p class="heritage-text">La storia di Fureco inizia in Italia negli anni Venti, quando Cesare Gavazzi apre una piccola bottega di pelletteria a Seregno. Da allora, quattro generazioni della famiglia hanno trasformato un sapere artigianale in un punto di riferimento per la manifattura del lusso.</p>
       </div>
     </div>
   </section>
 
-  <!-- SEZIONE 04 — SHOWROOM -->
+  <!-- SEZIONE 04 — LE SEDI -->
   <section class="below-hero">
     <div class="section-header">
-
       <div class="section-title-group">
-        <h2 class="section-title">Visita i nostri <em>showroom</em></h2>
+        <h2 class="section-title">Le <em>sedi</em></h2>
         <a href="prenota.html" class="section-link" style="text-decoration:none;">Prenota appuntamento →</a>
-      <p style="font-family:'Inter',sans-serif;font-size:11px;color:var(--gray-3);margin-top:8px;letter-spacing:0.05em;">Gratuita &middot; Senza impegno &middot; Risposta entro 24 ore</p>
       </div>
     </div>
     <div class="showroom-split">
       <div class="showroom-card featured milano">
         <div>
-          <div class="showroom-tag">★ Boutique flagship</div>
+          <div class="showroom-tag">Flagship boutique</div>
           <h3 class="showroom-name">Milano,<br/><em>Montenapoleone.</em></h3>
-          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Palazzo Gavazzi — Via Monte Napoleone 23, 20121 Milano<br/><br/>Ti accogliamo nel nostro salotto milanese per scoprire le collezioni in un'atmosfera intima e riservata. Visite esclusivamente su appuntamento.</p>
+          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Via Montenapoleone 23, 20121 Milano<br/><br/>Il nostro showroom di Milano invita ad esplorare creazioni esclusive in pelliccia e cashmere, interamente Made in Italy, in un contesto riservato ed elegante.</p>
         </div>
         <a href="prenota.html" class="collezione-link">Prenota visita &rarr;</a>
-      <p style="font-family:'Inter',sans-serif;font-size:11px;color:var(--gray-3);margin-top:8px;letter-spacing:0.05em;">Gratuita &middot; Senza impegno &middot; Risposta entro 24 ore</p>
       </div>
       <div class="showroom-card featured seregno">
         <div>
-          <div class="showroom-tag">— Atelier &amp; produzione</div>
+          <div class="showroom-tag">Atelier e produzione</div>
           <h3 class="showroom-name">Seregno,<br/><em>headquarter.</em></h3>
-          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Via Magenta 35, 20831 Seregno (MB)<br/><br/>Il cuore pulsante dove la tradizione artigianale prende forma. Spazio dedicato ai professionisti del settore e buyer internazionali.</p>
+          <p class="showroom-address" style="margin-top: 16px; margin-bottom: 32px; line-height: 1.6;">Via Magenta 35, 20831 Seregno (MB)<br/><br/>La nostra sede storica, dove la tradizione dell’arte della pellicceria si tramanda da oltre un secolo e prende forma. Spazio dedicato ai professionisti del settore e buyer internazionali.</p>
         </div>
         <a href="contatti.html" class="collezione-link">Contatta l'atelier →</a>
       </div>
@@ -1952,8 +1924,8 @@
       </div>
     </div>
     <div style="display:flex; gap:48px; align-items:center; border: 1px solid var(--line); padding: 56px; background: var(--white);">
-      <div style="flex: 0 0 160px; text-align:center;">
-        <img src="https://www.fureco.it/wp-content/uploads/2021/02/furmark.png" alt="Furmark Logo" style="max-width: 100%; height: auto; max-height: 60px;" />
+      <div style="flex: 0 0 220px; text-align:center;">
+        <img src="https://www.fureco.it/wp-content/uploads/2021/02/furmark.png" alt="Furmark Logo" style="max-width: 100%; height: auto; max-height: 120px;" />
       </div>
       <div style="flex: 1; padding-left: 48px; border-left: 1px solid var(--line-soft);">
         <h3 style="font-size:20px; font-weight:300; margin-bottom:12px; line-height:1.4;">Fureco è stata tra le prime aziende ad adottare la certificazione Furmark®</h3>
