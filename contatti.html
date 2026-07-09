@@ -54,13 +54,17 @@
 
     /* ─── NAVIGATION ───────────────────────────────────────── */
     .main-nav {
-      padding:28px 48px;
+      padding: 0 48px;
+      height: 72px;
       background:var(--paper);
       display:grid;
       grid-template-columns:1fr auto 1fr;
       align-items:center;
       gap:32px;
       border-bottom:1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .nav-left,.nav-right {
       display:flex;
@@ -559,7 +563,7 @@
   <!-- ─── MAIN NAV ────────────────────────────────────────── -->
   <nav class="main-nav">
     <div class="nav-left"><a href="fabio-gavazzi-woman.html" class="nav-item">Brand</a><a href="collezioni-donna.html" class="nav-item">Collezioni</a><a href="servizi.html" class="nav-item">Servizi</a></div>
-    <div class="nav-logo">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></div>
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
     <div class="nav-right"><a href="showroom.html" class="nav-item">Showroom</a><a href="contatti.html" class="nav-item">Contatti</a><a href="sostenibilita.html" class="nav-item">Sostenibilità</a><div class="nav-icons"><div class="nav-icon" style="font-size:18px;border:none;width:auto;height:auto;">⌕</div></div></div>
   </nav>
 
