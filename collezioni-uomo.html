@@ -43,6 +43,28 @@
     .hero-headline { font-family:'Cormorant Garamond',serif; font-size:80px; font-weight:300; line-height:.95; color:var(--white); margin-top:16px; }
     .hero-subhead { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:24px; color:rgba(255,255,255,.80); margin-top:16px; }
 
+    /* CATEGORY GRID */
+    .cat-view{display:block}.cat-view.hidden{display:none}
+    .prod-view{display:block}.prod-view.hidden{display:none}
+    .cat-grid-section{padding:64px 48px 80px}
+    .cat-breadcrumb{display:flex;align-items:center;gap:12px;margin-bottom:48px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-3)}
+    .cat-breadcrumb a{color:var(--gray-2);transition:color .2s}.cat-breadcrumb a:hover{color:var(--ink)}
+    .cat-breadcrumb .sep{color:var(--line)}.cat-breadcrumb .current{color:var(--ink)}
+    .gender-switcher{border:1px solid var(--line);display:inline-flex;margin-bottom:0}
+    .gender-btn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;padding:12px 32px;color:var(--gray-2);background:transparent;border:none;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+    .gender-btn.active{background:var(--ink);color:var(--white)}
+    .gender-btn:not(.active):hover{background:var(--bone);color:var(--ink)}
+    .gender-wrapper{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;border-bottom:1px solid var(--line);padding-bottom:40px}
+    .cat-section-title{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--ink);line-height:1}
+    .cat-items-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .cat-tile{position:relative;overflow:hidden;cursor:pointer;border:none;background:none;padding:0;text-align:left;display:block}
+    .cat-tile-img-wrap{aspect-ratio:3/4;overflow:hidden;margin-bottom:16px}
+    .cat-tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+    .cat-tile:hover img{transform:scale(1.06)}
+    .cat-tile-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);margin-bottom:4px}
+    .cat-tile-count{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-3)}
+    .back-to-cats{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-2);border:none;background:none;cursor:pointer;padding:0;transition:color .2s;margin-right:auto}
+    .back-to-cats:hover{color:var(--ink)}
     /* FILTER BAR */
     .filter-bar { background:var(--white); border-bottom:1px solid var(--line); padding:20px 48px; display:flex; align-items:center; gap:32px; }
     .filter-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-3); }
@@ -214,7 +236,7 @@
   <div class="nav-left">
     <a href="about.html" class="nav-item">Azienda</a>
     <a href="fabio-gavazzi-woman.html" class="nav-item">Brand</a>
-    <a href="collezioni-donna.html" class="nav-item active">Collezioni</a>
+    <a href="collezioni.html" class="nav-item active">Collezioni</a>
   </div>
   <a href="index.html" class="nav-logo">
     FURECO
@@ -230,37 +252,68 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img class="hero-bg" src="Home/FABIO GAVAZZI Uomo.jpg" alt="Fabio Gavazzi Man — Collezione Uomo FW 2025" />
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">— FABIO GAVAZZI MAN · COLLEZIONE UOMO</p>
-    <h1 class="hero-headline">Collezione<br/>Uomo FW 2025</h1>
-    <p class="hero-subhead">Eleganza maschile in pelliccia e cashmere</p>
+<!-- ── CATEGORY VIEW (default) ── -->
+<div id="cat-view" class="cat-view">
+  <div class="cat-grid-section">
+    <nav class="cat-breadcrumb" aria-label="breadcrumb">
+      <a href="collezioni.html">← Collezioni</a>
+      <span class="sep">/</span>
+      <span class="current">Uomo</span>
+    </nav>
+    <div class="gender-wrapper">
+      <div>
+        <h1 class="cat-section-title">Collezione<br>Uomo FW 2026</h1>
+      </div>
+      <div class="gender-switcher">
+        <a href="collezioni-donna.html" class="gender-btn" style="text-decoration:none;">Donna</a>
+        <button class="gender-btn active" onclick="return false">Uomo</button>
+      </div>
+    </div>
+    <div class="cat-items-grid">
+      <button class="cat-tile" onclick="selectCat('mink')">
+        <div class="cat-tile-img-wrap"><img src="Uomo/FG2230PIVR_B.jpg" alt="Visone Uomo" loading="lazy"></div>
+        <p class="cat-tile-name">Visone</p>
+        <p class="cat-tile-count">2 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('cashmere')">
+        <div class="cat-tile-img-wrap"><img src="Uomo/FG2260PIVR_B.jpg" alt="Cashmere &amp; Pelliccia Uomo" loading="lazy"></div>
+        <p class="cat-tile-name">Cashmere &amp; Pelliccia</p>
+        <p class="cat-tile-count">1 capo</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('giacconi')">
+        <div class="cat-tile-img-wrap"><img src="Uomo/FG2259PIVR_B.jpg" alt="Giacconi Uomo" loading="lazy"></div>
+        <p class="cat-tile-name">Giacconi</p>
+        <p class="cat-tile-count">2 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('cappotti')">
+        <div class="cat-tile-img-wrap"><img src="Uomo/FG2231PIVR_B.jpg" alt="Cappotti Uomo" loading="lazy"></div>
+        <p class="cat-tile-name">Cappotti</p>
+        <p class="cat-tile-count">1 capo</p>
+      </button>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- FILTER BAR -->
+<!-- ── PRODUCT VIEW ── -->
+<div id="prod-view" class="prod-view hidden">
 <div class="filter-bar">
-  <span class="filter-label">Filtra per:</span>
-  <button class="filter-btn active">Tutti</button>
-  <button class="filter-btn">Visone</button>
-  <button class="filter-btn">Cashmere &amp; Pelliccia</button>
-  <button class="filter-btn">Giacconi</button>
-  <button class="filter-btn">Cappotti</button>
+  <button class="back-to-cats" onclick="backToCats()">← Tutte le categorie</button>
+  <button class="filter-btn" data-filter="mink">Visone</button>
+  <button class="filter-btn" data-filter="cashmere">Cashmere &amp; Pelliccia</button>
+  <button class="filter-btn" data-filter="giacconi">Giacconi</button>
+  <button class="filter-btn" data-filter="cappotti">Cappotti</button>
 </div>
 
 <!-- PRODUCTS -->
 <section class="products-section">
   <div class="container">
     <div class="products-header">
-      <h2 class="products-title">Collezione Uomo</h2>
-      <span class="products-count">4 PEZZI · FW 2025</span>
+      <h2 class="products-title" id="prodTitle">Visone</h2>
+      <span class="products-count" id="count">— CAPI · FW 2026</span>
     </div>
     <div class="product-grid">
 
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink giacconi">
         <div class="product-img-wrap">
           <img src="Uomo/FG2230PIVR_B.jpg" alt="Giaccone in Visone FG2230PIVR" loading="lazy" />
         </div>
@@ -275,7 +328,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="mink cappotti">
         <div class="product-img-wrap">
           <img src="Uomo/FG2231PIVR_B.jpg" alt="Cappotto in Visone FG2231PIVR" loading="lazy" />
           <span class="product-tag">New</span>
@@ -291,7 +344,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="giacconi">
         <div class="product-img-wrap">
           <img src="Uomo/FG2259PIVR_B.jpg" alt="Pelliccia Uomo FG2259PIVR" loading="lazy" />
         </div>
@@ -306,7 +359,7 @@
         </div>
       </a>
 
-      <a class="product-card" href="wireframe-v4-PRODOTTO.html">
+      <a class="product-card" href="wireframe-v4-PRODOTTO.html" data-cat="cashmere giacconi">
         <div class="product-img-wrap">
           <img src="Uomo/FG2260PIVR_B.jpg" alt="Giubbotto in Visone FG2260PIVR" loading="lazy" />
           <span class="product-tag">Bespoke</span>
@@ -325,6 +378,8 @@
     </div>
   </div>
 </section>
+</div><!-- end prod-view -->
+
 
 <!-- CTA -->
 <section class="cta-section">
@@ -378,12 +433,49 @@
 </footer>
 
 <script>
+  const catLabels = {
+    'mink': 'Visone',
+    'cashmere': 'Cashmere & Pelliccia',
+    'giacconi': 'Giacconi',
+    'cappotti': 'Cappotti'
+  };
+
+  function selectCat(cat) {
+    document.getElementById('cat-view').classList.add('hidden');
+    document.getElementById('prod-view').classList.remove('hidden');
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+    const countEl = document.getElementById('count');
+    const titleEl = document.getElementById('prodTitle');
+    btns.forEach(b => b.classList.toggle('active', b.dataset.filter === cat));
+    let visible = 0;
+    cards.forEach(card => {
+      const cats = (card.dataset.cat || '').split(' ');
+      const match = cats.includes(cat);
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+    countEl.textContent = visible + ' CAPI · FW 2026';
+    titleEl.textContent = catLabels[cat] || cat;
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function backToCats() {
+    document.getElementById('prod-view').classList.add('hidden');
+    document.getElementById('cat-view').classList.remove('hidden');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+      selectCat(this.dataset.filter);
     });
   });
+
+  if (location.hash) {
+    const cat = location.hash.replace('#','');
+    if (catLabels[cat]) selectCat(cat);
+  }
 </script>
 </body>
 </html>

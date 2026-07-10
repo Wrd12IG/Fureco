@@ -41,6 +41,33 @@
     .hero-meta { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gray-3); letter-spacing:.2em; text-transform:uppercase; margin-top:24px; }
 
     /* FILTER */
+    /* ── CATEGORY GRID ── */
+    .cat-view { display:block }
+    .cat-view.hidden { display:none }
+    .prod-view { display:block }
+    .prod-view.hidden { display:none }
+    .cat-grid-section { padding:64px 48px 80px; }
+    .cat-breadcrumb { display:flex; align-items:center; gap:12px; margin-bottom:48px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:var(--gray-3); }
+    .cat-breadcrumb a { color:var(--gray-2); transition:color 0.2s; }
+    .cat-breadcrumb a:hover { color:var(--ink); }
+    .cat-breadcrumb .sep { color:var(--line); }
+    .cat-breadcrumb .current { color:var(--ink); }
+    .gender-switcher { display:flex; gap:0; margin-bottom:56px; border:1px solid var(--line); display:inline-flex; }
+    .gender-btn { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; padding:12px 32px; color:var(--gray-2); background:transparent; border:none; cursor:pointer; transition:all 0.2s; }
+    .gender-btn.active { background:var(--ink); color:var(--white); }
+    .gender-btn:not(.active):hover { background:var(--bone); color:var(--ink); }
+    .gender-wrapper { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; border-bottom:1px solid var(--line); padding-bottom:40px; }
+    .cat-section-title { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--ink); line-height:1; }
+    .cat-items-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:24px; }
+    .cat-tile { position:relative; overflow:hidden; cursor:pointer; border:none; background:none; padding:0; text-align:left; display:block; }
+    .cat-tile-img-wrap { aspect-ratio:3/4; overflow:hidden; margin-bottom:16px; }
+    .cat-tile img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .cat-tile:hover img { transform:scale(1.06); }
+    .cat-tile-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:400; color:var(--ink); margin-bottom:4px; }
+    .cat-tile-count { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray-3); }
+    /* ── BACK BUTTON ── */
+    .back-to-cats { display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray-2); border:none; background:none; cursor:pointer; padding:0; transition:color 0.2s; margin-right:auto; }
+    .back-to-cats:hover { color:var(--ink); }
     .filter-bar { background:var(--white); border-bottom:1px solid var(--line); padding:20px 48px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
     .filter-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--gray-3); }
     .filter-btn { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--gray-1); padding:6px 16px; border:1px solid var(--line); cursor:pointer; transition:all .2s; background:transparent; }
@@ -207,7 +234,7 @@
   <div class="nav-left">
     <a href="about.html" class="nav-item">Azienda</a>
     <a href="fabio-gavazzi-woman.html" class="nav-item">Brand</a>
-    <a href="collezioni-donna.html" class="nav-item active">Collezioni</a>
+    <a href="collezioni.html" class="nav-item active">Collezioni</a>
   </div>
   <a href="index.html" class="nav-logo">
     FURECO
@@ -221,31 +248,69 @@
   </div>
 </nav>
 
-<section class="hero-compact">
-  <div class="container">
-    <p class="eyebrow">— FABIO GAVAZZI · COLLEZIONE DONNA</p>
-    <h1 class="hero-headline">Collezione<br/>Donna FW 2025</h1>
-    <p class="hero-subhead">Chinchilla, visone, zibellino, shearling e cashmere Loro Piana</p>
-    <p class="hero-meta">Fabio Gavazzi &middot; Milano &middot; Made in Italy &middot; Dal 1924 &middot; 75 capi</p>
+<!-- ── CATEGORY VIEW (default) ── -->
+<div id="cat-view" class="cat-view">
+  <div class="cat-grid-section">
+    <nav class="cat-breadcrumb" aria-label="breadcrumb">
+      <a href="collezioni.html">← Collezioni</a>
+      <span class="sep">/</span>
+      <span class="current">Donna</span>
+    </nav>
+    <div class="gender-wrapper">
+      <div>
+        <h1 class="cat-section-title">Collezione<br>Donna FW 2026</h1>
+      </div>
+      <div class="gender-switcher">
+        <button class="gender-btn active" onclick="return false">Donna</button>
+        <a href="collezioni-uomo.html" class="gender-btn" style="text-decoration:none;display:inline-block;">Uomo</a>
+      </div>
+    </div>
+    <div class="cat-items-grid">
+      <button class="cat-tile" onclick="selectCat('chinchilla')">
+        <div class="cat-tile-img-wrap"><img src="prodotti/img/FG2416FDOR_A.jpg" alt="Chinchilla" loading="lazy"></div>
+        <p class="cat-tile-name">Chinchilla</p>
+        <p class="cat-tile-count">8 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('mink')">
+        <div class="cat-tile-img-wrap"><img src="prodotti/img/FG2334FDOR_A.jpg" alt="Visone" loading="lazy"></div>
+        <p class="cat-tile-name">Visone</p>
+        <p class="cat-tile-count">16 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('sable')">
+        <div class="cat-tile-img-wrap"><img src="prodotti/img/FG2218FDOR_A.jpg" alt="Zibellino" loading="lazy"></div>
+        <p class="cat-tile-name">Zibellino</p>
+        <p class="cat-tile-count">16 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('shearling')">
+        <div class="cat-tile-img-wrap"><img src="prodotti/img/FG2265FDOR_A.jpg" alt="Shearling" loading="lazy"></div>
+        <p class="cat-tile-name">Shearling</p>
+        <p class="cat-tile-count">7 capi</p>
+      </button>
+      <button class="cat-tile" onclick="selectCat('loro-piana-cashmere-with-fur')">
+        <div class="cat-tile-img-wrap"><img src="prodotti/LORO-PIANA/FG2222FDOR_A.jpg" alt="Cashmere Loro Piana" loading="lazy"></div>
+        <p class="cat-tile-name">Cashmere LP</p>
+        <p class="cat-tile-count">16 capi</p>
+      </button>
+    </div>
   </div>
-</section>
+</div>
 
+<!-- ── PRODUCT VIEW (shown after category selection) ── -->
+<div id="prod-view" class="prod-view hidden">
 <div class="filter-bar">
-  <span class="filter-label">Filtra:</span>
-  <button class="filter-btn active" data-filter="all">Tutti</button>
+  <button class="back-to-cats" id="backBtn" onclick="backToCats()">← Tutte le categorie</button>
   <button class="filter-btn" data-filter="chinchilla">Chinchilla</button>
-
-  <button class="filter-btn" data-filter="shearling">Shearling</button>
   <button class="filter-btn" data-filter="mink">Visone</button>
   <button class="filter-btn" data-filter="sable">Zibellino</button>
-  <button class="filter-btn" data-filter="loro-piana-cashmere-with-fur">Cashmere Loro Piana</button>
+  <button class="filter-btn" data-filter="shearling">Shearling</button>
+  <button class="filter-btn" data-filter="loro-piana-cashmere-with-fur">Cashmere LP</button>
 </div>
 
 <section class="products-section">
   <div class="container">
     <div class="products-header">
-      <h2 class="products-title">Tutti i capi</h2>
-      <span class="products-count" id="count">75 CAPI · FW 2025</span>
+      <h2 class="products-title" id="prodTitle">Chinchilla</h2>
+      <span class="products-count" id="count">— CAPI · FW 2026</span>
     </div>
     <div class="product-grid" id="grid">
       <a class="product-card" href="prodotti/fg2416fdor.html" data-cat="chinchilla">
@@ -1014,6 +1079,8 @@
   </div>
 </section>
 
+</div><!-- end prod-view -->
+
 <section class="cta-section">
   <h2 class="cta-title">Vivi la collezione<br/>in atelier</h2>
   <p class="cta-sub">Visite private su appuntamento &middot; Milano Montenapoleone &amp; Seregno</p>
@@ -1063,24 +1130,52 @@
 </footer>
 
 <script>
-  const btns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.product-card');
-  const countEl = document.getElementById('count');
+  const catLabels = {
+    'chinchilla': 'Chinchilla',
+    'mink': 'Visone',
+    'sable': 'Zibellino',
+    'shearling': 'Shearling',
+    'loro-piana-cashmere-with-fur': 'Cashmere Loro Piana'
+  };
 
-  btns.forEach(btn => {
+  function selectCat(cat) {
+    document.getElementById('cat-view').classList.add('hidden');
+    const pv = document.getElementById('prod-view');
+    pv.classList.remove('hidden');
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+    const countEl = document.getElementById('count');
+    const titleEl = document.getElementById('prodTitle');
+    btns.forEach(b => b.classList.toggle('active', b.dataset.filter === cat));
+    let visible = 0;
+    cards.forEach(card => {
+      const match = card.dataset.cat === cat;
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+    countEl.textContent = visible + ' CAPI · FW 2026';
+    titleEl.textContent = catLabels[cat] || cat;
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function backToCats() {
+    document.getElementById('prod-view').classList.add('hidden');
+    document.getElementById('cat-view').classList.remove('hidden');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Filter btn click (switches category while in product view)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-      btns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      const filter = this.dataset.filter;
-      let visible = 0;
-      cards.forEach(card => {
-        const match = filter === 'all' || card.dataset.cat === filter;
-        card.classList.toggle('hidden', !match);
-        if (match) visible++;
-      });
-      countEl.textContent = visible + ' CAPI · FW 2025';
+      selectCat(this.dataset.filter);
     });
   });
+
+  // Support direct URL hash e.g. collezioni-donna.html#chinchilla
+  if (location.hash) {
+    const cat = location.hash.replace('#','');
+    if (catLabels[cat]) selectCat(cat);
+  }
 </script>
 </body>
 </html>
