@@ -521,34 +521,7 @@
   }
   </script>
   <link rel="canonical" href="https://fureco.vercel.app/contatti.html" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Qual è il numero di telefono dello showroom di Milano?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Lo showroom Fabio Gavazzi di Via Montenapoleone 23, Milano è raggiungibile al +39 02 87038516 oppure via cellulare al +39 344 390 9855."}
-      },
-      {
-        "@type": "Question",
-        "name": "Qual è l'email per contattare Fureco?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Per lo showroom di Milano: montenapoleone@fureco.it. Per la sede di Seregno e informazioni generali: info@fureco.it."}
-      },
-      {
-        "@type": "Question",
-        "name": "Come si prenota una visita allo showroom?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Le visite sono su appuntamento: contattare il team per telefono (+39 02 87038516) o email (montenapoleone@fureco.it) indicando data, orario preferito e tipo di richiesta."}
-      },
-      {
-        "@type": "Question",
-        "name": "Fureco ha una sede fuori dall'Italia?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Fureco ha sede in Italia (Milano e Seregno) ma distribuisce le collezioni Fabio Gavazzi in Russia, Corea del Sud, Cina ed Europa tramite partner wholesale internazionali."}
-      }
-    ]
-  }
-  </script>
+  
 </head>
 <body>
 <div aria-hidden="false" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;" itemprop="description">Per contattare Fureco: showroom Milano al +39 02 87038516 (montenapoleone@fureco.it) e sede Seregno al +39 0362 223236 (info@fureco.it). Visite sempre su appuntamento privato.</div>
@@ -562,16 +535,26 @@
 
   <!-- ─── MAIN NAV ────────────────────────────────────────── -->
   <nav class="main-nav">
-    <div class="nav-left"><a href="fabio-gavazzi-woman.html" class="nav-item">Brand</a><a href="collezioni.html" class="nav-item">Collezioni</a><a href="servizi.html" class="nav-item">Servizi</a></div>
-    <a href="index.html" class="nav-logo" style="text-decoration:none;">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
-    <div class="nav-right"><a href="showroom.html" class="nav-item">Showroom</a><a href="contatti.html" class="nav-item">Contatti</a><a href="sostenibilita.html" class="nav-item">Sostenibilità</a><div class="nav-icons"><div class="nav-icon" style="font-size:18px;border:none;width:auto;height:auto;">⌕</div></div></div>
-  </nav>
+  <div class="nav-left">
+    <a href="about.html" class="nav-item">Azienda</a>
+    <a href="collezioni.html" class="nav-item">Collezioni</a>
+    <a href="servizi.html" class="nav-item">Servizi</a>
+  </div>
+  <a href="index.html" class="nav-logo" style="text-decoration:none; color:var(--ink);">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
+  <div class="nav-right">
+    <a href="showroom.html" class="nav-item">Showroom</a>
+    <a href="sostenibilita.html" class="nav-item">Sostenibilità</a>
+    <a href="contatti.html" class="nav-item" style="color:var(--bordeaux); border-bottom-color:var(--bordeaux);">Contatti</a>
+    <span class="nav-item" style="cursor:pointer; margin-left: 8px; font-family:'Inter', sans-serif; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:0.18em; color:var(--gray-1);">IT / EN</span>
+    <div class="nav-icons"><div class="nav-icon" style="font-size:18px; border:none; width:auto; height:auto; display:flex; align-items:center; justify-content:center;">&#x2315;</div></div>
+  </div>
+</nav>
+
 
   <!-- ─── HERO ───────────────────────────────────────────── -->
-  <section class="hero">
-    <p class="hero-eyebrow">— SIAMO A VOSTRA DISPOSIZIONE</p>
-    <h1 class="hero-headline">Incontriamoci</h1>
-    <p class="hero-subhead">Due sedi, una sola filosofia: accogliere ogni cliente con la discrezione e la cura che si riserva alle cose rare. Scriveteci, chiamateci o venite a trovarci su appuntamento.</p>
+  <section class="hero" style="text-align: center; padding: 80px 48px 40px; background: var(--bone); border-bottom: 1px solid var(--line);">
+    <p class="hero-eyebrow" style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--bordeaux); margin-bottom:16px;">— SIAMO A VOSTRA DISPOSIZIONE</p>
+    <h1 class="hero-headline" style="font-family:'Cormorant Garamond', serif; font-size:42px; font-weight:300; color:var(--ink); margin-bottom:0; text-transform:uppercase; letter-spacing:0.1em;">PRENOTA UN APPUNTAMENTO</h1>
   </section>
 
   <!-- ─── MAIN SECTION ────────────────────────────────────── -->
@@ -581,7 +564,7 @@
 
         <!-- LEFT — CONTACT FORM -->
         <div>
-          <h2 class="form-title">Invia un messaggio</h2>
+          <h2 class="form-title" style="font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:300; margin-bottom:32px;">Invia una richiesta</h2>
 
           <form id="contact-form" novalidate>
 
@@ -648,7 +631,7 @@
 
             <!-- Submit -->
             <button type="submit"
-              style="width:100%;background:var(--bordeaux);color:var(--white);border:1px solid var(--bordeaux);padding:18px 36px;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;"
+               style="width:100%;background:var(--bordeaux);color:var(--white);border:1px solid var(--bordeaux);padding:18px 36px;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;"
               onmouseover="this.style.background='transparent';this.style.color='var(--bordeaux)';"
               onmouseout="this.style.background='var(--bordeaux)';this.style.color='var(--white)';">
               Invia Messaggio
@@ -665,43 +648,37 @@
 
         <!-- RIGHT — INFO BOX -->
         <div>
-          <h2 class="info-title">I nostri recapiti</h2>
+          <h2 class="info-title" style="font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:300; margin-bottom:32px;">I nostri recapiti</h2>
 
-          <!-- Card 1 — Milano -->
-          <div class="contact-card bg-white">
-            <p class="card-tag">SHOWROOM FABIO GAVAZZI MILANO</p>
-            <p class="card-name">Palazzo Gavazzi &mdash; Montenapoleone</p>
-            <p class="card-address">Via Montenapoleone, 23 &mdash; 20121 Milano (MI)</p>
-            <p style="font-size:13px;color:var(--gray-2);margin:6px 0 10px;line-height:1.6;">Nel cuore del Quadrilatero della Moda milanese, Palazzo Gavazzi ospita il nostro showroom di rappresentanza. Un ambiente esclusivo, riservato e su appuntamento, dove è possibile scoprire l'intera collezione Fabio Gavazzi, avviare un percorso bespoke o richiedere una consulenza di restyling.</p>
-            <p class="card-hours">Lunedì&ndash;Venerdì 10:00&ndash;18:00 &middot; Solo su appuntamento</p>
-            <p class="card-contact" style="margin-top:12px;">
-              <a href="tel:+390287038516">+39 02 87038516</a>
-            </p>
-            <p class="card-contact">
-              <a href="https://wa.me/393443909855" target="_blank" rel="noopener noreferrer">WhatsApp: +39 344 390 9855</a>
-            </p>
-            <div class="card-buttons">
-              <a href="tel:+390287038516" class="btn-small btn-small-primary">Chiama</a>
-              <a href="https://wa.me/393443909855" target="_blank" rel="noopener noreferrer" class="btn-small btn-small-outline">WhatsApp</a>
+          <div class="contact-card bg-white" style="border:1px solid var(--line); padding:36px; margin-bottom:24px; display:flex; flex-direction:column; justify-content:space-between; height: 320px;">
+            <div>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--bordeaux); letter-spacing:0.15em; margin-bottom:16px; text-transform:uppercase;">SHOWROOM FABIO GAVAZZI, MILANO</p>
+              <p style="font-size:14px; color:var(--ink); font-weight:400; line-height:1.6; margin-bottom:8px;">Via Montenapoleone, 23 — 20121 Milano (MI)</p>
+              <p style="font-size:12px; color:var(--gray-2); margin-bottom:16px; line-height:1.5;">Lunedì–Venerdì 10:00–18:00 · Solo su appuntamento</p>
+              <p style="font-size:13px; color:var(--gray-1); margin-bottom:4px;">Tel: <a href="tel:+390287038516" style="color:var(--ink); font-weight:500;">+39 02 87038516</a></p>
+              <p style="font-size:13px; color:var(--gray-1); margin-bottom:4px;">WhatsApp: <a href="https://wa.me/393443909855" style="color:var(--ink); font-weight:500;">+39 344 390 9855</a></p>
+              <p style="font-size:13px; color:var(--gray-1); margin-bottom:4px;">Email: <a href="mailto:montenapoleone@fureco.it" style="color:var(--ink); font-weight:500;">montenapoleone@fureco.it</a></p>
             </div>
-            <a href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" rel="noopener noreferrer" class="card-map-link">Apri in Google Maps &rarr;</a>
+            <div style="display:flex; gap:12px; margin-top:20px; align-items:center;">
+              <a href="tel:+390287038516" class="btn-primary" style="padding:10px 20px; font-size:10px; text-decoration:none; text-align:center;">Chiama</a>
+              <a href="https://wa.me/393443909855" class="btn-primary" style="padding:10px 20px; font-size:10px; background:#25D366; border-color:#25D366; text-decoration:none; text-align:center;">WhatsApp</a>
+              <a href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" rel="noopener noreferrer" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
+            </div>
           </div>
 
-          <!-- Card 2 — Seregno -->
-          <div class="contact-card bg-bone">
-            <p class="card-tag">ATELIER E LABORATORI SEREGNO</p>
-            <p class="card-name">Sede Storica &mdash; Seregno (MB)</p>
-            <p class="card-address">Via Magenta, 35 &mdash; 20831 Seregno (MB)</p>
-            <p style="font-size:13px;color:var(--gray-2);margin:6px 0 10px;line-height:1.6;">La sede originale fondata da Cesare Gavazzi nel 1924. Qui si trovano i laboratori artigianali dove ogni capo Fabio Gavazzi viene realizzato a mano. È anche il luogo dei restyling e del servizio di cura e conservazione stagionale.</p>
-            <p class="card-hours">Lunedì&ndash;Venerdì 9:00&ndash;18:00 &middot; Su appuntamento</p>
-            <p class="card-contact" style="margin-top:12px;">
-              <a href="tel:+390362223236">+39 0362 223236</a>
-            </p>
-            <div class="card-buttons">
-              <a href="tel:+390362223236" class="btn-small btn-small-primary">Chiama</a>
-              <a href="mailto:info@fureco.it" class="btn-small btn-small-outline">Email</a>
+          <div class="contact-card bg-bone" style="border:1px solid var(--line); padding:36px; display:flex; flex-direction:column; justify-content:space-between; height: 320px;">
+            <div>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--bordeaux); letter-spacing:0.15em; margin-bottom:16px; text-transform:uppercase;">FURECO S.R.L., SEREGNO</p>
+              <p style="font-size:14px; color:var(--ink); font-weight:400; line-height:1.6; margin-bottom:8px;">Via Magenta, 35 — 20831 Seregno (MB)</p>
+              <p style="font-size:12px; color:var(--gray-2); margin-bottom:16px; line-height:1.5;">Lunedì–Venerdì 9:00–13:00 / 14:00–17:30 · Su appuntamento</p>
+              <p style="font-size:13px; color:var(--gray-1); margin-bottom:4px;">Tel: <a href="tel:+390362223236" style="color:var(--ink); font-weight:500;">+39 0362 223236</a></p>
+              <p style="font-size:13px; color:var(--gray-1); margin-bottom:4px;">Email: <a href="mailto:info@fureco.it" style="color:var(--ink); font-weight:500;">info@fureco.it</a></p>
             </div>
-            <a href="https://maps.google.com/?q=Via+Magenta+35+Seregno" target="_blank" rel="noopener noreferrer" class="card-map-link">Apri in Google Maps →</a>
+            <div style="display:flex; gap:12px; margin-top:20px; align-items:center;">
+              <a href="tel:+390362223236" class="btn-primary" style="padding:10px 20px; font-size:10px; text-decoration:none; text-align:center;">Chiama</a>
+              <a href="mailto:info@fureco.it" class="btn-primary" style="padding:10px 20px; font-size:10px; background:var(--ink); border-color:var(--ink); text-decoration:none; text-align:center;">Email</a>
+              <a href="https://maps.google.com/?q=Via+Magenta+35+Seregno" target="_blank" rel="noopener noreferrer" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
+            </div>
           </div>
         </div>
 
@@ -740,102 +717,82 @@
         <a href="https://linkedin.com/company/fureco" target="_blank" rel="noopener noreferrer" class="social-handle">Fureco Srl</a>
       </div>
 
-      <!-- Email -->
-      <div class="social-item">
-        <div class="social-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <p class="social-label">Email</p>
-        <a href="mailto:info@fureco.it" class="social-handle">info@fureco.it</a>
-      </div>
-
     </div>
   </section>
+
 
   <!-- ─── FOOTER ───────────────────────────────────────────── -->
-  <!-- ── FAQ ─────────────────────────────────────────────────────────── -->
-  <section style="max-width:1400px;margin:80px auto;padding:0 48px;">
-    <div style="border-top:1px solid var(--line);padding-top:60px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--bordeaux);margin-bottom:24px;">DOMANDE FREQUENTI</p>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--ink);margin-bottom:40px;">FAQ</h2>
-    <details class="faq-item" style="border-bottom:1px solid var(--line);padding:20px 0;">
-      <summary style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);cursor:pointer;list-style:none;">Qual è il numero di telefono dello showroom di Milano?</summary>
-      <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.8;color:var(--gray-1);margin-top:12px;">Lo showroom Fabio Gavazzi di Via Montenapoleone 23, Milano è raggiungibile al +39 02 87038516 oppure via cellulare al +39 344 390 9855.</p>
-    </details>
-    <details class="faq-item" style="border-bottom:1px solid var(--line);padding:20px 0;">
-      <summary style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);cursor:pointer;list-style:none;">Qual è l'email per contattare Fureco?</summary>
-      <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.8;color:var(--gray-1);margin-top:12px;">Per lo showroom di Milano: montenapoleone@fureco.it. Per la sede di Seregno e informazioni generali: info@fureco.it.</p>
-    </details>
-    <details class="faq-item" style="border-bottom:1px solid var(--line);padding:20px 0;">
-      <summary style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);cursor:pointer;list-style:none;">Come si prenota una visita allo showroom?</summary>
-      <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.8;color:var(--gray-1);margin-top:12px;">Le visite sono su appuntamento: contattare il team per telefono (+39 02 87038516) o email (montenapoleone@fureco.it) indicando data, orario preferito e tipo di richiesta.</p>
-    </details>
-    <details class="faq-item" style="border-bottom:1px solid var(--line);padding:20px 0;">
-      <summary style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);cursor:pointer;list-style:none;">Fureco ha una sede fuori dall'Italia?</summary>
-      <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.8;color:var(--gray-1);margin-top:12px;">Fureco ha sede in Italia (Milano e Seregno) ma distribuisce le collezioni Fabio Gavazzi in Russia, Corea del Sud, Cina ed Europa tramite partner wholesale internazionali.</p>
-    </details>
-    </div>
-  </section>
+
+
 
   <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
-        <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Brand</h4>
-        <ul>
-          <li>Fabio Gavazzi</li>
-          <li>Fabio Gavazzi Man</li>
-          <li>Mavina</li>
-          <li>Fureco Home</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Esplora</h4>
-        <ul>
-          <li>Collezioni</li>
-          <li>Shop online</li>
-          <li>Virtual Showroom</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Servizi</h4>
-        <ul>
-          <li>Bespoke</li>
-          <li>Made to Measure</li>
-          <li>Fur Restyling</li>
-          <li>Cura &amp; Conservazione</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Azienda</h4>
-        <ul>
-          <li>Chi siamo</li>
-          <li>Sostenibilità</li>
-          <li>Showroom</li>
-          <li>Contatti</li>
-        </ul>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:300; letter-spacing:0.2em; color:var(--ink); line-height:1.2; text-transform:uppercase; margin-bottom:16px;">
+        FURECO<br/><span style="font-size:10px; font-family:'Inter', sans-serif; letter-spacing:0.15em; color:var(--gray-2); font-weight:400; display:block; margin-top:4px;">FUR ENTERPRISE CO.</span>
+      </h3>
+      <p style="font-size:12px; color:var(--gray-1); line-height:1.8; margin-bottom:16px;">
+        Fureco S.r.l.<br/>
+        Via Magenta, 35<br/>
+        20831 Seregno (MB) - Italy<br/>
+        Fiscal Code: 04889790152<br/>
+        VAT: IT00794320960
+      </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/fureco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
-      <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+    <div class="footer-col">
+      <h4>Brand</h4>
+      <ul>
+        <li><a href="fabio-gavazzi-woman.html">Fabio Gavazzi Donna</a></li>
+        <li><a href="fabio-gavazzi-man.html">Fabio Gavazzi Uomo</a></li>
+        <li><a href="mavina.html">Mavina</a></li>
+        <li><a href="fureco-home.html">Fureco Home</a></li>
+      </ul>
     </div>
-  </footer>
+    <div class="footer-col">
+      <h4>Esplora</h4>
+      <ul>
+        <li><a href="collezioni.html">Collezioni</a></li>
+        <li><a href="collezioni-donna.html">Shop online</a></li>
+        <li><a href="showroom.html">Virtual Showroom</a></li>
+        <li><a href="servizi.html">Bespoke</a></li>
+        <li><a href="servizi.html">Made to Measure</a></li>
+        <li><a href="servizi.html">Fur Restyling</a></li>
+        <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <ul>
+        <li><a href="about.html">Chi siamo</a></li>
+        <li><a href="sostenibilita.html">Sostenibilità</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Termini Legali</h4>
+      <ul>
+        <li><a href="#">Dati Aziendali</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Recesso</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+    <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
+  </div>
+</footer>
 
   <!-- ─── JAVASCRIPT ───────────────────────────────────────── -->
   <script>

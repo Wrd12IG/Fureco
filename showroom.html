@@ -178,18 +178,7 @@
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "È necessario prenotare per visitare lo showroom?", "acceptedAnswer": { "@type": "Answer", "text": "Sì, entrambe le sedi ricevono esclusivamente su appuntamento privato. Contattare il team al +39 02 87038516 (Milano) o +39 0362 223236 (Seregno)." } },
-      { "@type": "Question", "name": "Dove si trova lo showroom di Milano?", "acceptedAnswer": { "@type": "Answer", "text": "Palazzo Gavazzi, Via Montenapoleone 23, 20121 Milano — primo piano, nel cuore del Quadrilatero della Moda." } },
-      { "@type": "Question", "name": "È possibile richiedere un capo bespoke?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. Il servizio bespoke è disponibile in entrambe le sedi. Si consiglia di prenotare una visita dedicata all'atelier di Seregno, dove si trovano i laboratori artigianali." } },
-      { "@type": "Question", "name": "Lo showroom organizza eventi privati?", "acceptedAnswer": { "@type": "Answer", "text": "Su richiesta, Fureco organizza presentazioni private della collezione presso lo showroom di Via Montenapoleone per clienti selezionati, buyer e stampa." } }
-    ]
-  }
-  </script>
+  
   <script type="application/ld+json">
   { "@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement": [
     { "@type":"ListItem", "position":1, "name":"Home", "item":"https://fureco.vercel.app/index.html" },
@@ -205,10 +194,8 @@
 <body>
 
 <!-- UTILITY BAR -->
-<div class="utility-bar">
-  <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
-  <a href="prenota.html">Prenota una visita &rarr;</a>
-  <span>IT / EN</span>
+<div class="utility-bar" style="display: flex; justify-content: center; align-items: center;">
+  <span style="margin: 0 auto;">NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
 </div>
 
 <!-- NAV -->
@@ -218,253 +205,152 @@
     <a href="collezioni.html" class="nav-item">Collezioni</a>
     <a href="servizi.html" class="nav-item">Servizi</a>
   </div>
-  <a href="index.html" class="nav-logo">
-    FURECO
-    <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
-  </a>
+  <a href="index.html" class="nav-logo" style="text-decoration:none; color:var(--ink);">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
   <div class="nav-right">
-    <a href="showroom.html" class="nav-item active">Showroom</a>
-    <a href="sostenibilita.html" class="nav-item">Sostenibilit&agrave;</a>
+    <a href="showroom.html" class="nav-item" style="color:var(--bordeaux); border-bottom-color:var(--bordeaux);">Showroom</a>
+    <a href="sostenibilita.html" class="nav-item">Sostenibilità</a>
     <a href="contatti.html" class="nav-item">Contatti</a>
-    <span class="nav-icon">&#9906;</span>
-  </div>
-</nav>
-
+    <div class="nav-icons"><div class="nav-icon" style="font-size:18px; border:none; width:auto; height:auto
 <!-- HERO -->
-<section class="hero">
-  <img class="hero-bg" src="Showroom/showroom-milano-1.jpg" alt="Palazzo Gavazzi — Showroom Fureco Milano Montenapoleone" />
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Due sedi &middot; Un&rsquo;unica eccellenza</p>
-    <h1 class="hero-headline">I Nostri<br/>Showroom</h1>
-    <p class="hero-subhead">Milano Montenapoleone e Seregno: due luoghi dove vivere l&rsquo;esperienza Fureco. Ogni visita &egrave; un appuntamento privato.</p>
-    <div class="hero-cta-row">
-      <a class="btn-primary" href="prenota.html">Prenota una visita</a>
-    </div>
-  </div>
+<section class="hero" style="height: 50vh; min-height: 350px; position: relative; overflow: hidden;">
+  <img class="hero-bg" src="Showroom/showroom-milano-1.jpg" alt="Showroom Fureco" style="position: absolute; inset:0; width: 100%; height: 100%; object-fit: cover;" />
 </section>
 
-<!-- INTRO STRIP -->
-<div class="intro-strip">
+<!-- SEZIONE TITOLO -->
+<section style="padding: 60px 0 20px; text-align: center; background: var(--paper);">
   <div class="container">
-    <div class="intro-strip-inner">
-      <div class="intro-strip-item">
-        <p class="intro-kicker">Fondazione</p>
-        <p class="intro-value">Dal 1924</p>
-        <p class="intro-sub">Quattro generazioni di pellicceria italiana</p>
-      </div>
-      <div class="intro-strip-divider"></div>
-      <div class="intro-strip-item">
-        <p class="intro-kicker">Milano</p>
-        <p class="intro-value">Via Montenapoleone 23</p>
-        <p class="intro-sub">Palazzo Gavazzi &middot; Solo su appuntamento</p>
-      </div>
-      <div class="intro-strip-divider"></div>
-      <div class="intro-strip-item">
-        <p class="intro-kicker">Seregno (MB)</p>
-        <p class="intro-value">Via Magenta 35</p>
-        <p class="intro-sub">Atelier storico &middot; Laboratori artigianali</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SHOWROOM 01 — MILANO -->
-<section class="showroom-section bg-white">
-  <div class="showroom-layout">
-
-    <!-- Immagine -->
-    <div class="showroom-img-col">
-      <img src="Showroom/showroom-milano-2.jpg" alt="Showroom Fabio Gavazzi — Palazzo Gavazzi Via Montenapoleone 23 Milano" />
-      <div class="showroom-img-overlay"></div>
-      <span class="showroom-img-number">01</span>
-    </div>
-
-    <!-- Contenuto -->
-    <div class="showroom-content-col">
-      <p class="sw-tag">Showroom Fabio Gavazzi &middot; Milano</p>
-      <h2 class="sw-title">Palazzo<br/>Gavazzi</h2>
-      <p class="sw-desc">Al primo piano di Palazzo Gavazzi, in uno degli indirizzi pi&ugrave; esclusivi al mondo, lo showroom milanese di Fabio Gavazzi accoglie i propri ospiti come in un salotto privato. Lo spazio &egrave; concepito per presentare la collezione stagionale con la cura di un atelier d&rsquo;alta moda: nessun negozio, nessuna affollata vetrina &mdash; solo un appuntamento riservato dove scoprire le creazioni, avviare un progetto bespoke o ricevere consulenza personalizzata da Fabio Gavazzi.</p>
-
-      <div class="sw-details">
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Indirizzo</p>
-          <p class="sw-detail-value">Via Montenapoleone, 23<br/>20121 Milano MI</p>
-        </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Orari</p>
-          <p class="sw-detail-value">Luned&igrave;&ndash;Venerd&igrave;<br/>10:00&ndash;18:00</p>
-        </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Telefono &amp; WhatsApp</p>
-          <p class="sw-detail-value">
-            <a href="tel:+390287038516">+39 02 87038516</a><br/>
-            <a href="https://wa.me/393443909855">+39 344 390 9855</a>
-          </p>
-        </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Email</p>
-          <p class="sw-detail-value">
-            <a href="mailto:montenapoleone@fureco.it">montenapoleone@fureco.it</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="sw-cta-row">
-        <a class="btn-primary" href="prenota.html">Prenota una visita</a>
-        <a class="sw-map-link" href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" rel="noopener noreferrer">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Apri in Google Maps
-        </a>
-      </div>
-    </div>
-
+    <h1 style="font-family:'Cormorant Garamond', serif; font-size:42px; font-weight:300; letter-spacing:0.15em; color:var(--ink); text-transform:uppercase;">LE SEDI</h1>
   </div>
 </section>
 
-<!-- SHOWROOM 02 — SEREGNO -->
-<section class="showroom-section bg-bone">
-  <div class="showroom-layout reverse">
-
-    <!-- Contenuto -->
-    <div class="showroom-content-col">
-      <p class="sw-tag">Atelier Storico &amp; HQ Fureco &middot; Seregno</p>
-      <h2 class="sw-title">L&rsquo;Atelier<br/>di Seregno</h2>
-      <p class="sw-desc">La sede di Seregno &egrave; dove tutto &egrave; cominciato nel 1924. Qui si trovano ancora oggi i laboratori artigianali dove i maestri pellicciai Fureco lavorano le pelli, gli archivi della collezione storica, e gli spazi dedicati ai servizi di bespoke, fur restyling e cura e conservazione. La visita all&rsquo;atelier offre la possibilit&agrave; unica di assistere alle fasi di lavorazione artigianale e comprendere dall&rsquo;interno il processo creativo di ogni capo Fabio Gavazzi.</p>
-
-      <div class="sw-details">
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Indirizzo</p>
-          <p class="sw-detail-value">Via Magenta, 35<br/>20831 Seregno (MB)</p>
+<!-- DUE BOX DESCRIZIONE -->
+<section style="padding: 20px 0 60px; background: var(--paper);">
+  <div class="container" style="max-width: 1300px; margin: 0 auto; padding: 0 48px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+      
+      <!-- BOX MILANO -->
+      <div style="background: var(--white); border: 1px solid var(--line); padding: 48px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:400; color:var(--bordeaux); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.1em;">Showroom Fabio Gavazzi, Milano</h2>
+          <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-bottom:24px; text-align:justify;">Le collezioni Fabio Gavazzi sono disponibili presso il prestigioso showroom di Milano in via Montenapoleone 23, ospitato nell’omonimo Palazzo Gavazzi, edificio storico risalente all'inizio del XIX secolo. Qui scoprirete l’eleganza del Made in Italy e la straordinaria versatilità dei capi realizzati a mano, potendo contare anche su servizi di personalizzazione per creazioni su misura.</p>
         </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Orari</p>
-          <p class="sw-detail-value">Luned&igrave;&ndash;Venerd&igrave;<br/>8:30&ndash;13:00 &middot; 14:00&ndash;17:30</p>
-        </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Telefono</p>
-          <p class="sw-detail-value">
-            <a href="tel:+390362223236">+39 0362 223236</a>
-          </p>
-        </div>
-        <div class="sw-detail-block">
-          <p class="sw-detail-label">Email</p>
-          <p class="sw-detail-value">
-            <a href="mailto:info@fureco.it">info@fureco.it</a>
-          </p>
+        <div style="border-top: 1px solid var(--line); padding-top: 24px; font-family:'Inter', sans-serif; font-size:13px; color:var(--gray-2); line-height:1.8;">
+          <p style="margin-bottom: 8px;"><strong>Indirizzo:</strong> Via Montenapoleone, 23 — 20121 Milano (MI)</p>
+          <p style="margin-bottom: 8px;"><strong>Orari:</strong> Lunedì–Venerdì 10:00–18:00 · Solo su appuntamento</p>
+          <p style="margin-bottom: 8px;"><strong>Telefono:</strong> <a href="tel:+390287038516" style="color:var(--ink); font-weight:500;">+39 02 87038516</a></p>
+          <p style="margin-bottom: 8px;"><strong>WhatsApp:</strong> <a href="https://wa.me/393443909855" style="color:var(--ink); font-weight:500;">+39 344 390 9855</a></p>
+          <p style="margin-bottom: 24px;"><strong>Email:</strong> <a href="mailto:montenapoleone@fureco.it" style="color:var(--ink); font-weight:500;">montenapoleone@fureco.it</a></p>
+          <div style="display: flex; gap: 16px; align-items: center;">
+            <a href="tel:+390287038516" class="btn-primary" style="padding: 12px 24px; font-size: 10px; text-decoration:none;">Chiama</a>
+            <a href="https://wa.me/393443909855" class="btn-primary" style="padding: 12px 24px; font-size: 10px; background: #25D366; border-color: #25D366; text-decoration:none;">WhatsApp</a>
+            <a href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
+          </div>
         </div>
       </div>
 
-      <div class="sw-cta-row">
-        <a class="btn-primary" href="prenota.html">Prenota una visita</a>
-        <a class="sw-map-link" href="https://maps.google.com/?q=Via+Magenta+35+Seregno+MB" target="_blank" rel="noopener noreferrer">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Apri in Google Maps
-        </a>
+      <!-- BOX SEREGNO -->
+      <div style="background: var(--white); border: 1px solid var(--line); padding: 48px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:400; color:var(--bordeaux); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.1em;">Headquarter Fureco, Seregno</h2>
+          <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-bottom:24px; text-align:justify;">L’atelier storico di Seregno, in via Magenta 35, ospita gli uffici direzionali, lo showroom aziendale e i laboratori di produzione dove, da cento anni, si tramanda l’arte della pellicceria Fureco.<br><br>La visita all’atelier rappresenta un viaggio nel cuore dell’artigianato Made in Italy, offrendo l’opportunità di vedere da vicino le diverse fasi di lavorazione delle pelli, dalla creazione dei modelli cartacei fino alle finiture cucite a mano.</p>
+        </div>
+        <div style="border-top: 1px solid var(--line); padding-top: 24px; font-family:'Inter', sans-serif; font-size:13px; color:var(--gray-2); line-height:1.8;">
+          <p style="margin-bottom: 8px;"><strong>Indirizzo:</strong> Via Magenta, 35 — 20831 Seregno (MB)</p>
+          <p style="margin-bottom: 8px;"><strong>Orari:</strong> Lunedì–Venerdì 9:00–13:00 / 14:00–17:30 · Su appuntamento</p>
+          <p style="margin-bottom: 8px;"><strong>Telefono:</strong> <a href="tel:+390362223236" style="color:var(--ink); font-weight:500;">+39 0362 223236</a></p>
+          <p style="margin-bottom: 8px;">&nbsp;</p>
+          <p style="margin-bottom: 24px;"><strong>Email:</strong> <a href="mailto:info@fureco.it" style="color:var(--ink); font-weight:500;">info@fureco.it</a></p>
+          <div style="display: flex; gap: 16px; align-items: center;">
+            <a href="tel:+390362223236" class="btn-primary" style="padding: 12px 24px; font-size: 10px; text-decoration:none;">Chiama</a>
+            <a href="mailto:info@fureco.it" class="btn-primary" style="padding: 12px 24px; font-size: 10px; background: var(--ink); border-color: var(--ink); text-decoration:none;">Email</a>
+            <a href="https://maps.google.com/?q=Via+Magenta+35+Seregno+MB" target="_blank" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Immagine -->
-    <div class="showroom-img-col">
-      <img src="Inside/inside-2.jpg" alt="Atelier storico Fureco — Seregno, laboratori artigianali pelliccia dal 1924" />
-      <div class="showroom-img-overlay"></div>
-      <span class="showroom-img-number">02</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- PRENOTA BAND -->
-<div class="prenota-band">
-  <div class="eyebrow">Visita privata su appuntamento</div>
-  <h2>Ogni visita &egrave;<br/>un&rsquo;esperienza unica.</h2>
-  <p>Non una vendita generica &mdash; un appuntamento riservato dove ascoltare, consigliare e creare insieme.</p>
-  <a class="btn-light" href="prenota.html">Prenota la tua visita</a>
-</div>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="container">
-    <div class="faq-header">
-      <p class="eyebrow">Domande frequenti</p>
-      <h2>Tutto quello<br/>che vuoi sapere</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>&Egrave; necessario prenotare per visitare lo showroom?</summary>
-        <p class="faq-answer">S&igrave;. Entrambe le sedi ricevono esclusivamente su appuntamento privato &mdash; nessun accesso diretto. Questo ci permette di dedicare ogni visita la giusta attenzione. Per prenotare: telefonate al +39 02 87038516 (Milano) o +39 0362 223236 (Seregno), oppure usate il form online.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Quali collezioni sono disponibili in showroom?</summary>
-        <p class="faq-answer">Lo showroom di Milano ospita la collezione stagionale completa Fabio Gavazzi donna e uomo, con tutta la campionatura. A Seregno &egrave; possibile accedere anche alle produzioni speciali, ai campionari di pellami e agli archivi storici della maison.</p>
-      </details>
-      <details class="faq-item">
-        <summary>&Egrave; possibile richiedere un capo bespoke?</summary>
-        <p class="faq-answer">Assolutamente. Il servizio bespoke &egrave; disponibile in entrambe le sedi. Per i progetti su misura si consiglia di prenotare una visita dedicata all&rsquo;atelier di Seregno, dove si trovano i laboratori artigianali e &egrave; possibile scegliere pelli e materiali direttamente dalle scorte.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Come raggiungere lo showroom di Via Montenapoleone?</summary>
-        <p class="faq-answer">Lo showroom si trova al primo piano di Palazzo Gavazzi, Via Montenapoleone 23, 20121 Milano. In metropolitana: MM3 Montenapoleone (linea gialla), uscita Via Manzoni. Parcheggi consigliati: Duomo, Piazza della Repubblica. Il team &egrave; disponibile a fornire indicazioni dettagliate al momento della prenotazione.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Lo showroom organizza eventi o presentazioni private?</summary>
-        <p class="faq-answer">Su richiesta, Fureco organizza presentazioni private della collezione presso lo showroom di Via Montenapoleone per clienti selezionati, buyer internazionali e stampa. Scrivere a <a href="mailto:montenapoleone@fureco.it" style="color:var(--bordeaux);">montenapoleone@fureco.it</a> per informazioni.</p>
-      </details>
     </div>
   </div>
 </section>
+
+<!-- CARRELLATA IMMAGINI -->
+<section style="padding: 40px 0 80px; background: var(--paper); border-bottom: 1px solid var(--line);">
+  <div class="container" style="max-width: 1300px; margin: 0 auto; padding: 0 48px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <img src="Showroom/showroom-milano-2.jpg" alt="Showroom Milano" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; border: 1px solid var(--line);" />
+      <img src="Inside/inside-2.jpg" alt="Atelier Seregno" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; border: 1px solid var(--line);" />
+    </div>
+  </div>
+</section>
+
+
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <h3>FURECO<br/><em style="font-style:italic; font-size:14px; color:var(--gray-2);">Fur Enterprise Co.</em></h3>
-      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:300; letter-spacing:0.2em; color:var(--ink); line-height:1.2; text-transform:uppercase; margin-bottom:16px;">
+        FURECO<br/><span style="font-size:10px; font-family:'Inter', sans-serif; letter-spacing:0.15em; color:var(--gray-2); font-weight:400; display:block; margin-top:4px;">FUR ENTERPRISE CO.</span>
+      </h3>
+      <p style="font-size:12px; color:var(--gray-1); line-height:1.8; margin-bottom:16px;">
+        Fureco S.r.l.<br/>
+        Via Magenta, 35<br/>
+        20831 Seregno (MB) - Italy<br/>
+        Fiscal Code: 04889790152<br/>
+        VAT: IT00794320960
+      </p>
       <div class="footer-social">
-        <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
-        <a href="https://www.youtube.com/@fureco" target="_blank" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-        </a>
-        <a href="https://www.xiaohongshu.com" target="_blank" aria-label="RedNote">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
-        </a>
-        <a href="https://wa.me/393443909855" target="_blank" aria-label="WhatsApp">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </a>
-        <a href="https://weixin.qq.com" target="_blank" aria-label="WeChat">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm5 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M2.5 12a7.5 7.5 0 0 0 12.97 5.12l3.53.88-.88-3.53A7.5 7.5 0 1 0 2.5 12z"/></svg>
+        <a href="https://www.linkedin.com/company/fureco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
         </a>
       </div>
     </div>
-    <div class="footer-col"><h4>Collezioni</h4><ul>
-      <li><a href="fabio-gavazzi-woman.html">Fabio Gavazzi Donna</a></li>
-      <li><a href="fabio-gavazzi-man.html">Fabio Gavazzi Uomo</a></li>
-      <li><a href="mavina.html">Mavina</a></li>
-      <li><a href="fureco-home.html">Fureco Home</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Azienda</h4><ul>
-      <li><a href="about.html">Chi Siamo</a></li>
-      <li><a href="sostenibilita.html">Sostenibilit&agrave;</a></li>
-      <li><a href="press.html">Press &amp; News</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Servizi</h4><ul>
-      <li><a href="servizi.html">Bespoke</a></li>
-      <li><a href="servizi.html">Made to Measure</a></li>
-      <li><a href="servizi.html">Fur Restyling</a></li>
-      <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Showroom</h4><ul>
-      <li><a href="showroom.html">Milano &middot; Montenapoleone</a></li>
-      <li><a href="showroom.html">Seregno (MB)</a></li>
-      <li><a href="prenota.html">Prenota una visita</a></li>
-    </ul></div>
+    <div class="footer-col">
+      <h4>Brand</h4>
+      <ul>
+        <li><a href="fabio-gavazzi-woman.html">Fabio Gavazzi Donna</a></li>
+        <li><a href="fabio-gavazzi-man.html">Fabio Gavazzi Uomo</a></li>
+        <li><a href="mavina.html">Mavina</a></li>
+        <li><a href="fureco-home.html">Fureco Home</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Esplora</h4>
+      <ul>
+        <li><a href="collezioni.html">Collezioni</a></li>
+        <li><a href="collezioni-donna.html">Shop online</a></li>
+        <li><a href="showroom.html">Virtual Showroom</a></li>
+        <li><a href="servizi.html">Bespoke</a></li>
+        <li><a href="servizi.html">Made to Measure</a></li>
+        <li><a href="servizi.html">Fur Restyling</a></li>
+        <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Azienda</h4>
+      <ul>
+        <li><a href="about.html">Chi siamo</a></li>
+        <li><a href="sostenibilita.html">Sostenibilità</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Termini Legali</h4>
+      <ul>
+        <li><a href="#">Dati Aziendali</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Recesso</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Fureco Srl &middot; P.IVA IT00794320960</span>
-    <span>Privacy &middot; Cookie &middot; Shipping &middot; Recesso</span>
+    <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
+    <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
   </div>
 </footer>
 

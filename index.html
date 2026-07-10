@@ -1040,8 +1040,8 @@
   .hero-media-overlay { z-index:4; }
   .hero-media-meta { z-index:5; }
   /* ── brand tile real bg ───────────────────────── */
-  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.4; filter: contrast(0.9) grayscale(20%); transition:all .6s ease; z-index:0; }
-  .brand-tile:hover .brand-tile-image-bg-real { opacity:0.65; filter: contrast(1.15) grayscale(0%); transform: scale(1.03); }
+  .brand-tile-image-bg-real { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; filter: contrast(0.9) grayscale(20%); transition:all .6s ease; z-index:0; }
+  .brand-tile:hover .brand-tile-image-bg-real { opacity:0.6; filter: contrast(1.15) grayscale(0%); transform: scale(1.03); }
 
 
   /* ── Showroom con foto sfondo ── */
@@ -1579,30 +1579,24 @@
 
 
 <!-- ==================== UTILITY BAR ==================== -->
-<div class="utility-bar">
-  <span>NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
-  <a href="contatti.html" style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:400; text-transform:uppercase; color:var(--bordeaux); border:none; padding:0; text-decoration:none; letter-spacing:0.15em;">Contattaci &rarr;</a>
-  <span>IT / EN</span>
+<div class="utility-bar" style="display: flex; justify-content: center; align-items: center;">
+  <span style="margin: 0 auto;">NEW COLLECTION 2026 — CONCEIVED, DESIGNED &amp; PRODUCED IN ITALY</span>
 </div>
 
 <!-- ==================== MAIN NAVIGATION ==================== -->
 <nav class="main-nav">
   <div class="nav-left">
-    <a href="azienda.html" class="nav-item">Azienda</a>
-    <a href="collezioni.html" class="nav-item">Collezioni</a>
+    <a href="about.html" class="nav-item">Azienda</a>
+    <a href="collezioni.html" class="nav-item" style="color:var(--bordeaux); border-bottom-color:var(--bordeaux);">Collezioni</a>
     <a href="servizi.html" class="nav-item">Servizi</a>
   </div>
-  <div class="nav-logo">
-    FURECO
-    <span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span>
-  </div>
+  <a href="index.html" class="nav-logo" style="text-decoration:none; color:var(--ink);">FURECO<span class="accent">FUR ENTERPRISE COMPANY · DAL 1924</span></a>
   <div class="nav-right">
     <a href="showroom.html" class="nav-item">Showroom</a>
-    <a href="contatti.html" class="nav-item">Contatti</a>
     <a href="sostenibilita.html" class="nav-item">Sostenibilità</a>
-    <div class="nav-icons">
-      <div class="nav-icon" style="font-size: 18px; border: none; width: auto; height: auto;">⌕</div>
-    </div>
+    <a href="contatti.html" class="nav-item">Contatti</a>
+    <span class="nav-item" style="cursor:pointer; margin-left: 8px; font-family:'Inter', sans-serif; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:0.18em; color:var(--gray-1);">IT / EN</span>
+    <div class="nav-icons"><div class="nav-icon" style="font-size:18px; border:none; width:auto; height:auto; display:flex; align-items:center; justify-content:center;">&#x2315;</div></div>
   </div>
 </nav>
 
@@ -1698,11 +1692,37 @@
 <!-- ==================== CONTENUTO SOTTO HERO ==================== -->
 <div class="container">
 
+  <!-- SEZIONE 03 — HERITAGE (SPOSTATA E MODIFICATA) -->
+  <section class="below-hero">
+    <div class="heritage">
+      <span class="heritage-decoration">1924</span>
+      <div class="heritage-image heritage-image-real">
+        <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Storia Fureco" style="object-fit:cover; width:100%; aspect-ratio:4/3; border:1px solid var(--line);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Fureco World 1" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Fureco World 2" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
+        </div>
+      </div>
+      <div class="heritage-content">
+        <div class="heritage-eyebrow" style="display: flex; align-items: center; gap: 8px;">
+          <span style="display: inline-block; width: 24px; height: 1px; background: var(--bordeaux);"></span>
+          Fureco World
+        </div>
+        <h2 class="heritage-title" style="margin-top: 12px; margin-bottom: 24px;">Storia e<br/><em>Heritage</em></h2>
+        <p class="heritage-text">La storia di Fureco inizia in Italia negli anni Venti, quando Cesare Gavazzi apre una piccola bottega di pelletteria a Seregno. Da allora, quattro generazioni della famiglia hanno trasformato un sapere artigianale in un punto di riferimento per la manifattura del lusso.</p>
+        <div style="margin-top: 28px;">
+          <a href="about.html" class="collezione-link" style="text-decoration:none;">Scopri &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SEZIONE 02 — COLLEZIONI -->
   <section class="below-hero">
     <div class="section-header">
       <div class="section-title-group">
-        <h2 class="section-title"><a href="collezioni-donna.html" style="text-decoration:none; color:inherit;">Collezioni 2026</a></h2>
+        <h2 class="section-title">Fabio Gavazzi FW 26</h2>
+        <a href="collezioni.html" class="section-link" style="text-decoration:none;">Scopri le collezioni &rarr;</a>
       </div>
     </div>
     <div class="collezioni-split">
@@ -1739,10 +1759,10 @@
       <div class="collezione-card">
         <div class="slider-wrap" id="slider-uomo">
           <div class="slider-track" id="track-uomo">
-            <img src="Uomo/FG2230PIVR_B.jpg" alt="Collezione Uomo 1">
-            <img src="Uomo/FG2231PIVR_B.jpg" alt="Collezione Uomo 2">
-            <img src="Uomo/FG2259PIVR_B.jpg" alt="Collezione Uomo 3">
-            <img src="Uomo/FG2260PIVR_B.jpg" alt="Collezione Uomo 4">
+            <img src="Uomo/COPPIA_1.jpg" alt="Collezione Uomo 1">
+            <img src="Uomo/COPPIA_2.jpg" alt="Collezione Uomo 2">
+            <img src="Uomo/COPPIA_3.jpg" alt="Collezione Uomo 3">
+            <img src="Uomo/COPPIA_4.jpg" alt="Collezione Uomo 4">
           </div>
           <button class="slider-btn slider-prev" onclick="slide('uomo',-1)">&#8592;</button>
           <button class="slider-btn slider-next" onclick="slide('uomo',1)">&#8594;</button>
@@ -1770,7 +1790,7 @@
   <section class="below-hero b2b-section">
     <div class="section-header">
       <div class="section-title-group">
-        <h2 class="section-title">Inside Fureco</h2>
+        <h2 class="section-title">Trade &amp; Atelier</h2>
       </div>
     </div>
     
@@ -1782,7 +1802,7 @@
         <div class="b2b-content">
           <h3 class="b2b-card-title">Commercio Pelli</h3>
           <p class="b2b-card-desc">Importazione, esportazione e una selezione rigorosa delle pelli grezze migliori al mondo, garantendo tracciabilità, qualità e trasparenza per l’industria.</p>
-          <span class="b2b-link">Scopri la filiera</span>
+          <a href="about.html" class="b2b-link">Scopri la filiera &rarr;</a>
         </div>
       </div>
       
@@ -1793,36 +1813,19 @@
         <div class="b2b-content">
           <h3 class="b2b-card-title">Collaborazioni e private label</h3>
           <p class="b2b-card-desc">Sviluppo e produzione di soluzioni su misura per i più prestigiosi marchi del lusso, con competenza tecnica e consolidata esperienza artigianale.</p>
-          <span class="b2b-link">Esplora l’atelier</span>
+          <a href="about.html" class="b2b-link">Scopri l’azienda &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEZIONE 03 — HERITAGE -->
-  <section class="below-hero">
-    <div class="heritage">
-      <span class="heritage-decoration">1924</span>
-      <div class="heritage-image heritage-image-real">
-        <img src="L'arte della pellicceria/img-storia_small.jpg" alt="Storia Fureco" style="object-fit:cover; width:100%; aspect-ratio:4/3; border:1px solid var(--line);">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <img src="L'arte della pellicceria/01_img_furecoworld-1.jpg" alt="Fureco World 1" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
-          <img src="L'arte della pellicceria/02_img_furecoworld.jpg" alt="Fureco World 2" style="object-fit:cover; width:100%; aspect-ratio:1/1; border:1px solid var(--line);">
-        </div>
-      </div>
-      <div class="heritage-content">
-        <div class="heritage-eyebrow">Heritage</div>
-        <h2 class="heritage-title">L'arte della<br/>pellicceria<br/><em>dal 1924.</em></h2>
-        <p class="heritage-text">La storia di Fureco inizia in Italia negli anni Venti, quando Cesare Gavazzi apre una piccola bottega di pelletteria a Seregno. Da allora, quattro generazioni della famiglia hanno trasformato un sapere artigianale in un punto di riferimento per la manifattura del lusso.</p>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- SEZIONE 04 — LE SEDI -->
   <section class="below-hero">
     <div class="section-header">
       <div class="section-title-group">
-        <h2 class="section-title">Le <em>sedi</em></h2>
+        <h2 class="section-title">Le sedi</h2>
         <a href="prenota.html" class="section-link" style="text-decoration:none;">Prenota appuntamento →</a>
       </div>
     </div>
@@ -1851,7 +1854,7 @@
     <div class="section-header">
 
       <div class="section-title-group">
-        <h2 class="section-title">Servizi <em>esclusivi</em></h2>
+        <h2 class="section-title">I nostri servizi</h2>
         <a href="servizi.html" class="section-link" style="text-decoration:none;">Tutti i servizi →</a>
       </div>
     </div>
@@ -1919,7 +1922,7 @@
     <div class="section-header">
 
       <div class="section-title-group">
-        <h2 class="section-title">Certificazione <em>Furmark®</em></h2>
+        <h2 class="section-title">Furmark®</h2>
         <a href="sostenibilita.html" class="section-link" style="text-decoration:none;">Sostenibilità →</a>
       </div>
     </div>
@@ -1928,11 +1931,9 @@
         <img src="https://www.fureco.it/wp-content/uploads/2021/02/furmark.png" alt="Furmark Logo" style="max-width: 100%; height: auto; max-height: 120px;" />
       </div>
       <div style="flex: 1; padding-left: 48px; border-left: 1px solid var(--line-soft);">
-        <h3 style="font-size:20px; font-weight:300; margin-bottom:12px; line-height:1.4;">Fureco è stata tra le prime aziende ad adottare la certificazione Furmark®</h3>
-        <p style="font-size:14px; color:var(--gray-2); line-height:1.6; max-width: 600px;">Selezioniamo pellami provenienti da Paesi in cui vigono rigorose normative sul benessere animale e stringenti standard ambientali. Da diversi anni partecipiamo attivamente a un programma globale per la tracciabilità delle pelli, che adottiamo lungo tutta la filiera produttiva per garantire la massima trasparenza e la più alta qualità ai nostri clienti.</p>
-        <div style="margin-top: 24px;">
-          <a href="sostenibilita.html" class="collezione-link" style="text-decoration:none;">Scopri la certificazione &rarr;</a>
-        </div>
+        <h3 style="font-size:20px; font-weight:300; margin-bottom:12px; line-height:1.4;">Certificazione internazionale per le pelli naturali.</h3>
+        <p style="font-size:14px; color:var(--gray-2); line-height:1.6; max-width: 600px;"><em>Fureco</em> è stata la prima azienda al mondo ad adottare <em>Furmark®</em>, una rigorosa politica di approvvigionamento basata su trasparenza e rispetto del benessere animale, in linea con i più alti standard ambientali internazionali, a garanzia che ogni capo sia realizzato con pelli certificate, tracciabili e provenienti da fonti responsabili.<br><br>Questa certificazione assicura ai clienti la certezza di scegliere pellicce autentiche e verificarne l'origine, in conformità con l’impegno costante di <em>Fureco</em> verso un prodotto responsabile.</p>
+        
       </div>
     </div>
   </section>
@@ -1942,8 +1943,8 @@
   <!-- NEWSLETTER -->
   <section class="newsletter">
     <div class="newsletter-inner">
-      <div class="newsletter-eyebrow">— FUR JOURNAL</div>
-      <h2 class="newsletter-title">Iscriviti alla nostra<br/><em>newsletter privata.</em></h2>
+      <div class="newsletter-eyebrow"></div>
+      <h2 class="newsletter-title">Iscriviti alla nostra<br/><em>newsletter.</em></h2>
       <p class="newsletter-desc">Anteprime collezioni, eventi privati, accesso esclusivo allo showroom e contenuti editoriali dedicati.</p>
       <div class="newsletter-form">
         <input type="email" placeholder="LA TUA EMAIL">
@@ -2043,48 +2044,23 @@
     </script>
   </section>
 
-  <!-- SEZIONE 06 — RECENSIONI -->
-  <section class="below-hero">
-    <div class="section-header">
-
-      <div class="section-title-group">
-        <h2 class="section-title">L'opinione dei <em>nostri clienti</em></h2>
-        <a href="showroom.html" class="section-link" style="text-decoration:none;">Leggi le recensioni →</a>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
-        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
-        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"Un'esperienza d'acquisto impeccabile. Il cappotto su misura è un capolavoro di sartoria e la qualità dei materiali è eccellente."</p>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Elena M.</span>
-      </div>
-      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
-        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
-        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"L'atelier di Seregno offre un servizio su misura senza pari. La consulenza per il restyling della mia pelliccia vintage è stata preziosissima."</p>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Sofia R.</span>
-      </div>
-      <div style="padding: 40px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column;">
-        <div style="color: var(--bordeaux); margin-bottom: 16px; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
-        <p style="font-size: 14px; color: var(--gray-2); line-height: 1.6; flex-grow: 1; margin-bottom: 24px; font-style: italic;">"I dettagli in zibellino fanno la differenza. Ho acquistato la collezione uomo ed è diventato il mio punto di riferimento per il lusso invernale."</p>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--bordeaux); text-transform: uppercase;">— Marco T.</span>
-      </div>
-    </div>
-  </section>
-
-  </div>
-
-<!-- ==================== FOOTER ==================== -->
+  <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <h3>FURECO<br/><em>Fur Enterprise Co.</em></h3>
-      <p>Pellicceria italiana dal 1924. Quattro generazioni di artigianato, ricerca e innovazione al servizio del lusso senza tempo.</p>
+      <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:300; letter-spacing:0.2em; color:var(--ink); line-height:1.2; text-transform:uppercase; margin-bottom:16px;">
+        FURECO<br/><span style="font-size:10px; font-family:'Inter', sans-serif; letter-spacing:0.15em; color:var(--gray-2); font-weight:400; display:block; margin-top:4px;">FUR ENTERPRISE CO.</span>
+      </h3>
+      <p style="font-size:12px; color:var(--gray-1); line-height:1.8; margin-bottom:16px;">
+        Fureco S.r.l.<br/>
+        Via Magenta, 35<br/>
+        20831 Seregno (MB) - Italy<br/>
+        Fiscal Code: 04889790152<br/>
+        VAT: IT00794320960
+      </p>
       <div class="footer-social">
         <a href="https://www.instagram.com/fabiogavazziofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
-        <a href="https://www.facebook.com/FabiogavazziMilano" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
         <a href="https://www.linkedin.com/company/fureco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -2094,36 +2070,41 @@
     <div class="footer-col">
       <h4>Brand</h4>
       <ul>
-        <li>Fabio Gavazzi</li>
-        <li>Fabio Gavazzi Man</li>
-        <li>Mavina</li>
-        <li>Fureco Home</li>
+        <li><a href="fabio-gavazzi-woman.html">Fabio Gavazzi Donna</a></li>
+        <li><a href="fabio-gavazzi-man.html">Fabio Gavazzi Uomo</a></li>
+        <li><a href="mavina.html">Mavina</a></li>
+        <li><a href="fureco-home.html">Fureco Home</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Esplora</h4>
       <ul>
-        <li>Collezioni</li>
-        <li>Shop online</li>
-        <li>Virtual Showroom</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Servizi</h4>
-      <ul>
-        <li>Bespoke</li>
-        <li>Made to Measure</li>
-        <li>Fur Restyling</li>
-        <li>Cura &amp; Conservazione</li>
+        <li><a href="collezioni.html">Collezioni</a></li>
+        <li><a href="collezioni-donna.html">Shop online</a></li>
+        <li><a href="showroom.html">Virtual Showroom</a></li>
+        <li><a href="servizi.html">Bespoke</a></li>
+        <li><a href="servizi.html">Made to Measure</a></li>
+        <li><a href="servizi.html">Fur Restyling</a></li>
+        <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Azienda</h4>
       <ul>
-        <li>Chi siamo</li>
-        <li>Sostenibilità</li>
-        <li>Showroom</li>
-        <li>Contatti</li>
+        <li><a href="about.html">Chi siamo</a></li>
+        <li><a href="sostenibilita.html">Sostenibilità</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Termini Legali</h4>
+      <ul>
+        <li><a href="#">Dati Aziendali</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Recesso</a></li>
       </ul>
     </div>
   </div>
