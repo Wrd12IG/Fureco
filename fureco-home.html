@@ -484,7 +484,10 @@
       .step:last-child { border-bottom: none; }
       .utility-bar { flex-direction: column; gap: 6px; text-align: center; padding: 10px 16px; }
     }
-  </style>
+  
+    .footer a { color: inherit; text-decoration: none; }
+    .footer a:hover { color: var(--bordeaux); }
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -735,13 +738,18 @@
     <div class="footer-col">
       <h4>Esplora</h4>
       <ul>
-        <li><a href="collezioni.html">Collezioni</a></li>
+        <li><a href="collezioni.html">Collezione</a></li>
         <li><a href="collezioni-donna.html">Shop online</a></li>
         <li><a href="showroom.html">Virtual Showroom</a></li>
-        <li><a href="servizi.html">Bespoke</a></li>
-        <li><a href="servizi.html">Made to Measure</a></li>
-        <li><a href="servizi.html">Fur Restyling</a></li>
-        <li><a href="servizi.html">Cura &amp; Conservazione</a></li>
+        <li style="margin-top: 10px;">
+          <a href="servizi.html" style="font-weight: 500;">Servizi</a>
+          <ul style="list-style: none; margin-top: 6px; padding-left: 8px;">
+            <li style="margin-bottom: 6px; font-size: 11px;"><a href="servizi.html#bespoke" style="color: var(--gray-2);">Bespoke</a></li>
+            <li style="margin-bottom: 6px; font-size: 11px;"><a href="servizi.html#made-to-measure" style="color: var(--gray-2);">Made to Measure</a></li>
+            <li style="margin-bottom: 6px; font-size: 11px;"><a href="servizi.html#fur-restyling" style="color: var(--gray-2);">Fur Restyling</a></li>
+            <li style="margin-bottom: 0; font-size: 11px;"><a href="servizi.html#cura-conservazione" style="color: var(--gray-2);">Cura &amp; Conservazione</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div class="footer-col">
@@ -766,7 +774,6 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 FURECO SRL · P.IVA IT00794320960</span>
-    <span>PRIVACY · COOKIE · SHIPPING · RECESSO</span>
   </div>
 </footer>
 
