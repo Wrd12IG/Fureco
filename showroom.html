@@ -218,7 +218,7 @@
 </nav>
 <!-- HERO -->
 <section class="hero" style="height: 50vh; min-height: 350px; position: relative; overflow: hidden;">
-  <img class="hero-bg" src="Showroom/showroom-milano-1.jpg" alt="Showroom Fureco" style="position: absolute; inset:0; width: 100%; height: 100%; object-fit: cover;" />
+  <img class="hero-bg" src="Showroom/header-showroom.jpg" alt="Showroom Fureco" style="position: absolute; inset:0; width: 100%; height: 100%; object-fit: cover;" />
 </section>
 
 <!-- SEZIONE TITOLO -->
@@ -228,52 +228,41 @@
   </div>
 </section>
 
-<!-- DUE BOX DESCRIZIONE -->
+<!-- DUE CUBOTTI AZIONE -->
 <section style="padding: 20px 0 60px; background: var(--paper);">
   <div class="container" style="max-width: 1300px; margin: 0 auto; padding: 0 48px;">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
       
-      <!-- BOX MILANO -->
-      <div style="background: var(--white); border: 1px solid var(--line); padding: 48px; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <h2 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:400; color:var(--bordeaux); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.1em;">Showroom Fabio Gavazzi, Milano</h2>
-          <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-bottom:24px; text-align:justify;">Le collezioni Fabio Gavazzi sono disponibili presso il prestigioso showroom di Milano in via Montenapoleone 23, ospitato nell’omonimo Palazzo Gavazzi, edificio storico risalente all'inizio del XIX secolo. Qui scoprirete l’eleganza del Made in Italy e la straordinaria versatilità dei capi realizzati a mano, potendo contare anche su servizi di personalizzazione per creazioni su misura.</p>
-        </div>
-        <div style="border-top: 1px solid var(--line); padding-top: 24px; font-family:'Inter', sans-serif; font-size:13px; color:var(--gray-2); line-height:1.8;">
-          <p style="margin-bottom: 8px;"><strong>Indirizzo:</strong> Via Montenapoleone, 23 — 20121 Milano (MI)</p>
-          <p style="margin-bottom: 8px;"><strong>Orari:</strong> Lunedì–Venerdì 10:00–18:00 · Solo su appuntamento</p>
-          <p style="margin-bottom: 8px;"><strong>Telefono:</strong> <a href="tel:+390287038516" style="color:var(--ink); font-weight:500;">+39 02 87038516</a></p>
-          <p style="margin-bottom: 8px;"><strong>WhatsApp:</strong> <a href="https://wa.me/393443909855" style="color:var(--ink); font-weight:500;">+39 344 390 9855</a></p>
-          <p style="margin-bottom: 24px;"><strong>Email:</strong> <a href="mailto:montenapoleone@fureco.it" style="color:var(--ink); font-weight:500;">montenapoleone@fureco.it</a></p>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <a href="tel:+390287038516" class="btn-primary" style="padding: 12px 24px; font-size: 10px; text-decoration:none;">Chiama</a>
-            <a href="https://wa.me/393443909855" class="btn-primary" style="padding: 12px 24px; font-size: 10px; background: #25D366; border-color: #25D366; text-decoration:none;">WhatsApp</a>
-            <a href="https://maps.app.goo.gl/AnCseHgq8JEB7UyMA" target="_blank" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
-          </div>
+      <!-- CUBOTTO MILANO -->
+      <div style="position:relative; aspect-ratio:4/3; overflow:hidden; border:1px solid var(--line); cursor:pointer;" onclick="window.location.href='contatti.html'">
+        <img src="Showroom/header-showroom.jpg" alt="Showroom Milano" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(15,10,5,0.75) 0%, transparent 50%);"></div>
+        <div style="position:absolute; bottom:32px; left:32px; right:32px;">
+          <h2 style="font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:300; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">Showroom Milano</h2>
+          <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.6; margin-bottom:16px;">Via Montenapoleone, 23 — 20121 Milano (MI)</p>
+          <a href="contatti.html" style="display:inline-block; padding:12px 28px; border:1px solid var(--white); color:var(--white); font-family:'Inter',sans-serif; font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:all 0.3s;" onmouseover="this.style.background='var(--white)';this.style.color='var(--ink)'" onmouseout="this.style.background='transparent';this.style.color='var(--white)'">Prenota una visita</a>
         </div>
       </div>
 
-      <!-- BOX SEREGNO -->
-      <div style="background: var(--white); border: 1px solid var(--line); padding: 48px; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <h2 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:400; color:var(--bordeaux); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.1em;">Headquarter Fureco, Seregno</h2>
-          <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); margin-bottom:24px; text-align:justify;">L’atelier storico di Seregno, in via Magenta 35, ospita gli uffici direzionali, lo showroom aziendale e i laboratori di produzione dove, da cento anni, si tramanda l’arte della pellicceria Fureco.<br><br>La visita all’atelier rappresenta un viaggio nel cuore dell’artigianato Made in Italy, offrendo l’opportunità di vedere da vicino le diverse fasi di lavorazione delle pelli, dalla creazione dei modelli cartacei fino alle finiture cucite a mano.</p>
-        </div>
-        <div style="border-top: 1px solid var(--line); padding-top: 24px; font-family:'Inter', sans-serif; font-size:13px; color:var(--gray-2); line-height:1.8;">
-          <p style="margin-bottom: 8px;"><strong>Indirizzo:</strong> Via Magenta, 35 — 20831 Seregno (MB)</p>
-          <p style="margin-bottom: 8px;"><strong>Orari:</strong> Lunedì–Venerdì 9:00–13:00 / 14:00–17:30 · Su appuntamento</p>
-          <p style="margin-bottom: 8px;"><strong>Telefono:</strong> <a href="tel:+390362223236" style="color:var(--ink); font-weight:500;">+39 0362 223236</a></p>
-          <p style="margin-bottom: 8px;">&nbsp;</p>
-          <p style="margin-bottom: 24px;"><strong>Email:</strong> <a href="mailto:info@fureco.it" style="color:var(--ink); font-weight:500;">info@fureco.it</a></p>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <a href="tel:+390362223236" class="btn-primary" style="padding: 12px 24px; font-size: 10px; text-decoration:none;">Chiama</a>
-            <a href="mailto:info@fureco.it" class="btn-primary" style="padding: 12px 24px; font-size: 10px; background: var(--ink); border-color: var(--ink); text-decoration:none;">Email</a>
-            <a href="https://maps.google.com/?q=Via+Magenta+35+Seregno+MB" target="_blank" style="font-family:'Inter', sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray-2); display:flex; align-items:center; text-decoration:none; margin-left:auto;">Mappa &rarr;</a>
-          </div>
+      <!-- CUBOTTO SEREGNO -->
+      <div style="position:relative; aspect-ratio:4/3; overflow:hidden; border:1px solid var(--line); cursor:pointer;" onclick="window.location.href='contatti.html'">
+        <img src="Azienda/azienda-3.jpg" alt="Headquarter Seregno" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(15,10,5,0.75) 0%, transparent 50%);"></div>
+        <div style="position:absolute; bottom:32px; left:32px; right:32px;">
+          <h2 style="font-family:'Cormorant Garamond', serif; font-size:28px; font-weight:300; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">Headquarter Seregno</h2>
+          <p style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.6; margin-bottom:16px;">Via Magenta, 35 — 20831 Seregno (MB)</p>
+          <a href="contatti.html" style="display:inline-block; padding:12px 28px; border:1px solid var(--white); color:var(--white); font-family:'Inter',sans-serif; font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:all 0.3s;" onmouseover="this.style.background='var(--white)';this.style.color='var(--ink)'" onmouseout="this.style.background='transparent';this.style.color='var(--white)'">Prenota una visita</a>
         </div>
       </div>
 
     </div>
+
+    <!-- MINI DESCRIZIONI -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px;">
+      <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); text-align:justify;">Le collezioni Fabio Gavazzi sono disponibili presso il prestigioso showroom di Milano in via Montenapoleone 23, ospitato nell'omonimo Palazzo Gavazzi. Qui scoprirete l'eleganza del Made in Italy e la straordinaria versatilità dei capi realizzati a mano.</p>
+      <p style="font-family:'Inter', sans-serif; font-size:14px; line-height:1.8; color:var(--gray-1); text-align:justify;">L'atelier storico di Seregno ospita gli uffici direzionali, lo showroom aziendale e i laboratori di produzione dove, da cento anni, si tramanda l'arte della pellicceria Fureco.</p>
+    </div>
+
   </div>
 </section>
 
